@@ -417,6 +417,23 @@
     max-width: 1100px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
   }
+  .concierge-header {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;
+  }
+  .concierge-booklet {
+    display: flex; align-items: center; gap: 1rem; text-decoration: none;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(200,185,154,0.2);
+    padding: 1.25rem 1.5rem; transition: all 0.25s; flex-shrink: 0;
+  }
+  .concierge-booklet:hover { background: rgba(255,255,255,0.1); border-color: var(--sand-dark); }
+  .concierge-booklet-icon { width: 40px; height: 50px; color: var(--sand); flex-shrink: 0; }
+  .concierge-booklet-label {
+    font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.25rem;
+  }
+  .concierge-booklet-title { font-family: var(--serif); font-size: 1rem; color: var(--sand); line-height: 1.3; }
+  .concierge-booklet-dl { font-size: 0.72rem; color: var(--drift); margin-top: 0.35rem; transition: color 0.2s; }
+  .concierge-booklet:hover .concierge-booklet-dl { color: var(--sand); }
   .concierge-content .section-tag { color: var(--sand-dark); }
   .concierge-content .section-tag::before { background: var(--sand-dark); }
   .concierge-content .section-heading { color: var(--sand); }
@@ -625,6 +642,8 @@
     .welcome-inner { grid-template-columns: 1fr; }
     .concierge-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     #concierge { padding: 4rem 1.5rem; }
+    .concierge-header { flex-direction: column; gap: 1.25rem; }
+    .concierge-booklet { width: 100%; }
     .test-grid { grid-template-columns: 1fr; }
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
@@ -808,8 +827,24 @@
 <section id="concierge">
   <div class="concierge-inner">
     <div class="concierge-content">
-      <div class="section-tag reveal">For Sellers</div>
-      <h2 class="section-heading reveal reveal-delay-1">Compass<br><em>Concierge.</em></h2>
+      <div class="concierge-header">
+        <div>
+          <div class="section-tag reveal">For Sellers</div>
+          <h2 class="section-heading reveal reveal-delay-1">Compass<br><em>Concierge.</em></h2>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('concierge-dl-modal')" class="concierge-booklet reveal reveal-delay-1">
+          <svg class="concierge-booklet-icon" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="44" height="56" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 18h20M14 26h20M14 34h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M30 40l4 4 6-8" stroke="var(--sand-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="concierge-booklet-text">
+            <div class="concierge-booklet-label">Free PDF</div>
+            <div class="concierge-booklet-title">Concierge<br>Booklet</div>
+            <div class="concierge-booklet-dl">Download &rarr;</div>
+          </div>
+        </a>
+      </div>
       <p class="body-text reveal reveal-delay-2">Sell your home faster and for more. Compass Concierge fronts the cost of home improvement services with no upfront costs and no interest &mdash; ever. From staging to landscaping to cosmetic renovations, we handle it so you don't have to.</p>
       <div class="concierge-features reveal reveal-delay-2">
         <div class="concierge-feature">
@@ -830,18 +865,7 @@
         </div>
       </div>
       <div class="concierge-cta-wrap reveal reveal-delay-3">
-        <form id="concierge-form" style="width:100%;max-width:400px;">
-          <input type="hidden" name="_subject" value="Concierge Inquiry — OwnPalosVerdes.com">
-          <input type="hidden" name="form_type" value="concierge_inquiry">
-          <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.6rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
-          <input class="form-input" type="text" name="address" placeholder="Property address" data-fs-field style="margin-bottom:0.6rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
-          <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.6rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
-          <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)" data-fs-field style="margin-bottom:0.75rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
-          <button type="submit" class="concierge-cta" data-fs-submit-btn style="width:100%;text-align:center;border:none;cursor:pointer;">Let's Talk About Listing &rarr;</button>
-          <div data-fs-success class="form-success" style="margin-top:0.75rem;color:var(--sand);"></div>
-          <div data-fs-error class="form-error" style="color:#e88;"></div>
-        </form>
-        <a href="guides/compass-concierge.pdf" target="_blank" class="concierge-pdf" style="margin-top:0.5rem;">Download the Concierge booklet &rarr;</a>
+        <a href="javascript:void(0)" onclick="openModal('connect-modal')" class="concierge-cta">Let's Talk About Listing &rarr;</a>
       </div>
     </div>
     <div class="concierge-card reveal reveal-delay-1">
@@ -1076,6 +1100,25 @@
   </div>
 </div>
 
+<!-- Concierge Booklet Download Modal -->
+<div class="modal-overlay" id="concierge-dl-modal" onclick="closeModalOutside(event,'concierge-dl-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('concierge-dl-modal')">&#10005;</button>
+    <div class="modal-title">Get the Concierge Booklet</div>
+    <p class="modal-body">Everything you need to know about Compass Concierge &mdash; how it works, what's covered, and real before-and-after results. Free PDF, no obligation.</p>
+    <form id="concierge-dl-form">
+      <input type="hidden" name="_subject" value="Concierge Booklet Download — OwnPalosVerdes.com">
+      <input type="hidden" name="form_type" value="concierge_booklet">
+      <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
+      <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
+      <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)" data-fs-field style="margin-bottom:0.75rem;width:100%;">
+      <button type="submit" class="form-submit" data-fs-submit-btn style="width:100%;">Download the booklet &rarr;</button>
+    </form>
+    <div data-fs-success class="form-success" style="margin-top:1rem;"></div>
+    <div data-fs-error class="form-error"></div>
+  </div>
+</div>
+
 <!-- FORMSPREE -->
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
@@ -1083,7 +1126,10 @@
   formspree('initForm', { formElement: '#guide-form', formId: 'mwvapnan' });
   formspree('initForm', { formElement: '#value-form', formId: 'mwvapnan' });
   formspree('initForm', { formElement: '#connect-form', formId: 'mwvapnan' });
-  formspree('initForm', { formElement: '#concierge-form', formId: 'mwvapnan' });
+  formspree('initForm', {
+    formElement: '#concierge-dl-form', formId: 'mwvapnan',
+    onSuccess: function() { window.open('guides/compass-concierge.pdf', '_blank'); }
+  });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
