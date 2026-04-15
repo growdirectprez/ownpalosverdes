@@ -165,10 +165,22 @@
 
   /* ── FOOTER ─────── */
   footer {
-    padding: 3rem; text-align: center;
-    font-size: 0.75rem; color: var(--drift);
+    background: var(--ink); padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem;
   }
-  footer a { color: var(--ocean); text-decoration: none; }
+  .footer-logo { font-family: var(--serif); font-size: 1.3rem; color: var(--sand); }
+  .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; margin-top: 0.5rem; }
+  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-dark); margin-bottom: 1rem; }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sand-dark); }
+  .footer-bottom {
+    background: var(--ink); padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(200,185,154,0.15);
+  }
+  .footer-bottom p { font-size: 0.65rem; color: var(--stone); }
+  .footer-bottom a { color: var(--stone); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--sand-dark); }
 
   /* ── CTA BAR ─────── */
   .cta-bar {
@@ -188,7 +200,9 @@
 
   /* ── RESPONSIVE ─────── */
   @media (max-width: 768px) {
-    nav { padding: 0 1.5rem; }
+    nav { padding: 0 1.5rem;     footer { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
     .report-hero { padding: 4rem 1.5rem 3rem; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
     .table-section { overflow-x: auto; }
@@ -260,7 +274,7 @@
         <td>7</td>
         <td>63</td>
         <td>$930/ft&sup2;</td>
-        <td><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
       <tr>
         <td><strong>RPV</strong></td>
@@ -268,7 +282,7 @@
         <td>19</td>
         <td>60</td>
         <td>$759/ft&sup2;</td>
-        <td><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
       <tr>
         <td><strong>RHE</strong></td>
@@ -276,7 +290,7 @@
         <td>1</td>
         <td>12</td>
         <td>$1,026/ft&sup2;</td>
-        <td><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
       <tr>
         <td><strong>RH</strong></td>
@@ -284,7 +298,7 @@
         <td>1</td>
         <td>134</td>
         <td>$1,442/ft&sup2;</td>
-        <td><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
     </tbody>
   </table>
@@ -306,7 +320,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/601-Paseo-Del-Mar-90274/home" target="_blank" rel="noopener">601 Paseo Del Mar</a></td>
+        <td>601 Paseo Del Mar</td>
         <td>PVE</td>
         <td>$9,400,000</td>
         <td>5/5</td>
@@ -314,7 +328,7 @@
         <td>82 days</td>
       </tr>
       <tr>
-        <td><a href="https://www.redfin.com/CA/Rolling-Hills/1-Hackamore-90274/home" target="_blank" rel="noopener">1 Hackamore</a></td>
+        <td>1 Hackamore</td>
         <td>RH</td>
         <td>$4,180,000</td>
         <td>4/4</td>
@@ -322,7 +336,7 @@
         <td>134 days</td>
       </tr>
       <tr>
-        <td><a href="https://www.redfin.com/CA/Rancho-Palos-Verdes/30153-Matisse-90275/home" target="_blank" rel="noopener">30153 Matisse</a></td>
+        <td>30153 Matisse</td>
         <td>RPV</td>
         <td>$3,450,000</td>
         <td>4/4</td>
@@ -330,7 +344,7 @@
         <td>75 days</td>
       </tr>
       <tr>
-        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/1744-Paseo-Del-Mar-90274/home" target="_blank" rel="noopener">1744 Paseo Del Mar</a></td>
+        <td>1744 Paseo Del Mar</td>
         <td>PVE</td>
         <td>$3,380,000</td>
         <td>4/5</td>
@@ -338,7 +352,7 @@
         <td>37 days</td>
       </tr>
       <tr>
-        <td><a href="https://www.redfin.com/CA/Rancho-Palos-Verdes/3069-Crest-90275/home" target="_blank" rel="noopener">3069 Crest</a></td>
+        <td>3069 Crest</td>
         <td>RPV</td>
         <td>$3,300,000</td>
         <td>4/2</td>
@@ -357,15 +371,6 @@
       <li><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
       <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
       <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
-    </ul>
-  </div>
-  <div class="platform-card">
-    <h3>Market Data on Redfin</h3>
-    <ul>
-      <li><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">PVE Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">RPV Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">RHE Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">RH Housing Market</a> <span class="tag">Trends</span></li>
     </ul>
   </div>
 </section>
@@ -417,13 +422,50 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 Angelique Lyle &middot; Compass &middot; DRE# 01475592</p>
-  <p style="margin-top:0.5rem;"><a href="/">OwnPalosVerdes.com</a></p>
-  <p style="margin-top:1rem; font-size:0.65rem; max-width:700px; margin-left:auto; margin-right:auto;">
-    Data sourced from CRMLS. Deemed reliable but not guaranteed.
-    Compass is a licensed real estate broker. Equal Housing Opportunity.
-  </p>
+  <div>
+    <div class="footer-logo">Angelique Lyle</div>
+    <div class="footer-sub">Accardo Real Estate Associates<br>CA DRE# 01475592<br>Compass &middot; 550 Silver Spur Rd, Suite 110<br>Rancho Palos Verdes, CA 90275</div>
+  </div>
+  <div>
+    <div class="footer-col-title">Navigate</div>
+    <div class="footer-links">
+      <a href="/#about">About Angelique</a>
+      <a href="/#welcome">Welcome Guide</a>
+      <a href="/#testimonials">Reviews</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Guides &amp; Reports</div>
+    <div class="footer-links">
+      <a href="/guides/neighborhoods/">Neighborhood Guide</a>
+      <a href="/guides/schools/">School Guide</a>
+      <a href="/guides/lifestyle/">Life on the Hill</a>
+      <a href="/market/">Monthly Market Reports</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <div class="footer-links">
+      <a href="tel:3107518335">(310) 751-8335</a>
+      <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
+      <a href="https://angeliquelyle.com" target="_blank" rel="noopener">angeliquelyle.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;">
+      <a href="https://accardorealestate.com" target="_blank" rel="noopener"><img src="/images/logos/area-logo-white.png" alt="AREA — Accardo Real Estate Associates" style="height:56px;opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
+      <a href="https://www.compass.com" target="_blank" rel="noopener" style="opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+        <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="'Outfit', system-ui, sans-serif" font-size="18" font-weight="400" letter-spacing="0.18em" fill="white">COMPASS</text>
+        </svg>
+      </a>
+    </div>
+  </div>
 </footer>
+<div class="footer-bottom">
+  <p>&copy; 2026 Angelique Lyle &middot; Accardo Real Estate Associates &middot; Compass &middot; CA DRE# 01475592 &middot; Equal Housing Opportunity</p>
+  <p><a href="https://angeliquelyle.com/terms-and-conditions" target="_blank" rel="noopener">Privacy Policy</a></p>
+  <p style="margin-top:0.5rem; font-size:0.65rem; max-width:700px; margin-left:auto; margin-right:auto;">Data sourced from CRMLS. Deemed reliable but not guaranteed.</p>
+</div>
 
 </body>
 </html>

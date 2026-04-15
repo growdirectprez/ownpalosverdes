@@ -623,7 +623,8 @@
     #contact { grid-template-columns: 1fr; }
     footer { grid-template-columns: 1fr 1fr; }
     .welcome-inner { grid-template-columns: 1fr; }
-    .history-inner { grid-template-columns: 1fr; }
+    .concierge-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    #concierge { padding: 4rem 1.5rem; }
     .test-grid { grid-template-columns: 1fr; }
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
@@ -674,7 +675,7 @@
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Let's Connect</a>
+  <a href="javascript:void(0)" class="nav-cta" onclick="openModal('connect-modal')">Let's Connect</a>
   <button class="nav-menu" onclick="document.querySelector('.mobile-nav').classList.add('open')">Menu</button>
 </nav>
 
@@ -686,7 +687,7 @@
     <p class="hero-sub">20+ years guiding families home to the Peninsula. I figured it out the hard way so you don't have to.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Start a Conversation</a>
-      <button class="btn-ghost" onclick="openModal('value-modal')">Talk to Me About Listing Your Home</button>
+      <a href="#concierge" class="btn-ghost">Talk to Me About Listing Your Home</a>
     </div>
   </div>
   <div class="hero-right">
@@ -757,8 +758,16 @@
           </div>
           <div class="chapter-arrow">&rarr;</div>
         </a>
-        <a href="/guides/schools/" class="chapter-row">
+        <a href="/guides/lifestyle/" class="chapter-row">
           <div class="chapter-num">02</div>
+          <div class="chapter-text">
+            <div class="chapter-title">Life on the Hill</div>
+            <div class="chapter-desc">Trails, beaches, golf, equestrian, arts, dining &mdash; and a century of history</div>
+          </div>
+          <div class="chapter-arrow">&rarr;</div>
+        </a>
+        <a href="/guides/schools/" class="chapter-row">
+          <div class="chapter-num">03</div>
           <div class="chapter-text">
             <div class="chapter-title">Schools &amp; the PVPUSD</div>
             <div class="chapter-desc">Feeder patterns, ratings, programs, and the things the website won't tell you</div>
@@ -766,18 +775,10 @@
           <div class="chapter-arrow">&rarr;</div>
         </a>
         <a href="/market/" class="chapter-row">
-          <div class="chapter-num">03</div>
+          <div class="chapter-num">04</div>
           <div class="chapter-text">
             <div class="chapter-title">Monthly Market Reports</div>
             <div class="chapter-desc">34 months of closed CRMLS data &mdash; median prices, DOM, and price per square foot</div>
-          </div>
-          <div class="chapter-arrow">&rarr;</div>
-        </a>
-        <a href="/guides/lifestyle/" class="chapter-row">
-          <div class="chapter-num">04</div>
-          <div class="chapter-text">
-            <div class="chapter-title">Life on the Hill</div>
-            <div class="chapter-desc">Trails, beaches, golf, equestrian, arts, dining &mdash; and a century of history</div>
           </div>
           <div class="chapter-arrow">&rarr;</div>
         </a>
@@ -786,18 +787,18 @@
     <div class="welcome-pkg-card reveal reveal-delay-2">
       <div data-fs-success class="pkg-success"></div>
       <div data-fs-error class="pkg-error"></div>
-      <div class="pkg-label">Free Download</div>
-      <div class="pkg-title">Get the full Welcome Guide</div>
-      <p class="pkg-body">Four chapters, real data, and a vendor directory &mdash; sent straight to your inbox. Updated quarterly.</p>
+      <div class="pkg-label">Stay in the Loop</div>
+      <div class="pkg-title">Peninsula market updates, monthly.</div>
+      <p class="pkg-body">New listings, closed sales, price shifts, and neighborhood intel &mdash; straight to your inbox. No spam, unsubscribe anytime.</p>
       <form id="guide-form" class="pkg-form">
-        <input type="hidden" name="_subject" value="Welcome Package Request — OwnPalosVerdes.com">
-        <input type="hidden" name="form_type" value="welcome_package">
+        <input type="hidden" name="_subject" value="Newsletter Signup — OwnPalosVerdes.com">
+        <input type="hidden" name="form_type" value="newsletter">
         <input class="pkg-input" type="text" name="name" placeholder="Your name" data-fs-field required>
         <span data-fs-error="name" class="pkg-error"></span>
         <input class="pkg-input" type="email" name="email" placeholder="Email address" data-fs-field required>
         <span data-fs-error="email" class="pkg-error"></span>
-        <button type="submit" class="pkg-btn" data-fs-submit-btn>Send me the guide &rarr;</button>
-        <p class="pkg-disclaimer">Your information is never shared. Opt out any time.</p>
+        <button type="submit" class="pkg-btn" data-fs-submit-btn>Subscribe &rarr;</button>
+        <p class="pkg-disclaimer">Your information is never shared. Unsubscribe anytime.</p>
       </form>
     </div>
   </div>
@@ -829,8 +830,18 @@
         </div>
       </div>
       <div class="concierge-cta-wrap reveal reveal-delay-3">
-        <a href="#contact" class="concierge-cta">Talk to Me About Listing Your Home</a>
-        <a href="guides/compass-concierge.pdf" target="_blank" class="concierge-pdf">Download the Concierge booklet &rarr;</a>
+        <form id="concierge-form" style="width:100%;max-width:400px;">
+          <input type="hidden" name="_subject" value="Concierge Inquiry — OwnPalosVerdes.com">
+          <input type="hidden" name="form_type" value="concierge_inquiry">
+          <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.6rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
+          <input class="form-input" type="text" name="address" placeholder="Property address" data-fs-field style="margin-bottom:0.6rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
+          <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.6rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
+          <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)" data-fs-field style="margin-bottom:0.75rem;width:100%;background:rgba(255,255,255,0.08);border-color:var(--stone);color:var(--sand);">
+          <button type="submit" class="concierge-cta" data-fs-submit-btn style="width:100%;text-align:center;border:none;cursor:pointer;">Let's Talk About Listing &rarr;</button>
+          <div data-fs-success class="form-success" style="margin-top:0.75rem;color:var(--sand);"></div>
+          <div data-fs-error class="form-error" style="color:#e88;"></div>
+        </form>
+        <a href="guides/compass-concierge.pdf" target="_blank" class="concierge-pdf" style="margin-top:0.5rem;">Download the Concierge booklet &rarr;</a>
       </div>
     </div>
     <div class="concierge-card reveal reveal-delay-1">
@@ -976,23 +987,19 @@
   <div>
     <div class="footer-col-title">Navigate</div>
     <div class="footer-links">
-      <a href="#about">About Angelique</a>
-      <a href="#neighborhoods">Neighborhood Guides</a>
-      <a href="#market">Market Reports</a>
-      <a href="#schools">School Guide</a>
-      <a href="#welcome">Welcome Guide</a>
-      <a href="#testimonials">Reviews</a>
+      <a href="/#about">About Angelique</a>
+      <a href="/#welcome">Welcome Guide</a>
+      <a href="/#testimonials">Reviews</a>
+      <a href="/#contact">Contact</a>
     </div>
   </div>
   <div>
-    <div class="footer-col-title">Resources</div>
+    <div class="footer-col-title">Guides &amp; Reports</div>
     <div class="footer-links">
+      <a href="/guides/neighborhoods/">Neighborhood Guide</a>
+      <a href="/guides/lifestyle/">Life on the Hill</a>
+      <a href="/guides/schools/">School Guide</a>
       <a href="/market/">Monthly Market Reports</a>
-      <a href="https://angeliquelyle.com/home-search/listings" target="_blank" rel="noopener">Search Homes</a>
-      <a href="https://angeliquelyle.com/properties/sold" target="_blank" rel="noopener">Past Transactions</a>
-      <a href="https://pvpusd.net" target="_blank" rel="noopener">PVPUSD Schools</a>
-      <a href="https://pvld.org" target="_blank" rel="noopener">PV Library District</a>
-      <a href="https://palosverdeshistory.org" target="_blank" rel="noopener">PV Community Archives</a>
     </div>
   </div>
   <div>
@@ -1001,10 +1008,9 @@
       <a href="tel:3107518335">(310) 751-8335</a>
       <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
       <a href="https://angeliquelyle.com" target="_blank" rel="noopener">angeliquelyle.com</a>
-      <a href="#contact">Send a Message</a>
     </div>
     <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;">
-      <a href="https://accardorealestate.com" target="_blank" rel="noopener"><img src="images/logos/area-logo-white.png" alt="AREA — Accardo Real Estate Associates" style="height:56px;opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
+      <a href="https://accardorealestate.com" target="_blank" rel="noopener"><img src="/images/logos/area-logo-white.png" alt="AREA — Accardo Real Estate Associates" style="height:56px;opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
       <a href="https://www.compass.com" target="_blank" rel="noopener" style="opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
         <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <text x="0" y="21" font-family="'Outfit', system-ui, sans-serif" font-size="18" font-weight="400" letter-spacing="0.18em" fill="white">COMPASS</text>
@@ -1019,6 +1025,39 @@
 </div>
 
 <!-- MODALS -->
+
+<!-- Quick Connect Modal -->
+<div class="modal-overlay" id="connect-modal" onclick="closeModalOutside(event,'connect-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('connect-modal')">&#10005;</button>
+    <div class="modal-title">Let's Connect</div>
+    <p class="modal-body">Quick question? Thinking about a move? Drop me a line &mdash; I'll get back to you the same day.</p>
+    <form id="connect-form">
+      <input type="hidden" name="_subject" value="Quick Connect — OwnPalosVerdes.com">
+      <input type="hidden" name="form_type" value="quick_connect">
+      <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
+      <input class="form-input" type="tel" name="phone" placeholder="Phone number" data-fs-field style="margin-bottom:0.75rem;width:100%;">
+      <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
+      <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;">
+        <label style="flex:1;display:flex;align-items:center;gap:0.4rem;padding:0.6rem 0.8rem;border:1px solid var(--sand-mid);border-radius:6px;cursor:pointer;font-size:0.85rem;color:var(--stone);transition:all 0.2s;">
+          <input type="radio" name="preferred_contact" value="email_me" checked style="accent-color:var(--ocean);"> Email me
+        </label>
+        <label style="flex:1;display:flex;align-items:center;gap:0.4rem;padding:0.6rem 0.8rem;border:1px solid var(--sand-mid);border-radius:6px;cursor:pointer;font-size:0.85rem;color:var(--stone);transition:all 0.2s;">
+          <input type="radio" name="preferred_contact" value="text_me"> Text me
+        </label>
+        <label style="flex:1;display:flex;align-items:center;gap:0.4rem;padding:0.6rem 0.8rem;border:1px solid var(--sand-mid);border-radius:6px;cursor:pointer;font-size:0.85rem;color:var(--stone);transition:all 0.2s;">
+          <input type="radio" name="preferred_contact" value="call_me"> Call me
+        </label>
+      </div>
+      <textarea class="form-input" name="message" placeholder="What's on your mind? (optional)" data-fs-field rows="2" style="margin-bottom:0.75rem;width:100%;resize:vertical;"></textarea>
+      <button type="submit" class="form-submit" data-fs-submit-btn style="width:100%;">Send &rarr;</button>
+    </form>
+    <div data-fs-success class="form-success" style="margin-top:1rem;"></div>
+    <div data-fs-error class="form-error"></div>
+  </div>
+</div>
+
+<!-- Home Valuation Modal -->
 <div class="modal-overlay" id="value-modal" onclick="closeModalOutside(event,'value-modal')">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('value-modal')">&#10005;</button>
@@ -1043,6 +1082,8 @@
   formspree('initForm', { formElement: '#contact-form', formId: 'mwvapnan' });
   formspree('initForm', { formElement: '#guide-form', formId: 'mwvapnan' });
   formspree('initForm', { formElement: '#value-form', formId: 'mwvapnan' });
+  formspree('initForm', { formElement: '#connect-form', formId: 'mwvapnan' });
+  formspree('initForm', { formElement: '#concierge-form', formId: 'mwvapnan' });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 

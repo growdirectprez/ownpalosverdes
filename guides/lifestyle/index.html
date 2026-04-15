@@ -167,6 +167,7 @@
   /* ── LIFESTYLE SECTIONS ─────────────────────── */
   .lifestyle-section {
     padding: 5rem 3rem; border-bottom: 1px solid var(--sand-mid);
+    scroll-margin-top: 130px;
   }
   .lifestyle-section:nth-child(even) { background: var(--white); }
   .lifestyle-section:nth-child(odd) { background: var(--foam); }
@@ -241,7 +242,7 @@
   /* ── FOOTER ─────────────────────────────────── */
   footer {
     background: var(--ink); padding: 3rem;
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem;
   }
   .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--sand); margin-bottom: 0.75rem; font-style: italic; }
   .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; }
@@ -643,9 +644,18 @@
     <div class="footer-col-title">Navigate</div>
     <div class="footer-links">
       <a href="/#about">About Angelique</a>
-      <a href="/#neighborhoods">Neighborhoods</a>
-      <a href="/market/">Market Reports</a>
+      <a href="/#welcome">Welcome Guide</a>
+      <a href="/#testimonials">Reviews</a>
       <a href="/#contact">Contact</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Guides &amp; Reports</div>
+    <div class="footer-links">
+      <a href="/guides/neighborhoods/">Neighborhood Guide</a>
+      <a href="/guides/schools/">School Guide</a>
+      <a href="/guides/lifestyle/">Life on the Hill</a>
+      <a href="/market/">Monthly Market Reports</a>
     </div>
   </div>
   <div>
@@ -654,6 +664,14 @@
       <a href="tel:3107518335">(310) 751-8335</a>
       <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
       <a href="https://angeliquelyle.com" target="_blank" rel="noopener">angeliquelyle.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;">
+      <a href="https://accardorealestate.com" target="_blank" rel="noopener"><img src="/images/logos/area-logo-white.png" alt="AREA — Accardo Real Estate Associates" style="height:56px;opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
+      <a href="https://www.compass.com" target="_blank" rel="noopener" style="opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+        <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="'Outfit', system-ui, sans-serif" font-size="18" font-weight="400" letter-spacing="0.18em" fill="white">COMPASS</text>
+        </svg>
+      </a>
     </div>
   </div>
 </footer>
