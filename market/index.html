@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY3DD9BYZ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZY3DD9BYZ2');
+</script>
 <title>Palos Verdes Monthly Market Reports | OwnPalosVerdes.com</title>
 <meta name="description" content="Monthly housing market reports for the Palos Verdes Peninsula. Median prices, days on market, and sales data for PVE, RPV, RHE, and Rolling Hills.">
 <link rel="canonical" href="https://ownpalosverdes.com/market/">
@@ -105,12 +113,12 @@
   .footer-bottom a { color: var(--stone); text-decoration: none; }
   .footer-bottom a:hover { color: var(--sand-dark); }
   @media (max-width: 768px) {
-    nav { padding: 0 1.5rem;     footer { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
-    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
+    nav { padding: 0 1.5rem; }
     .hero { padding: 4rem 1.5rem 3rem; }
     .platform-links { grid-template-columns: 1fr; }
     .content { overflow-x: auto; }
+    footer { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
 </head>
