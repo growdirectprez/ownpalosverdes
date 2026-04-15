@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palos Verdes Monthly Market Reports | OwnPalosVerdes.com</title>
+<meta name="description" content="Monthly housing market reports for the Palos Verdes Peninsula. Median prices, days on market, and sales data for PVE, RPV, RHE, and Rolling Hills.">
+<link rel="canonical" href="https://ownpalosverdes.com/market/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sand: #F4EFE6; --sand-mid: #E8DDD0; --sand-dark: #C8B99A;
+    --ocean: #1C3A4A; --ocean-mid: #2C5568; --foam: #F9F7F4;
+    --drift: #8A9BA8; --stone: #4A5A62; --white: #FFFFFF; --ink: #1A2428;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Outfit', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--foam); color: var(--ink); }
+  nav {
+    position: sticky; top: 0; z-index: 100; padding: 0 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px; background: rgba(249,247,244,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,185,154,0.25);
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); text-decoration: none; }
+  .nav-logo span { font-style: italic; color: var(--sand-dark); }
+  .nav-back { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
+  .nav-back:hover { color: var(--ocean); }
+  .hero {
+    background: var(--ocean); padding: 5rem 3rem 4rem; text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400; color: var(--sand); line-height: 1.15; margin-bottom: 1rem;
+  }
+  .hero h1 em { font-style: italic; }
+  .hero p { color: var(--drift); font-size: 0.95rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+  .content { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::before { content: ''; width: 28px; height: 1px; background: var(--sand-dark); }
+  .content h2 {
+    font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 2rem;
+  }
+  .content h2 em { font-style: italic; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  thead th {
+    text-align: left; padding: 0.8rem 1rem;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--drift); border-bottom: 2px solid var(--sand-mid); font-weight: 400;
+  }
+  tbody td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--sand-mid); color: var(--stone); }
+  tbody tr:hover { background: rgba(244,239,230,0.5); }
+  tbody a { color: var(--ocean); text-decoration: none; font-weight: 500; }
+  tbody a:hover { text-decoration: underline; }
+  .platform-links {
+    max-width: 1100px; margin: 3rem auto 4rem; padding: 0 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .platform-card {
+    background: var(--white); padding: 2rem; box-shadow: 0 2px 16px rgba(28,58,74,0.05);
+  }
+  .platform-card h3 {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 1rem;
+  }
+  .platform-card ul { list-style: none; }
+  .platform-card li { margin-bottom: 0.6rem; }
+  .platform-card a {
+    color: var(--ocean); text-decoration: none; font-size: 0.85rem;
+    border-bottom: 1px solid rgba(28,58,74,0.2); padding-bottom: 1px;
+  }
+  .platform-card a:hover { border-color: var(--ocean); }
+  .platform-card .tag {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--drift); margin-left: 0.5rem;
+  }
+  footer {
+    padding: 3rem; text-align: center; font-size: 0.75rem; color: var(--drift);
+    border-top: 1px solid var(--sand-mid);
+  }
+  footer a { color: var(--ocean); text-decoration: none; }
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .hero { padding: 4rem 1.5rem 3rem; }
+    .platform-links { grid-template-columns: 1fr; }
+    .content { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Own<span>PV</span></a>
+  <a href="/" class="nav-back">&larr; OwnPalosVerdes.com</a>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Market Intelligence</div>
+  <h1>Palos Verdes<br><em>Market Reports</em></h1>
+  <p>Monthly housing data for the Peninsula. Median prices, days on market, inventory, and city-level breakdowns from closed CRMLS transactions.</p>
+</section>
+
+<section class="content">
+  <div class="section-label">Monthly Reports</div>
+  <h2>All available <em>months.</em></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Median Price</th>
+        <th>Sales</th>
+        <th>Median DOM</th>
+        <th>$/ft&sup2;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/market/2026-04/">April 2026</a></td>
+        <td>$1.84M</td>
+        <td>4</td>
+        <td>19</td>
+        <td>$753/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2026-03/">March 2026</a></td>
+        <td>$2.02M</td>
+        <td>46</td>
+        <td>19</td>
+        <td>$856/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2026-02/">February 2026</a></td>
+        <td>$2.34M</td>
+        <td>24</td>
+        <td>40</td>
+        <td>$834/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2026-01/">January 2026</a></td>
+        <td>$1.90M</td>
+        <td>37</td>
+        <td>64</td>
+        <td>$785/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-12/">December 2025</a></td>
+        <td>$2.08M</td>
+        <td>41</td>
+        <td>28</td>
+        <td>$794/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-11/">November 2025</a></td>
+        <td>$2.22M</td>
+        <td>42</td>
+        <td>46</td>
+        <td>$861/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-10/">October 2025</a></td>
+        <td>$2.00M</td>
+        <td>50</td>
+        <td>51</td>
+        <td>$828/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-09/">September 2025</a></td>
+        <td>$2.25M</td>
+        <td>71</td>
+        <td>38</td>
+        <td>$897/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-08/">August 2025</a></td>
+        <td>$1.93M</td>
+        <td>46</td>
+        <td>19</td>
+        <td>$831/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-07/">July 2025</a></td>
+        <td>$2.30M</td>
+        <td>66</td>
+        <td>32</td>
+        <td>$864/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-06/">June 2025</a></td>
+        <td>$2.14M</td>
+        <td>43</td>
+        <td>23</td>
+        <td>$860/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-05/">May 2025</a></td>
+        <td>$1.98M</td>
+        <td>62</td>
+        <td>15</td>
+        <td>$830/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-04/">April 2025</a></td>
+        <td>$1.94M</td>
+        <td>53</td>
+        <td>15</td>
+        <td>$884/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-03/">March 2025</a></td>
+        <td>$2.25M</td>
+        <td>45</td>
+        <td>24</td>
+        <td>$841/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-02/">February 2025</a></td>
+        <td>$2.20M</td>
+        <td>43</td>
+        <td>33</td>
+        <td>$842/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2025-01/">January 2025</a></td>
+        <td>$1.95M</td>
+        <td>26</td>
+        <td>39</td>
+        <td>$854/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-12/">December 2024</a></td>
+        <td>$1.99M</td>
+        <td>36</td>
+        <td>34</td>
+        <td>$786/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-11/">November 2024</a></td>
+        <td>$2.02M</td>
+        <td>32</td>
+        <td>49</td>
+        <td>$871/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-10/">October 2024</a></td>
+        <td>$2.02M</td>
+        <td>52</td>
+        <td>20</td>
+        <td>$914/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-09/">September 2024</a></td>
+        <td>$1.71M</td>
+        <td>38</td>
+        <td>27</td>
+        <td>$816/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-08/">August 2024</a></td>
+        <td>$2.20M</td>
+        <td>51</td>
+        <td>26</td>
+        <td>$887/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-07/">July 2024</a></td>
+        <td>$2.23M</td>
+        <td>60</td>
+        <td>21</td>
+        <td>$885/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-06/">June 2024</a></td>
+        <td>$2.20M</td>
+        <td>52</td>
+        <td>17</td>
+        <td>$918/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-05/">May 2024</a></td>
+        <td>$2.16M</td>
+        <td>53</td>
+        <td>21</td>
+        <td>$868/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-04/">April 2024</a></td>
+        <td>$2.17M</td>
+        <td>52</td>
+        <td>11</td>
+        <td>$924/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-03/">March 2024</a></td>
+        <td>$2.10M</td>
+        <td>45</td>
+        <td>15</td>
+        <td>$873/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-02/">February 2024</a></td>
+        <td>$2.00M</td>
+        <td>33</td>
+        <td>18</td>
+        <td>$878/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2024-01/">January 2024</a></td>
+        <td>$2.01M</td>
+        <td>34</td>
+        <td>41</td>
+        <td>$918/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2023-12/">December 2023</a></td>
+        <td>$2.19M</td>
+        <td>34</td>
+        <td>31</td>
+        <td>$844/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2023-11/">November 2023</a></td>
+        <td>$2.02M</td>
+        <td>43</td>
+        <td>19</td>
+        <td>$837/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2023-10/">October 2023</a></td>
+        <td>$2.04M</td>
+        <td>62</td>
+        <td>18</td>
+        <td>$874/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2023-09/">September 2023</a></td>
+        <td>$2.23M</td>
+        <td>44</td>
+        <td>14</td>
+        <td>$901/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2023-08/">August 2023</a></td>
+        <td>$1.77M</td>
+        <td>37</td>
+        <td>9</td>
+        <td>$923/ft&sup2;</td>
+      </tr>
+      <tr>
+        <td><a href="/market/2023-07/">July 2023</a></td>
+        <td>$1.99M</td>
+        <td>32</td>
+        <td>8</td>
+        <td>$937/ft&sup2;</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="platform-links">
+  <div class="platform-card">
+    <h3>Search on Compass</h3>
+    <ul>
+      <li><a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Palos Verdes Estates</a> <span class="tag">PVE</span></li>
+      <li><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
+      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
+      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
+    </ul>
+  </div>
+  <div class="platform-card">
+    <h3>Market Data on Redfin</h3>
+    <ul>
+      <li><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">PVE Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">RPV Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">RHE Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">RH Housing Market</a> <span class="tag">Trends</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Angelique Lyle &middot; Compass &middot; DRE# 01475592</p>
+  <p style="margin-top:0.5rem;"><a href="/">OwnPalosVerdes.com</a></p>
+  <p style="margin-top:1rem; font-size:0.65rem; max-width:700px; margin-left:auto; margin-right:auto;">
+    Data sourced from CRMLS. Deemed reliable but not guaranteed.
+    Compass is a licensed real estate broker. Equal Housing Opportunity.
+  </p>
+</footer>
+
+</body>
+</html>

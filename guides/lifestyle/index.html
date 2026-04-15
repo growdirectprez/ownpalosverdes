@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life on the Hill — Lifestyle Guide · OwnPalosVerdes.com</title>
+<meta name="description" content="A factual guide to living on the Palos Verdes Peninsula — trails, golf, equestrian culture, beaches, dining, arts, and organized sports. What daily life actually looks like on the Hill.">
+<meta property="og:title" content="Life on the Hill — Lifestyle Guide · OwnPalosVerdes.com">
+<meta property="og:description" content="Trails, golf, equestrian culture, beaches, dining, arts, and sports on the Palos Verdes Peninsula. What daily life actually looks like on the Hill.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ownpalosverdes.com/guides/lifestyle/">
+<link rel="canonical" href="https://ownpalosverdes.com/guides/lifestyle/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Life on the Hill — Palos Verdes Lifestyle Guide",
+  "description": "A factual guide to living on the Palos Verdes Peninsula — trails, golf, equestrian culture, beaches, dining, arts, and organized sports.",
+  "url": "https://ownpalosverdes.com/guides/lifestyle/",
+  "author": {
+    "@type": "RealEstateAgent",
+    "name": "Angelique Lyle",
+    "url": "https://ownpalosverdes.com",
+    "worksFor": {
+      "@type": "RealEstateAgent",
+      "name": "Compass"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Palos Verdes Peninsula",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "California"
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand: #F4EFE6;
+    --sand-mid: #E8DDD0;
+    --sand-dark: #C8B99A;
+    --ocean: #1C3A4A;
+    --ocean-mid: #2C5568;
+    --foam: #F9F7F4;
+    --drift: #8A9BA8;
+    --stone: #4A5A62;
+    --white: #FFFFFF;
+    --ink: #1A2428;
+    --sunset: #D4784A;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Outfit', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--foam); color: var(--ink); overflow-x: hidden; }
+
+  /* ── NAV ────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 3rem; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; background: rgba(249,247,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,185,154,0.25);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(28,58,74,0.08); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); letter-spacing: 0.02em; text-decoration: none; }
+  .nav-logo span { font-style: italic; color: var(--sand-dark); }
+  .nav-links {
+    list-style: none; display: flex; gap: 2rem; align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--stone); text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ocean); }
+  .nav-cta {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 22px; border: 1px solid var(--ocean); color: var(--ocean);
+    text-decoration: none; font-weight: 500; transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--ocean); color: var(--foam); }
+  .nav-menu {
+    display: none; background: none; border: none; font-family: var(--sans);
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ocean); cursor: pointer;
+  }
+  .mobile-nav {
+    position: fixed; inset: 0; z-index: 200; background: var(--foam);
+    display: none; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ocean); text-decoration: none;
+  }
+  .mobile-nav-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; font-size: 2rem; color: var(--ocean); cursor: pointer;
+  }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    background: var(--ocean); padding: 10rem 3rem 5rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(28,58,74,0.95), rgba(44,85,104,0.85));
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero-tag {
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  }
+  .hero-tag::before, .hero-tag::after { content: ''; display: block; width: 32px; height: 1px; background: var(--sand-dark); }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 400; line-height: 1.1; color: var(--sand); margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--sand-dark); }
+  .hero p {
+    font-size: 0.92rem; line-height: 1.8; color: var(--drift);
+    max-width: 560px; margin: 0 auto; font-weight: 300;
+  }
+
+  /* ── SHARED ─────────────────────────────────── */
+  .section-tag {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--sand-dark); }
+
+  /* ── TOC ────────────────────────────────────── */
+  .toc {
+    background: var(--white); border-bottom: 1px solid var(--sand-mid);
+    padding: 2rem 3rem; position: sticky; top: 68px; z-index: 50;
+  }
+  .toc-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+    align-items: center;
+  }
+  .toc-label {
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sand-dark); font-weight: 400; margin-right: 0.5rem;
+    white-space: nowrap;
+  }
+  .toc a {
+    font-size: 0.78rem; color: var(--stone); text-decoration: none;
+    padding: 4px 10px; border: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .toc a:hover { border-color: var(--sand-mid); color: var(--ocean); }
+
+  /* ── LIFESTYLE SECTIONS ─────────────────────── */
+  .lifestyle-section {
+    padding: 5rem 3rem; border-bottom: 1px solid var(--sand-mid);
+  }
+  .lifestyle-section:nth-child(even) { background: var(--white); }
+  .lifestyle-section:nth-child(odd) { background: var(--foam); }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-header { margin-bottom: 3rem; }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400; color: var(--ocean); margin-bottom: 1rem; line-height: 1.15;
+  }
+  .section-intro {
+    font-size: 0.92rem; line-height: 1.85; color: var(--stone); font-weight: 300;
+    max-width: 720px;
+  }
+
+  .content-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    margin-top: 2.5rem;
+  }
+  .content-grid.thirds { grid-template-columns: 1fr 1fr 1fr; }
+
+  .content-card h4 {
+    font-family: var(--serif); font-size: 1rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 1rem; font-style: italic;
+  }
+  .content-card p {
+    font-size: 0.85rem; line-height: 1.75; color: var(--stone); font-weight: 300;
+  }
+  .content-card ul {
+    font-size: 0.85rem; line-height: 1.75; color: var(--stone); font-weight: 300;
+    list-style: none;
+  }
+  .content-card li {
+    padding: 0.25rem 0; border-bottom: 1px solid var(--sand-mid);
+  }
+  .content-card li:last-child { border-bottom: none; }
+
+  .content-card a {
+    color: var(--ocean-mid); text-decoration: none; border-bottom: 1px solid var(--sand-mid);
+    transition: border-color 0.2s;
+  }
+  .content-card a:hover { border-color: var(--ocean); }
+
+  /* Single-column prose block */
+  .prose-block {
+    font-size: 0.88rem; line-height: 1.85; color: var(--stone); font-weight: 300;
+    max-width: 720px;
+  }
+  .prose-block p + p { margin-top: 1.25rem; }
+
+  /* ── CTA BAR ────────────────────────────────── */
+  .cta-bar {
+    background: var(--ocean); padding: 5rem 3rem; text-align: center;
+  }
+  .cta-bar h2 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400; color: var(--sand); margin-bottom: 1rem;
+  }
+  .cta-bar p {
+    font-size: 0.88rem; color: var(--drift); margin-bottom: 2rem;
+    font-weight: 300; max-width: 480px; margin-left: auto; margin-right: auto;
+  }
+  .btn-primary {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 32px; background: var(--sand-dark); color: var(--ocean);
+    border: none; font-family: var(--sans); font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--sand); transform: translateY(-1px); }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--ink); padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--sand); margin-bottom: 0.75rem; font-style: italic; }
+  .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; }
+  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-dark); margin-bottom: 1rem; }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sand-dark); }
+  .footer-bottom {
+    background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 0.68rem; color: var(--stone); }
+  .footer-bottom a { color: var(--stone); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom a:hover { color: var(--sand-dark); }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-menu { display: block; }
+    .hero { padding: 8rem 1.5rem 3.5rem; }
+    .toc { padding: 1.25rem 1.5rem; }
+    .lifestyle-section { padding: 3rem 1.5rem; }
+    .content-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .content-grid.thirds { grid-template-columns: 1fr; }
+    .cta-bar { padding: 3.5rem 1.5rem; }
+    footer { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.25rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .toc-inner { gap: 0.3rem 0.75rem; }
+    .toc a { font-size: 0.7rem; padding: 3px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close">&times;</button>
+  <a href="/" onclick="this.parentElement.classList.remove('open')">Home</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="/#welcome" onclick="this.parentElement.classList.remove('open')">Welcome Guide</a>
+  <a href="/#resources" onclick="this.parentElement.classList.remove('open')">Resources</a>
+  <a href="/#testimonials" onclick="this.parentElement.classList.remove('open')">Reviews</a>
+  <a href="/#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">Own <span>Palos Verdes</span></a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#welcome">Welcome Guide</a></li>
+    <li><a href="/#resources">Resources</a></li>
+    <li><a href="/#testimonials">Reviews</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta">Let's Connect</a>
+  <button class="nav-menu" onclick="document.querySelector('.mobile-nav').classList.add('open')">Menu</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">OwnPV Guides</div>
+    <h1>Life on <em>the Hill</em></h1>
+    <p>Golf courses on ocean cliffs. Horses on bridle trails through coastal sage. Four hundred acres of open reserve land a mile from your front door. This is what daily life looks like on the Palos Verdes Peninsula.</p>
+  </div>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-inner">
+    <span class="toc-label">Jump to</span>
+    <a href="#history">History</a>
+    <a href="#trails">Trails &amp; Open Space</a>
+    <a href="#golf">Golf</a>
+    <a href="#equestrian">Equestrian</a>
+    <a href="#beaches">Beaches &amp; Coast</a>
+    <a href="#arts">Arts &amp; Culture</a>
+    <a href="#dining">Dining &amp; Villages</a>
+    <a href="#sports">Sports &amp; Recreation</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HISTORY & HERITAGE                          -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="history">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">History &amp; Heritage</div>
+      <h2 class="section-title">A Planned Community Since 1913</h2>
+    </div>
+    <div class="content-grid">
+      <div class="content-card">
+        <h4>The Vanderlip Vision</h4>
+        <p>In 1913, New York banker Frank Vanderlip purchased 16,000 acres of the Palos Verdes Peninsula with a vision for a planned residential community. He hired the Olmsted Brothers &mdash; sons of Central Park's designer &mdash; to lay out the landscape plan. Development began in earnest in the 1920s, with deed-controlled Spanish Colonial architecture, preserved ridgeline views, and wide setbacks that still define the peninsula's character today.</p>
+        <p style="margin-top: 1rem;">The original Malaga Cove Plaza, completed in 1926, was the commercial anchor &mdash; a Mediterranean courtyard with the Neptune Fountain carved from Italian marble. It earned National Register of Historic Places listing in 2021.</p>
+      </div>
+      <div class="content-card">
+        <h4>What the Planning Preserved</h4>
+        <p>The Olmsted plan prioritized open space, ocean views, and natural contours over grid-pattern subdivision. That decision still shapes daily life. More than half the peninsula is open space, parkland, or preserve. There are no billboards. Commercial signage is regulated. The ridgeline is protected.</p>
+        <p style="margin-top: 1rem;">Portuguese Bend's Riding Club dates to the Vanderlip era &mdash; originally the stables for Villa Narcissa, the family estate. Rolling Hills incorporated as a gated city in 1957 specifically to preserve its horse-zoned, rural character. These weren't accidental outcomes. They were planned.</p>
+        <p style="margin-top: 1rem;">The <a href="https://palosverdeshistory.org" target="_blank" rel="noopener">Palos Verdes Community Archives</a> at palosverdeshistory.org maintains the primary collection of historical photos, maps, and records from the peninsula's development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TRAILS & OPEN SPACE                         -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="trails">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Trails &amp; Open Space</div>
+      <h2 class="section-title">Four Hundred Acres of Reserve, Twelve Miles of Coast</h2>
+    </div>
+    <div class="prose-block">
+      <p>More than half the peninsula is undeveloped. That's not an accident &mdash; it's the direct result of the 1920s Olmsted plan and decades of land-use decisions that prioritized open space over density. The result is a trail network that runs from the ridgeline to the ocean, through coastal sage scrub, grassland, and rocky bluffs.</p>
+    </div>
+    <div class="content-grid thirds" style="margin-top: 2.5rem;">
+      <div class="content-card">
+        <h4>Portuguese Bend Reserve</h4>
+        <p>The largest contiguous open space on the peninsula &mdash; over 400 acres with 12 named trails for hiking, mountain biking, and equestrian use. The terrain is coastal sage scrub and grassland with ocean views from the ridgeline. Trailheads off Crenshaw Boulevard and Del Cerro Park. Connects to Forrestal Nature Reserve to the south.</p>
+      </div>
+      <div class="content-card">
+        <h4>Coastal Preserves</h4>
+        <ul>
+          <li>PV Shoreline Preserve &mdash; 4.5-mile bluff trail, whale watching Nov&ndash;Apr</li>
+          <li>Forrestal Nature Reserve &mdash; 137 acres, connects to Portuguese Bend</li>
+          <li>Abalone Cove Ecological Reserve &mdash; tide pools, sea caves, kelp beds</li>
+          <li>Point Vicente Interpretive Center &mdash; whale migration lookout, native plant gardens</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <h4>Gardens &amp; Parks</h4>
+        <ul>
+          <li>South Coast Botanic Garden &mdash; 87 acres on a reclaimed mine site, 2,500+ plant species</li>
+          <li>Point Vicente Lighthouse &mdash; 1926, still operational, open first Saturday monthly</li>
+          <li>Founders Park (PVE) &mdash; tennis, playground, Catalina views</li>
+          <li>Hesse Park (RPV) &mdash; community programs, gardens, event space</li>
+          <li>Ernie Howlett Park (RHE) &mdash; baseball, soccer, equestrian arena</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- GOLF                                        -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="golf">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Golf</div>
+      <h2 class="section-title">Five Courses, Three Tiers</h2>
+      <p class="section-intro">The peninsula has five golf venues covering every tier from affordable public to private member-only. Two private clubs carry generational membership weight. One true public course offers ocean views at county rates. And two daily-fee options serve different ends of the market.</p>
+    </div>
+    <div class="content-grid">
+      <div class="content-card">
+        <h4>Palos Verdes Golf Club</h4>
+        <p>Private, member-only. George C. Thomas design, opened 1924 &mdash; one of the original community amenities planned alongside Malaga Cove. Classic Southern California parkland course with ocean views and a modest clubhouse. Membership carries lineage weight in PVE circles, particularly in Valmonte, Malaga Cove, and Lunada Bay.</p>
+      </div>
+      <div class="content-card">
+        <h4>Rolling Hills Country Club</h4>
+        <p>Private, full-service country club in Rolling Hills Estates. Golf, pool, tennis, fitness, dining, and events. Recent course renovation investment. Family-oriented &mdash; juniors, swim team, tennis lessons. The default club for RHE and Rolling Hills families.</p>
+      </div>
+      <div class="content-card">
+        <h4>Los Verdes Golf Course</h4>
+        <p>LA County-operated public course at 7000 W Los Verdes Drive, RPV. Eighteen holes with genuine ocean and cliff views at county public rates. Double-deck driving range. Casual bar and cafe open to walk-ins. The clubhouse terrace hosts weddings and events at a fraction of resort pricing &mdash; a genuine local-favorite venue. For buyers used to private-club minimums, the honest message here is: you can just play on a Tuesday.</p>
+      </div>
+      <div class="content-card">
+        <h4>Trump National Golf Club Los Angeles</h4>
+        <p>Daily-fee at premium rates. Located on the coastal cliffs adjacent to Terranea. Originally the Pete Dye-designed Ocean Trails course; Trump purchased after the 1999 landslide collapse and rebuilt with a $250M restoration, reopening January 2006. Dramatic cliff and ocean views. Heavy event and wedding business.</p>
+      </div>
+      <div class="content-card">
+        <h4>The Links at Terranea</h4>
+        <p>Nine-hole oceanfront par-3 course at Terranea Resort, 100 Terranea Way, RPV. Public daily-fee. Short, walkable, dramatic ocean bluff setting with a practice area and multi-tiered short-game facility. Not a championship course &mdash; a lifestyle course. Good for practice rounds, walking nine with friends, or introducing beginners.</p>
+      </div>
+      <div class="content-card">
+        <h4>Terranea Memberships</h4>
+        <p>For residents who don't want a private club commitment, Terranea offers a three-part membership stack: the Links Card for golf access, a Spa membership for wellness and pool access, and a Palos Verdes Local Resident rate (from ~$325/night, complimentary parking, waived resort fee). For many Hill families, Terranea functions as a de facto country club without the initiation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EQUESTRIAN                                  -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="equestrian">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Equestrian</div>
+      <h2 class="section-title">Horses on the Hill</h2>
+      <p class="section-intro">Equestrian life is a genuine differentiator for the peninsula &mdash; particularly in Rolling Hills, Rolling Hills Estates, and Portuguese Bend. This isn't a niche hobby. In Rolling Hills, horses are part of the municipal zoning. Many properties have private stables and direct trail access.</p>
+    </div>
+    <div class="content-grid thirds">
+      <div class="content-card">
+        <h4>Portuguese Bend Riding Club</h4>
+        <p>Ten-plus acres on Narcissa Drive in the gated Portuguese Bend community. Full-service barn with boarding, lessons, and training across all disciplines. Originally the stables for Villa Narcissa &mdash; Frank and Narcissa Vanderlip's 1920s estate. Nearing its 100th year. One of the very first structures built on the Hill.</p>
+      </div>
+      <div class="content-card">
+        <h4>Empty Saddle Club</h4>
+        <p>Thirteen acres in Rolling Hills Estates. Private member organization focused on preserving and promoting Western riding traditions. Member shows, clinics, social events, and junior programs. The cultural anchor of RHE's equestrian identity.</p>
+      </div>
+      <div class="content-card">
+        <h4>Palos Verdes Stables</h4>
+        <p>Three-plus acres in Palos Verdes Estates, established 1926. Full-service boarding and lessons across all disciplines and experience levels. Direct access to the PVE trail network. The PVE-side counterpart to PBRC.</p>
+      </div>
+    </div>
+    <div class="content-grid" style="margin-top: 2.5rem;">
+      <div class="content-card">
+        <h4>Trails for Riders</h4>
+        <p>Portuguese Bend Reserve and Forrestal Nature Reserve offer extensive multi-use trails through coastal sage scrub &mdash; open to equestrian use. Rolling Hills maintains a private residents-only trail system tied directly to property value. The PVE trail network provides scenic routes from PV Stables and the Malaga Cove side.</p>
+      </div>
+      <div class="content-card">
+        <h4>Ernie Howlett Park</h4>
+        <p>The public equestrian arena in Rolling Hills Estates, shared with baseball and soccer fields. Hosts clinics, local shows, and recreational rides. Arguably the most active public equestrian venue on the Hill &mdash; a high-traffic Saturday destination. For families new to horses, Howlett is the accessible entry point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BEACHES & COAST                             -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="beaches">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Beaches &amp; Coast</div>
+      <h2 class="section-title">Rocky Coves, Tide Pools, and Open Water</h2>
+      <p class="section-intro">The peninsula's coastline is not a sand-beach story. It's rocky coves, tide pools, sea caves, and kelp forests along roughly 12 miles of shoreline. Access is via trails and steep paths &mdash; not boardwalks. That's part of the appeal.</p>
+    </div>
+    <div class="content-grid thirds">
+      <div class="content-card">
+        <h4>Abalone Cove</h4>
+        <p>Part of the Abalone Cove Ecological Reserve. Rocky shoreline with accessible tide pools, sea caves, and kelp beds. The most-visited cove on the peninsula. Parking lot and trail access off Palos Verdes Drive South. Docent-led tide pool programs run seasonally.</p>
+      </div>
+      <div class="content-card">
+        <h4>Lunada Bay</h4>
+        <p>A rocky cove below PVE's western cliffs, known for its powerful reef break. Serious surf spot &mdash; heavy swell, experienced surfers only. You can hear the waves from the street on big days. The bluff-top views are accessible to anyone via the coastal trail.</p>
+      </div>
+      <div class="content-card">
+        <h4>Bluff Cove</h4>
+        <p>Below Malaga Cove, accessed via the Bluff Cove Trail (1.7-mile coastal bluff walk from Malaga Cove Plaza). Rocky shoreline with tide pools and diving access. A morning walk down and back up is the default Malaga Cove routine.</p>
+      </div>
+      <div class="content-card">
+        <h4>RAT Beach</h4>
+        <p>At the base of PVE where the peninsula meets Torrance Beach. The name stands for Right After Torrance. Surfing, diving, kelp forest. One of the few sand-accessible beaches on the peninsula side, connecting to the Torrance Beach bike path and the Marvin Braude trail heading north.</p>
+      </div>
+      <div class="content-card">
+        <h4>Point Vicente</h4>
+        <p>Point Vicente Lighthouse has stood on the bluff since 1926 and remains operational. The Point Vicente Interpretive Center is the primary whale-watching site on the peninsula &mdash; gray whale migration runs November through April. Native plant demonstration gardens surround the center.</p>
+      </div>
+      <div class="content-card">
+        <h4>Torrance Beach</h4>
+        <p>At the base of the peninsula where PVE meets Torrance. A wide, flat sand beach with the Marvin Braude bike path, volleyball courts, and the Strand running north to Hermosa and Manhattan Beach. Where Hill families go when they want an actual beach day without driving to the South Bay beach cities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ARTS & CULTURE                              -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="arts">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Arts &amp; Culture</div>
+      <h2 class="section-title">Art Centers, Theater, and Garden Shows</h2>
+    </div>
+    <div class="content-grid">
+      <div class="content-card">
+        <h4>Palos Verdes Art Center</h4>
+        <p>The peninsula's primary visual arts institution, located on Crestridge Road in RPV. Rotating gallery exhibitions, studio classes for all ages, ceramics and printmaking studios, and an annual art show and sale. Community-supported, volunteer-driven. The Art Center functions as the cultural anchor for the Hill's visual arts scene.</p>
+      </div>
+      <div class="content-card">
+        <h4>Norris Theatre</h4>
+        <p>A 450-seat performing arts theater at the Norris Center in Rolling Hills Estates (27570 Crossfield Drive). Professional touring productions, local theater companies, concerts, and community performances. One of the few dedicated performing arts venues between the South Bay beach cities and Long Beach. Shows run year-round.</p>
+      </div>
+      <div class="content-card">
+        <h4>Malaga Cove Library</h4>
+        <p>The original 1930 library building in Malaga Cove Plaza. Hosts gallery exhibitions, author events, and the summer reading program. The building itself is a contributing structure to the Malaga Cove Plaza National Register Historic District. Friday night movies on the library lawn run through summer.</p>
+      </div>
+      <div class="content-card">
+        <h4>South Coast Botanic Garden</h4>
+        <p>Eighty-seven acres on a reclaimed diatomaceous earth mine in RPV. Over 2,500 plant species across themed gardens. Hosts seasonal exhibitions, outdoor concerts, plant sales, and the popular holiday lights event. A membership here is one of the most-used family amenities on the peninsula &mdash; it's a default weekend walk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- DINING & VILLAGE LIFE                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="dining">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Dining &amp; Village Life</div>
+      <h2 class="section-title">Commercial Pockets, Not Strips</h2>
+      <p class="section-intro">The peninsula has no downtown. Commercial life is clustered in small, walkable pockets &mdash; each with its own character. There are no chain-dominated shopping centers on the Hill proper. The dining and retail options reflect the community's preference for local, independent, and small-scale.</p>
+    </div>
+    <div class="content-grid">
+      <div class="content-card">
+        <h4>Malaga Cove Plaza</h4>
+        <p>The original commercial center, built 1926. Yellow Vase (French-American brunch, in-house bakery), Malaga Cove Ranch Market (deli, bakery, wine bar since 1952), The Cove Cafe (gourmet coffee, flatbreads). The Neptune Fountain courtyard anchors weekend strolling. The plaza is walkable from Malaga Cove and Valmonte.</p>
+      </div>
+      <div class="content-card">
+        <h4>Silver Spur Corridor</h4>
+        <p>The commercial spine of Rolling Hills Estates, running along Silver Spur Road. Peninsula Center is the primary shopping center (Trader Joe's, restaurants, services). This is where most Hill families do their daily errands. Compass's local office is here at 550 Silver Spur Road.</p>
+      </div>
+      <div class="content-card">
+        <h4>Terranea Resort</h4>
+        <p>Multiple dining venues at the resort &mdash; from casual poolside to fine dining at mar'sel. Terranea functions as the peninsula's de facto resort dining destination. The Palos Verdes Local Resident rate makes it accessible for staycations. Spa, pools, and the Links course round out the day-use picture.</p>
+      </div>
+      <div class="content-card">
+        <h4>Riviera Village</h4>
+        <p>Technically in Redondo Beach, but a five-minute drive from the base of the peninsula and functionally the Hill's closest walkable restaurant and shopping district. Boutiques, restaurants, coffee shops, and bars along Catalina Avenue. Friday farmers' market. Most Hill families consider Riviera Village part of their regular dining rotation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SPORTS & RECREATION                         -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="lifestyle-section" id="sports">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Sports &amp; Recreation</div>
+      <h2 class="section-title">A Total Industry for All Sports</h2>
+      <p class="section-intro">For most Hill families with kids, sports and schools are the two dominant forces that structure the week. Every major sport has a recreational layer and a travel-ball layer. The peninsula supports an unusual density of organized programs for a community this size.</p>
+    </div>
+    <div class="content-grid thirds">
+      <div class="content-card">
+        <h4>Baseball &amp; Softball</h4>
+        <p>Four Little League charters serve the peninsula &mdash; Palos Verdes LL, Silver Spur LL (Ernie Howlett Park), Lunada Bay LL, and PV Peninsula Junior League (up to age 14, full 90-foot diamond). Four charters on a peninsula this size is a tell: PV is a baseball town. Travel programs plug into the broader South Bay circuit.</p>
+      </div>
+      <div class="content-card">
+        <h4>Soccer</h4>
+        <p>AYSO Region 10 is the default entry point. Year-round, ages U5 through U19, 100% volunteer-run. The vast majority of Hill kids who play soccer start here. Families seeking higher-level play move to South Bay club programs &mdash; Beach FC, South Bay Force, and Galaxy-affiliated clubs, with practices off-Hill.</p>
+      </div>
+      <div class="content-card">
+        <h4>Football &amp; Cheer</h4>
+        <p>PV Pop Warner (the Mavericks) is the only tackle football and cheer program on the peninsula. Fifty-plus years serving the Hill, ages 5&ndash;14, flag through tackle. The cheer program competes at conference, regional, and national Pop Warner championships. Peninsula and San Pedro catchment.</p>
+      </div>
+      <div class="content-card">
+        <h4>Volleyball</h4>
+        <p>Arguably the biggest travel-ball commitment for Hill girls. Mizuno Long Beach, Surfside Volleyball Club, and other major South Bay clubs draw significant PV contingents. Practices off-Hill. Tournament travel is regional and national. Both PV High and Peninsula High field competitive programs that feed (and are fed by) the club pipeline.</p>
+      </div>
+      <div class="content-card">
+        <h4>Swimming &amp; Water Polo</h4>
+        <p>The PV Beach &amp; Athletic Club competition pool anchors a strong summer-league and year-round swim culture. Both high schools field competitive water polo programs supported by South Bay club water polo. Year-round competitive swimming through South Bay swim clubs.</p>
+      </div>
+      <div class="content-card">
+        <h4>Tennis, Surfing, Lacrosse</h4>
+        <p>Private courts at PVBAC and Terranea. A cottage industry of private coaching on the Hill. PV Surf team has been historically competitive &mdash; centered on Lunada Bay, RAT Beach, and the coves. PV Lacrosse club programs feed both high school teams with travel pipelines for serious players.</p>
+      </div>
+    </div>
+    <div class="content-grid" style="margin-top: 2.5rem;">
+      <div class="content-card">
+        <h4>Rec vs. Travel: The Real Commitment</h4>
+        <p>A family doing AYSO plus PVBA basketball is maybe 4&ndash;6 hours per week. A family with one kid in travel volleyball and a sibling in travel baseball is routinely 20-plus hours per week, plus weekend tournament travel and $5,000&ndash;$15,000+ in annual team fees. The gap in time and money between rec-league and travel-ball is meaningful. Worth understanding before you buy into a neighborhood based on field proximity.</p>
+      </div>
+      <div class="content-card">
+        <h4>The Saturday Morning Hub</h4>
+        <p>For families with elementary-age kids, Saturdays at Ernie Howlett Park become a de facto community event. Little League on three fields, soccer on three more, equestrian in the arena. Several neighborhoods &mdash; RHE, the Crest, adjacent RPV &mdash; sell the "bike to Howlett" story. City rec programs in RPV (Hesse Park), PVE (Farnham Martin Park), and RHE (Ernie Howlett) provide lower-barrier entry before families commit to a league.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <h2>Ready to explore in person?</h2>
+  <p>The trails, the courses, the coves, the Saturday morning fields &mdash; none of it translates from a screen. I have lived here for over twenty years. Let me show you.</p>
+  <a href="/#contact" class="btn-primary">Get in touch &rarr;</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Angelique Lyle</div>
+    <div class="footer-sub">Accardo Real Estate Associates<br>CA DRE# 01475592<br>Compass &middot; 550 Silver Spur Rd, Suite 110<br>Rancho Palos Verdes, CA 90275</div>
+  </div>
+  <div>
+    <div class="footer-col-title">Navigate</div>
+    <div class="footer-links">
+      <a href="/#about">About Angelique</a>
+      <a href="/#neighborhoods">Neighborhoods</a>
+      <a href="/market/">Market Reports</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <div class="footer-links">
+      <a href="tel:3107518335">(310) 751-8335</a>
+      <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
+      <a href="https://angeliquelyle.com" target="_blank" rel="noopener">angeliquelyle.com</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>&copy; 2026 Angelique Lyle &middot; Accardo Real Estate Associates &middot; Compass &middot; CA DRE# 01475592 &middot; Equal Housing Opportunity</p>
+  <p><a href="https://angeliquelyle.com/terms-and-conditions" target="_blank" rel="noopener">Privacy Policy</a></p>
+</div>
+
+<!-- NAV SCROLL SHADOW -->
+<script>
+  window.addEventListener('scroll', function() {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>

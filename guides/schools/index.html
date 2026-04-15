@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PVPUSD School Guide | Own Palos Verdes</title>
+<meta name="description" content="The complete guide to schools on the Palos Verdes Peninsula — PVPUSD enrollment, elementary boundaries, high school open choice, grandparent permits, and private school options. From a mom who raised two kids in this district.">
+<meta property="og:title" content="PVPUSD School Guide | Own Palos Verdes">
+<meta property="og:description" content="How school assignment really works on the Palos Verdes Peninsula — boundary rules, open-choice high schools, out-of-district permits, and the private options families actually consider.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ownpalosverdes.com/guides/schools/">
+<link rel="canonical" href="https://ownpalosverdes.com/guides/schools/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand: #F4EFE6;
+    --sand-mid: #E8DDD0;
+    --sand-dark: #C8B99A;
+    --ocean: #1C3A4A;
+    --ocean-mid: #2C5568;
+    --foam: #F9F7F4;
+    --drift: #8A9BA8;
+    --stone: #4A5A62;
+    --white: #FFFFFF;
+    --ink: #1A2428;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Outfit', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--foam); color: var(--ink); overflow-x: hidden; }
+
+  /* ── NAV ────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 3rem; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; background: rgba(249,247,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,185,154,0.25);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(28,58,74,0.08); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); letter-spacing: 0.02em; text-decoration: none; }
+  .nav-logo span { font-style: italic; color: var(--sand-dark); }
+  .nav-links {
+    list-style: none; display: flex; gap: 2rem; align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--stone); text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ocean); }
+  .nav-cta {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 22px; border: 1px solid var(--ocean); color: var(--ocean);
+    text-decoration: none; font-weight: 500; transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--ocean); color: var(--foam); }
+  .nav-menu {
+    display: none; background: none; border: none; font-family: var(--sans);
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ocean); cursor: pointer;
+  }
+  .mobile-nav {
+    position: fixed; inset: 0; z-index: 200; background: var(--foam);
+    display: none; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ocean); text-decoration: none;
+  }
+  .mobile-nav-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; font-size: 2rem; color: var(--ocean); cursor: pointer;
+  }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    background: var(--ocean); padding: 10rem 3rem 5rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 80%, rgba(200,185,154,0.08) 0%, transparent 60%);
+  }
+  .hero-eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1.5rem; position: relative;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 400; line-height: 1.1; color: var(--sand); margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .hero h1 em { font-style: italic; color: var(--sand-dark); }
+  .hero-sub {
+    font-size: 0.92rem; line-height: 1.8; color: var(--drift); max-width: 640px;
+    margin: 0 auto; font-weight: 300; position: relative;
+  }
+
+  /* ── SHARED ─────────────────────────────────── */
+  .section-tag {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--sand-dark); }
+  .section-heading {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400; line-height: 1.15; color: var(--ocean); margin-bottom: 1.5rem;
+  }
+  .section-heading em { font-style: italic; }
+  .body-text { font-size: 0.92rem; line-height: 1.85; color: var(--stone); font-weight: 300; margin-bottom: 1rem; }
+  .body-text strong { font-weight: 500; color: var(--ocean); }
+
+  .content-section { padding: 5rem 3rem; max-width: 960px; margin: 0 auto; }
+  .content-section-wide { padding: 5rem 3rem; }
+  .content-inner { max-width: 960px; margin: 0 auto; }
+
+  /* ── HOW IT WORKS ──────────────────────────── */
+  .how-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    background: var(--sand-mid); margin-top: 2rem;
+  }
+  .how-card {
+    background: var(--foam); padding: 2rem;
+  }
+  .how-card-level {
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.75rem;
+  }
+  .how-card h3 {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 0.75rem;
+  }
+  .how-card p { font-size: 0.85rem; line-height: 1.7; color: var(--stone); font-weight: 300; }
+
+  /* ── SCHOOL TABLES ──────────────────────────── */
+  .school-table {
+    width: 100%; border-collapse: collapse; margin-top: 1.5rem;
+  }
+  .school-table th {
+    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sand-dark); text-align: left; padding: 0.75rem 1rem;
+    border-bottom: 2px solid var(--sand-mid); font-weight: 500;
+  }
+  .school-table td {
+    font-size: 0.88rem; color: var(--stone); padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--sand-mid); font-weight: 300;
+    vertical-align: top;
+  }
+  .school-table td:first-child {
+    color: var(--ocean); font-weight: 400;
+  }
+  .school-table tr:last-child td { border-bottom: none; }
+  .school-table tr:hover td { background: rgba(244,239,230,0.5); }
+
+  /* ── HS COMPARISON ──────────────────────────── */
+  .hs-compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--sand-mid); margin-top: 2rem;
+  }
+  .hs-card {
+    background: var(--foam); padding: 2.5rem;
+  }
+  .hs-card-tag {
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.5rem;
+  }
+  .hs-card h3 {
+    font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 0.25rem;
+  }
+  .hs-card-schedule {
+    font-size: 0.78rem; font-weight: 500; color: var(--ocean);
+    letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid var(--sand-mid);
+  }
+  .hs-detail { margin-bottom: 0.75rem; }
+  .hs-detail-label {
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.15rem;
+  }
+  .hs-detail-value { font-size: 0.88rem; color: var(--stone); font-weight: 300; line-height: 1.6; }
+
+  /* ── CALLOUT ─────────────────────────────────── */
+  .callout {
+    background: var(--ocean); padding: 2.5rem; margin-top: 2rem;
+  }
+  .callout h3 {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+    color: var(--sand); margin-bottom: 0.75rem;
+  }
+  .callout p { font-size: 0.88rem; line-height: 1.75; color: var(--drift); font-weight: 300; }
+  .callout strong { color: var(--sand-dark); font-weight: 500; }
+
+  /* ── PERMIT DOCS ─────────────────────────────── */
+  .doc-list {
+    margin-top: 1.25rem; padding-left: 0; list-style: none;
+  }
+  .doc-list li {
+    font-size: 0.88rem; color: var(--stone); font-weight: 300; line-height: 1.7;
+    padding: 0.35rem 0 0.35rem 1.25rem; position: relative;
+  }
+  .doc-list li::before {
+    content: ''; position: absolute; left: 0; top: 0.85rem;
+    width: 6px; height: 6px; border: 1px solid var(--sand-dark);
+  }
+
+  /* ── PRIVATE SCHOOL CARDS ──────────────────── */
+  .private-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--sand-mid); margin-top: 2rem;
+  }
+  .private-card {
+    background: var(--foam); padding: 2rem;
+  }
+  .private-card h4 {
+    font-family: var(--serif); font-size: 1.05rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 0.15rem;
+  }
+  .private-card-grades {
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.75rem;
+  }
+  .private-card p { font-size: 0.85rem; line-height: 1.7; color: var(--stone); font-weight: 300; }
+
+  /* ── CTA BAR ────────────────────────────────── */
+  .cta-bar {
+    background: var(--ocean); padding: 4rem 3rem; text-align: center;
+  }
+  .cta-bar h2 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 400; color: var(--sand); margin-bottom: 0.75rem;
+  }
+  .cta-bar p {
+    font-size: 0.92rem; color: var(--drift); font-weight: 300; margin-bottom: 2rem;
+  }
+  .cta-btn {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 32px; background: var(--sand-dark); color: var(--ocean);
+    border: none; font-family: var(--sans); font-weight: 500;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cta-btn:hover { background: var(--sand); transform: translateY(-1px); }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--ink); padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--sand); margin-bottom: 0.75rem; font-style: italic; }
+  .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; }
+  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-dark); margin-bottom: 1rem; }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sand-dark); }
+  .footer-bottom {
+    background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 0.68rem; color: var(--stone); }
+
+  /* ── DIVIDER ────────────────────────────────── */
+  .section-divider {
+    border: none; border-top: 1px solid var(--sand-mid);
+    margin: 0;
+  }
+
+  /* ── ALT BG ─────────────────────────────────── */
+  .bg-white { background: var(--white); }
+  .bg-foam { background: var(--foam); }
+  .bg-sand { background: var(--sand); }
+
+  /* ── REVEALS ────────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 900px) {
+    .how-grid { grid-template-columns: 1fr; }
+    .hs-compare { grid-template-columns: 1fr; }
+    .private-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-menu { display: block; }
+    .content-section { padding: 3.5rem 1.5rem; }
+    .content-section-wide { padding: 3.5rem 1.5rem; }
+    .hero { padding: 8rem 1.5rem 4rem; }
+    .school-table { font-size: 0.82rem; }
+    .school-table th, .school-table td { padding: 0.6rem 0.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    .school-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close">&times;</button>
+  <a href="/" onclick="this.parentElement.classList.remove('open')">Home</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="/#welcome" onclick="this.parentElement.classList.remove('open')">Welcome Guide</a>
+  <a href="/#resources" onclick="this.parentElement.classList.remove('open')">Resources</a>
+  <a href="/#testimonials" onclick="this.parentElement.classList.remove('open')">Reviews</a>
+  <a href="/#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">Own <span>Palos Verdes</span></a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#welcome">Welcome Guide</a></li>
+    <li><a href="/#resources">Resources</a></li>
+    <li><a href="/#testimonials">Reviews</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta">Let's Connect</a>
+  <button class="nav-menu" onclick="document.querySelector('.mobile-nav').classList.add('open')">Menu</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">OwnPV Guides</div>
+  <h1>PVPUSD <em>School Guide</em></h1>
+  <p class="hero-sub">Palos Verdes Peninsula Unified School District serves roughly 10,300 students across 17 schools in four cities. Assignment rules vary by level. This guide covers how it actually works &mdash; from a parent who navigated the system with two kids.</p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="content-section-wide bg-white">
+  <div class="content-inner reveal">
+    <div class="section-tag">Overview</div>
+    <h2 class="section-heading">How Assignment <em>Works</em></h2>
+    <p class="body-text">PVPUSD uses different assignment rules at each level. This is the single most important thing relocating families need to understand before they start looking at houses.</p>
+
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-card-level">Elementary (TK&ndash;5)</div>
+        <h3>Boundary-Based</h3>
+        <p>Your address determines your assigned elementary school. Enter it into the PVPUSD School Locator and it tells you where your child will go. But assignment is only finalized after enrollment is complete &mdash; if your home school is "impacted," the district can place your child at the closest school with available space. This happens at popular schools like Montemalaga, Lunada Bay, and Silver Spur in strong enrollment years.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-level">Intermediate (6&ndash;8)</div>
+        <h3>Boundary-Based</h3>
+        <p>Middle school (PVPUSD calls them "intermediate") is boundary-assigned across three campuses: PVIS on the PVE side, Miraleste on the eastern RPV side, and Ridgecrest covering RHE, Rolling Hills, and western RPV. The intradistrict transfer window &mdash; <strong>February 16&ndash;28</strong>, notifications March 3 &mdash; is one of the most important calendar items for Hill parents.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-level">High School (9&ndash;12)</div>
+        <h3>Open Choice</h3>
+        <p>Any student residing in PVPUSD may attend either Palos Verdes High or Peninsula High. High school is <strong>not</strong> boundary-assigned. Where you buy a house does not determine which high school your child attends. The two schools have meaningfully different schedules and cultures &mdash; this is a real choice families make.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELEMENTARY SCHOOLS -->
+<section class="content-section bg-foam reveal">
+  <div class="section-tag">TK&ndash;5</div>
+  <h2 class="section-heading">Elementary <em>Schools</em></h2>
+  <p class="body-text">PVPUSD operates 10 elementary campuses. Nine are boundary-assigned; one (Cornerstone) is lottery-based. Assignment depends on your address and capacity &mdash; the "impacted school" caveat means your boundary school is not always guaranteed.</p>
+
+  <div class="school-table-wrap">
+    <table class="school-table">
+      <thead>
+        <tr><th>School</th><th>Area</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cornerstone Elementary</td><td>Lunada Bay (host site)</td><td>Boundary-free. Spanish dual immersion. Application + lottery. See below.</td></tr>
+        <tr><td>Dapplegray Elementary</td><td>Rolling Hills / RHE</td><td>Boundary-assigned</td></tr>
+        <tr><td>Lunada Bay Elementary</td><td>PVE coastal side</td><td>Boundary-assigned. Can be impacted in strong enrollment years.</td></tr>
+        <tr><td>Mira Catalina Elementary</td><td>Eastern RPV</td><td>Boundary-assigned. Mira Catalina neighborhood.</td></tr>
+        <tr><td>Montemalaga Elementary</td><td>PVE</td><td>Boundary-assigned. Malaga Cove feeder. Can be impacted.</td></tr>
+        <tr><td>Point Vicente Elementary</td><td>Western RPV</td><td>Boundary-assigned</td></tr>
+        <tr><td>Rancho Vista Elementary</td><td>Central RPV</td><td>Boundary-assigned</td></tr>
+        <tr><td>Silver Spur Elementary</td><td>RHE / Silver Spur</td><td>Boundary-assigned. Can be impacted.</td></tr>
+        <tr><td>Soleado Elementary</td><td>Eastern RPV / Los Verdes</td><td>Boundary-assigned</td></tr>
+        <tr><td>Vista Grande Elementary</td><td>RPV</td><td>Boundary-assigned</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <h3>The "Impacted" Caveat</h3>
+    <p>Assignment is only finalized after enrollment is complete. If your home school is impacted at that point, the district places your child at <strong>"the closest school with available space."</strong> This is not theoretical. It happens at popular boundary schools in hot enrollment years. I tell every relocating family: check with the district office before you close escrow, not after.</p>
+  </div>
+</section>
+
+<!-- CORNERSTONE -->
+<section class="content-section bg-white reveal">
+  <div class="section-tag">Dual Immersion</div>
+  <h2 class="section-heading">Cornerstone <em>Elementary</em></h2>
+  <p class="body-text">Cornerstone is PVPUSD's Spanish dual-immersion program. It has no attendance boundary &mdash; any district-eligible student can apply. The majority of the school day and all core content are taught in Spanish; PE is in English.</p>
+  <p class="body-text"><strong>Application window:</strong> March 1 &ndash; March 31, through the Aeries parent portal.</p>
+  <p class="body-text"><strong>Notifications:</strong> End of April.</p>
+  <p class="body-text"><strong>Priority:</strong> Lunada Bay residents go first (Cornerstone is the Lunada Bay campus host site). All other district students enter a lottery if seats remain.</p>
+  <p class="body-text"><strong>No waitlist</strong> for denied applications. If you don't get in, there is no queue for future openings.</p>
+  <p class="body-text">Parents who want Cornerstone should apply before deciding on an intra-district transfer for their boundary school. The timelines run independently.</p>
+</section>
+
+<!-- INTERMEDIATE SCHOOLS -->
+<section class="content-section bg-foam reveal">
+  <div class="section-tag">Grades 6&ndash;8</div>
+  <h2 class="section-heading">Intermediate <em>Schools</em></h2>
+  <p class="body-text">PVPUSD has three intermediate (middle) schools, boundary-assigned. This is where the peninsula's geography starts to matter for daily logistics.</p>
+
+  <div class="school-table-wrap">
+    <table class="school-table">
+      <thead>
+        <tr><th>School</th><th>Rough Service Area</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Palos Verdes Intermediate (PVIS)</td><td>PVE-side neighborhoods: Malaga Cove, Valmonte, Monte Malaga, Lunada Bay, Montemalaga feeder area</td></tr>
+        <tr><td>Miraleste Intermediate</td><td>Eastern RPV: Miraleste, Mira Catalina, PV Drive East and North, Mediterrania, Mirasol</td></tr>
+        <tr><td>Ridgecrest Intermediate</td><td>RHE, Silver Spur, Rolling Hills, western RPV, La Cresta</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <h3>The Transfer Window Matters</h3>
+    <p>Parents who work at opposite ends of the peninsula, carpool across the hill, or have kids at different-side schools regularly use the <strong>intradistrict transfer window (February 16&ndash;28, notifications March 3)</strong> to move a child to a more logistically practical campus. I see this constantly: a family buys on the RHE side but has work or family ties on the PVE side and wants PVIS. Approvals are space-dependent, not guaranteed, and <strong>accepting a transfer means giving up your boundary placement.</strong> Build that into your home search, not after.</p>
+  </div>
+</section>
+
+<!-- HIGH SCHOOLS -->
+<section class="content-section-wide bg-white">
+  <div class="content-inner reveal">
+    <div class="section-tag">Grades 9&ndash;12</div>
+    <h2 class="section-heading">High Schools &mdash; <em>The Decision</em></h2>
+    <p class="body-text">This is the choice families actually make. Both PV High and Peninsula High are top-performing, high-ranking California high schools. The difference is not quality &mdash; it's fit. The schedule structure is the most decision-relevant fact, and families relocating from out of state often assume high school is boundary-assigned like elementary. It is not. Any PVPUSD resident can enroll at either campus.</p>
+
+    <div class="hs-compare">
+      <div class="hs-card">
+        <div class="hs-card-tag">Ocean-Side Campus</div>
+        <h3>Palos Verdes High School</h3>
+        <div class="hs-card-schedule">Block Schedule</div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">Location</div>
+          <div class="hs-detail-value">600 Cloyden Rd, Palos Verdes Estates &mdash; half a block from the Pacific</div>
+        </div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">Daily Structure</div>
+          <div class="hs-detail-value">Three 115-minute block periods per day, plus an optional 55-minute Zero Period (daily)</div>
+        </div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">What That Means</div>
+          <div class="hs-detail-value">Fewer classes per day, deeper single-subject immersion, longer homework blocks per subject, fewer transitions. Works well for students who focus in longer stretches. Can be tough for students who prefer variety and frequent resets.</div>
+        </div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">Scale</div>
+          <div class="hs-detail-value">Smaller than Peninsula. More intimate campus feel.</div>
+        </div>
+      </div>
+      <div class="hs-card">
+        <div class="hs-card-tag">Hilltop Campus</div>
+        <h3>Peninsula High School</h3>
+        <div class="hs-card-schedule">Traditional Schedule</div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">Location</div>
+          <div class="hs-detail-value">27118 Silver Spur Rd, Rolling Hills Estates</div>
+        </div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">Daily Structure</div>
+          <div class="hs-detail-value">Six periods per day, roughly 44&ndash;61 minutes each, plus a 35&ndash;39 minute lunch</div>
+        </div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">What That Means</div>
+          <div class="hs-detail-value">More subjects per day, shorter class periods, more frequent transitions. Students see every teacher every day. Closer to the typical public high school rhythm most families are familiar with.</div>
+        </div>
+        <div class="hs-detail">
+          <div class="hs-detail-label">Scale</div>
+          <div class="hs-detail-value">Roughly 2,000 students. Broader elective catalog. More comprehensive sports program.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text" style="margin-top: 2rem;">Some families deliberately split &mdash; an older child at PV High, a younger one at Peninsula &mdash; based on which schedule fits each kid. The enrollment window for 2026&ndash;27 opened February 2, 2026, and enrollment is done directly at the campus.</p>
+    <p class="body-text">PVPUSD also operates <strong>Rancho Del Mar High</strong> (38 Crest Road West, Rolling Hills), a WASC-accredited continuation school.</p>
+  </div>
+</section>
+
+<!-- GETTING IN FROM OUTSIDE -->
+<section class="content-section bg-foam reveal">
+  <div class="section-tag">Out-of-District</div>
+  <h2 class="section-heading">Getting In <em>From Outside</em></h2>
+  <p class="body-text">This is the section that matters most for buyers who own or are considering a home outside PVPUSD boundaries but want access to the schools. These paths are real, documented, and used regularly by peninsula families.</p>
+
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2rem 0 0.75rem;">Grandparent Permit</h3>
+  <p class="body-text">The most commonly used out-of-district path. Available TK through 12. The student must have at least one grandparent residing inside PVPUSD boundaries. LAUSD-zoned portions of RHE and RPV (notably parts of Eastview) do not qualify as "inside PVPUSD boundaries."</p>
+  <p class="body-text"><strong>Application window:</strong> April 1 &ndash; June 1 (annual). Space-dependent &mdash; approval is not guaranteed. The district recommends concurrent enrollment in your home district as a fallback.</p>
+  <p class="body-text"><strong>Documents required:</strong></p>
+  <ul class="doc-list">
+    <li>Student's official birth certificate</li>
+    <li><strong>Parent's official birth certificate</strong> (proves the parent&ndash;grandparent lineage) &mdash; this is the piece most applicants forget</li>
+    <li>Two different utility bills showing the grandparent's PVPUSD-boundary address</li>
+    <li>Recent report card or transcript</li>
+    <li>IEP or 504 plan if applicable</li>
+    <li>An interdistrict permit release from the student's home district</li>
+  </ul>
+  <p class="body-text" style="margin-top: 1rem;">Online enrollment note: when filling the district portal, enter the home address as literally <strong>"1 Grandparent Permit"</strong> &mdash; not the student's actual home address and not the grandparent's address.</p>
+  <p class="body-text">The grandparent permit is a multi-generational legacy lever. It's how a family that moved "down the hill" years ago can still get grandchildren into PVPUSD today. Each child must file separately &mdash; permits are not portable across siblings.</p>
+
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Allen Bill (Parent Employment)</h3>
+  <p class="body-text">A parent works at least 10 hours per week at a business physically located inside PVPUSD boundaries. Governed by Administrative Regulation 5.111.12. Covers K&ndash;12. Space-dependent. This path is underused &mdash; a buyer who works out of Peninsula Center, Golden Cove, or any PVE/RPV/RHE business has a viable path they may not know about.</p>
+
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Eastview Optional Attendance</h3>
+  <p class="body-text">This is not a permit &mdash; it's a zoning fact. Eastview (eastern RPV, adjoining San Pedro) is technically zoned for LAUSD. PVPUSD designates it an optional attendance area &mdash; TK&ndash;12 students who live there may choose PVPUSD instead. No lineage, employment, or military tie required.</p>
+
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Active-Duty Military</h3>
+  <p class="body-text">Children of active-duty U.S. military parents qualify for an interdistrict permit through a separate, expedited process.</p>
+
+  <div class="callout">
+    <h3>The Common Failure Point</h3>
+    <p>Interdistrict releases from the home district are where most applications stall. LAUSD, for example, has its own release process that takes time and doesn't always approve. If you're counting on a grandparent permit or Allen Bill path, <strong>start the home-district release early.</strong> Build it into your timeline, not as an afterthought.</p>
+  </div>
+</section>
+
+<!-- PRIVATE SCHOOLS -->
+<section class="content-section-wide bg-white">
+  <div class="content-inner reveal">
+    <div class="section-tag">Independent</div>
+    <h2 class="section-heading">Private <em>Schools</em></h2>
+    <p class="body-text">The peninsula is unusual in that its public schools are as strong as its privates for most families. The reasons families go private tend to be specific: class size, K&ndash;12 continuity, values-based education, or learning-difference support &mdash; not performance.</p>
+
+    <div class="private-grid">
+      <div class="private-card">
+        <h4>Chadwick School</h4>
+        <div class="private-card-grades">K&ndash;12</div>
+        <p>26800 Academy Drive, Rolling Hills side. Roughly 860 students, 8:1 student-teacher ratio. Tuition approximately $43,740&ndash;$51,240 depending on grade. Founded 1935. Outdoor education K&ndash;12, global studies and community service 7&ndash;12. The default name families mean when they say "Hill private school."</p>
+      </div>
+      <div class="private-card">
+        <h4>Rolling Hills Preparatory</h4>
+        <div class="private-card-grades">6&ndash;12</div>
+        <p>Located in San Pedro (1 Rolling Hills Prep Way), not on the Hill, but serves peninsula families heavily. Tuition approximately $44,800. Academically rigorous with a strong learning-support program. 11 interscholastic sports.</p>
+      </div>
+      <div class="private-card">
+        <h4>Peninsula Heritage School</h4>
+        <div class="private-card-grades">K&ndash;8</div>
+        <p>Rolling Hills Estates. Founded 1961. Small classes, around 12&ndash;15 students each. Emphasis on individualized education and a warm, small-community environment.</p>
+      </div>
+      <div class="private-card">
+        <h4>Rolling Hills Country Day</h4>
+        <div class="private-card-grades">K&ndash;8</div>
+        <p>Palos Verdes Peninsula. K&ndash;5 elementary plus 6&ndash;8 middle school divisions. Small classes with subject-specialized teachers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAROCHIAL SCHOOLS -->
+<section class="content-section bg-foam reveal">
+  <div class="section-tag">Faith-Based</div>
+  <h2 class="section-heading">Parochial <em>Schools</em></h2>
+  <p class="body-text">A meaningful share of peninsula families &mdash; including families who could afford Chadwick &mdash; choose a religious K&ndash;8 for values, smaller scale, or proximity. The peninsula is well-served by Catholic and Lutheran options.</p>
+
+  <h3 style="font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ocean); margin: 2rem 0 0.75rem;">Catholic</h3>
+
+  <div class="school-table-wrap">
+    <table class="school-table">
+      <thead>
+        <tr><th>School</th><th>Grades</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>St. John Fisher School</td>
+          <td>K&ndash;8</td>
+          <td>5446 Crest Road, RPV. Roughly 183 students, 14:1 ratio, classes capped at 20. Tuition approximately $7,780 (parishioner) to $11,600 (non-parishioner). The peninsula's default Catholic K&ndash;8.</td>
+        </tr>
+        <tr>
+          <td>Mary Star of the Sea Elementary</td>
+          <td>PK&ndash;8</td>
+          <td>717 S Cabrillo Ave, San Pedro. Founded 1922. Close enough to the RPV boundary that Eastview, Miraleste, PV Drive East, and Mira Catalina families regularly consider it. Financial aid and sliding-scale tuition available.</td>
+        </tr>
+        <tr>
+          <td>Mary Star of the Sea High School</td>
+          <td>9&ndash;12</td>
+          <td>2500 N Taper Ave, San Pedro. Founded 1954. Co-educational, Roman Catholic. Sits on the bluffs above the harbor, near Miraleste Plaza &mdash; just down from the RPV boundary. The only nearby Catholic high school option for families wanting faith-based continuity after a K&ndash;8 like St. John Fisher.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Lutheran &mdash; The PV Boulevard Cluster</h3>
+  <p class="body-text">Three Lutheran K&ndash;8 schools sit on or near the peninsula boundary. Hill-native families know about them; relocating buyers typically don't.</p>
+
+  <div class="school-table-wrap">
+    <table class="school-table">
+      <thead>
+        <tr><th>School</th><th>Grades</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Riviera Hall Lutheran School</td>
+          <td>PK&ndash;8</td>
+          <td>330 Palos Verdes Boulevard, Redondo Beach. 242 students. Founded 1952. Right on the PVE/Hollywood Riviera/Redondo Beach boundary. The closest religious K&ndash;8 for buyers on the PVE, Valmonte, and Lunada Bay side.</td>
+        </tr>
+        <tr>
+          <td>First Lutheran School</td>
+          <td>PK&ndash;8</td>
+          <td>2900 W Carson Street, Torrance. 293 students. Tuition approximately $8,420. Founded 1957. WASC-accredited. Easy drive from Valmonte, Malaga Cove, and the Riviera.</td>
+        </tr>
+        <tr>
+          <td>Christ Lutheran Church &amp; School</td>
+          <td>EC&ndash;8</td>
+          <td>28850 S Western Avenue, RPV. Eastern RPV boundary. Serves the Mira Catalina, Eastview, and PV Drive East side &mdash; the east-side counterpart to the west-side PV Boulevard cluster.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <h2>Questions about schools?</h2>
+  <p>I've been through the system &mdash; two kids, elementary through high school, on this peninsula. I know the transfer windows, the impacted-school workarounds, and the permit paperwork. Let's talk.</p>
+  <a href="/#contact" class="cta-btn">Get in Touch</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Angelique Lyle</div>
+    <div class="footer-sub">Accardo Real Estate Associates<br>CA DRE# 01475592<br>Compass &middot; 550 Silver Spur Rd, Suite 110<br>Rancho Palos Verdes, CA 90275</div>
+  </div>
+  <div>
+    <div class="footer-col-title">Navigate</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#neighborhoods">Neighborhoods</a>
+      <a href="/#market">Market</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <div class="footer-links">
+      <a href="tel:+13107518335">310.751.8335</a>
+      <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>&copy; 2026 Angelique Lyle &middot; Accardo Real Estate Associates &middot; Compass &middot; CA DRE# 01475592 &middot; Equal Housing Opportunity</p>
+</div>
+
+<!-- SCROLL REVEALS -->
+<script>
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

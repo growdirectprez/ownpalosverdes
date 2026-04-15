@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peninsula Neighborhood Guide · OwnPalosVerdes.com</title>
+<meta name="description" content="Detailed neighborhood guide to the Palos Verdes Peninsula — 12 neighborhoods across PVE, RPV, Rolling Hills Estates, and Rolling Hills. Real estate stats, dining, parks, and daily life from a local who knows every street.">
+<meta property="og:title" content="Peninsula Neighborhood Guide · OwnPalosVerdes.com">
+<meta property="og:description" content="12 neighborhoods across the Palos Verdes Peninsula. Real estate stats, dining, parks, and what daily life actually looks like.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ownpalosverdes.com/guides/neighborhoods/">
+<link rel="canonical" href="https://ownpalosverdes.com/guides/neighborhoods/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Peninsula Neighborhood Guide",
+  "description": "Detailed guide to 12 neighborhoods across the Palos Verdes Peninsula — real estate data, dining, parks, and daily life.",
+  "url": "https://ownpalosverdes.com/guides/neighborhoods/",
+  "author": {
+    "@type": "RealEstateAgent",
+    "name": "Angelique Lyle",
+    "url": "https://ownpalosverdes.com",
+    "worksFor": {
+      "@type": "RealEstateAgent",
+      "name": "Compass"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Palos Verdes Peninsula",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "California"
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand: #F4EFE6;
+    --sand-mid: #E8DDD0;
+    --sand-dark: #C8B99A;
+    --ocean: #1C3A4A;
+    --ocean-mid: #2C5568;
+    --foam: #F9F7F4;
+    --drift: #8A9BA8;
+    --stone: #4A5A62;
+    --white: #FFFFFF;
+    --ink: #1A2428;
+    --sunset: #D4784A;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Outfit', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--foam); color: var(--ink); overflow-x: hidden; }
+
+  /* ── NAV ────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 3rem; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; background: rgba(249,247,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,185,154,0.25);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(28,58,74,0.08); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); letter-spacing: 0.02em; text-decoration: none; }
+  .nav-logo span { font-style: italic; color: var(--sand-dark); }
+  .nav-links {
+    list-style: none; display: flex; gap: 2rem; align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--stone); text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ocean); }
+  .nav-cta {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 22px; border: 1px solid var(--ocean); color: var(--ocean);
+    text-decoration: none; font-weight: 500; transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--ocean); color: var(--foam); }
+  .nav-menu {
+    display: none; background: none; border: none; font-family: var(--sans);
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ocean); cursor: pointer;
+  }
+  .mobile-nav {
+    position: fixed; inset: 0; z-index: 200; background: var(--foam);
+    display: none; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ocean); text-decoration: none;
+  }
+  .mobile-nav-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; font-size: 2rem; color: var(--ocean); cursor: pointer;
+  }
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero {
+    background: var(--ocean); padding: 10rem 3rem 5rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(28,58,74,0.95), rgba(44,85,104,0.85));
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero-tag {
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  }
+  .hero-tag::before, .hero-tag::after { content: ''; display: block; width: 32px; height: 1px; background: var(--sand-dark); }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 400; line-height: 1.1; color: var(--sand); margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--sand-dark); }
+  .hero p {
+    font-size: 0.92rem; line-height: 1.8; color: var(--drift);
+    max-width: 560px; margin: 0 auto; font-weight: 300;
+  }
+
+  /* ── SHARED ─────────────────────────────────── */
+  .section-tag {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--sand-dark); }
+
+  /* ── SIDEBAR + LAYOUT ────────────────────────── */
+  .page-layout {
+    display: grid; grid-template-columns: 220px 1fr;
+  }
+  .sidebar {
+    position: sticky; top: 68px; height: calc(100vh - 68px);
+    overflow-y: auto; background: var(--white);
+    border-right: 1px solid var(--sand-mid);
+    padding: 2rem 1.5rem; z-index: 50;
+  }
+  .sidebar-label {
+    font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); font-weight: 400; margin-bottom: 1rem;
+  }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+  .sidebar-nav a {
+    font-size: 0.76rem; color: var(--stone); text-decoration: none;
+    padding: 6px 10px; border-left: 2px solid transparent;
+    transition: all 0.2s; line-height: 1.4;
+  }
+  .sidebar-nav a:hover { color: var(--ocean); background: var(--foam); }
+  .sidebar-nav a.active {
+    color: var(--ocean); border-left-color: var(--ocean);
+    background: var(--foam); font-weight: 400;
+  }
+  .sidebar-nav .city-label {
+    font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sand-dark); padding: 12px 10px 4px; font-weight: 400;
+  }
+  .sidebar-nav .city-label:first-child { padding-top: 0; }
+  .sidebar-guides {
+    margin-top: 2rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--sand-mid);
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .sidebar-guides-label {
+    font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); font-weight: 400; margin-bottom: 0.5rem;
+  }
+  .sidebar-guides a {
+    font-size: 0.72rem; color: var(--drift); text-decoration: none;
+    padding: 5px 10px; transition: color 0.2s;
+  }
+  .sidebar-guides a:hover { color: var(--ocean); }
+  .page-content { min-width: 0; }
+
+  /* Mobile: hide sidebar, show horizontal TOC */
+  .toc-mobile {
+    display: none; background: var(--white); border-bottom: 1px solid var(--sand-mid);
+    padding: 1.25rem 1.5rem; position: sticky; top: 68px; z-index: 50;
+    overflow-x: auto; white-space: nowrap;
+  }
+  .toc-mobile-inner {
+    display: flex; gap: 0.5rem; align-items: center;
+  }
+  .toc-mobile-label {
+    font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sand-dark); font-weight: 400; margin-right: 0.25rem;
+    flex-shrink: 0;
+  }
+  .toc-mobile a {
+    font-size: 0.72rem; color: var(--stone); text-decoration: none;
+    padding: 4px 8px; border: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s; flex-shrink: 0;
+  }
+  .toc-mobile a:hover { border-color: var(--sand-mid); color: var(--ocean); }
+
+  /* ── NEIGHBORHOOD SECTIONS ──────────────────── */
+  .neighborhood {
+    padding: 5rem 3rem; border-bottom: 1px solid var(--sand-mid);
+  }
+  .neighborhood:nth-child(even) { background: var(--white); }
+  .neighborhood:nth-child(odd) { background: var(--foam); }
+  .hood-inner { max-width: 1100px; margin: 0 auto; }
+  .hood-header {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start; margin-bottom: 3rem;
+  }
+  .hood-name {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400; color: var(--ocean); margin-bottom: 0.5rem; line-height: 1.15;
+  }
+  .hood-city {
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--drift); margin-bottom: 1.25rem;
+  }
+  .hood-summary {
+    font-size: 0.92rem; line-height: 1.85; color: var(--stone); font-weight: 300;
+  }
+  .hood-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--sand-mid);
+  }
+  .hood-stat {
+    background: var(--white); padding: 1.25rem 1.5rem;
+  }
+  .neighborhood:nth-child(odd) .hood-stat { background: var(--foam); }
+  .hood-stat-num {
+    font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+    color: var(--ocean); line-height: 1;
+  }
+  .hood-stat-label {
+    font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--drift); margin-top: 4px;
+  }
+
+  .hood-details {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
+  }
+  .hood-detail h4 {
+    font-family: var(--serif); font-size: 1rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 1rem; font-style: italic;
+  }
+  .hood-detail p, .hood-detail ul {
+    font-size: 0.85rem; line-height: 1.75; color: var(--stone); font-weight: 300;
+  }
+  .hood-detail ul { list-style: none; }
+  .hood-detail li { padding: 0.25rem 0; border-bottom: 1px solid var(--sand-mid); }
+  .hood-detail li:last-child { border-bottom: none; }
+
+  /* ── CITY DIVIDERS ──────────────────────────── */
+  .city-divider {
+    background: var(--ocean); padding: 3rem; position: relative; overflow: hidden;
+  }
+  .city-divider-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; gap: 3rem;
+  }
+  .city-divider img {
+    width: 280px; height: 180px; object-fit: cover;
+    filter: saturate(0.75) brightness(0.85);
+  }
+  .city-divider h2 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 400; color: var(--sand); line-height: 1.15;
+  }
+  .city-divider p {
+    font-size: 0.85rem; line-height: 1.75; color: var(--drift); font-weight: 300;
+    margin-top: 0.75rem; max-width: 500px;
+  }
+
+  /* ── CTA BAR ────────────────────────────────── */
+  .cta-bar {
+    background: var(--ocean); padding: 5rem 3rem; text-align: center;
+  }
+  .cta-bar h2 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400; color: var(--sand); margin-bottom: 1rem;
+  }
+  .cta-bar p {
+    font-size: 0.88rem; color: var(--drift); margin-bottom: 2rem;
+    font-weight: 300; max-width: 480px; margin-left: auto; margin-right: auto;
+  }
+  .btn-primary {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 32px; background: var(--sand-dark); color: var(--ocean);
+    border: none; font-family: var(--sans); font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--sand); transform: translateY(-1px); }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--ink); padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--sand); margin-bottom: 0.75rem; font-style: italic; }
+  .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; }
+  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-dark); margin-bottom: 1rem; }
+  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sand-dark); }
+  .footer-bottom {
+    background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 0.68rem; color: var(--stone); }
+  .footer-bottom a { color: var(--stone); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom a:hover { color: var(--sand-dark); }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-menu { display: block; }
+    .hero { padding: 8rem 1.5rem 3.5rem; }
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .toc-mobile { display: block; }
+    .neighborhood { padding: 3rem 1.5rem; }
+    .hood-header { grid-template-columns: 1fr; gap: 2rem; }
+    .hood-details { grid-template-columns: 1fr; gap: 2rem; }
+    .city-divider { padding: 2rem 1.5rem; }
+    .city-divider-inner { flex-direction: column; gap: 1.5rem; }
+    .city-divider img { width: 100%; height: 200px; }
+    .cta-bar { padding: 3.5rem 1.5rem; }
+    footer { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.25rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .hood-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close">&times;</button>
+  <a href="/" onclick="this.parentElement.classList.remove('open')">Home</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="/#welcome" onclick="this.parentElement.classList.remove('open')">Welcome Guide</a>
+  <a href="/#resources" onclick="this.parentElement.classList.remove('open')">Resources</a>
+  <a href="/#testimonials" onclick="this.parentElement.classList.remove('open')">Reviews</a>
+  <a href="/#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">Own <span>Palos Verdes</span></a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#welcome">Welcome Guide</a></li>
+    <li><a href="/#resources">Resources</a></li>
+    <li><a href="/#testimonials">Reviews</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta">Let's Connect</a>
+  <button class="nav-menu" onclick="document.querySelector('.mobile-nav').classList.add('open')">Menu</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">OwnPV Guides</div>
+    <h1>Peninsula <em>Neighborhood</em> Guide</h1>
+    <p>Twelve neighborhoods across four cities. Real estate data, dining, parks, trails, and what daily life actually looks like in each one. From someone who has lived here for over two decades.</p>
+  </div>
+</section>
+
+<!-- MOBILE TOC (shown < 900px) -->
+<div class="toc-mobile">
+  <div class="toc-mobile-inner">
+    <span class="toc-mobile-label">Jump to</span>
+    <a href="#malaga-cove">Malaga Cove</a>
+    <a href="#lunada-bay">Lunada Bay</a>
+    <a href="#valmonte">Valmonte</a>
+    <a href="#montemalaga">Montemalaga</a>
+    <a href="#rolling-hills-estates">RHE</a>
+    <a href="#silver-spur">Silver Spur</a>
+    <a href="#rolling-hills">Rolling Hills</a>
+    <a href="#mira-catalina">Mira Catalina</a>
+    <a href="#los-verdes">Los Verdes</a>
+    <a href="#pv-drive-east">PV Dr East</a>
+    <a href="#la-cresta">La Cresta</a>
+    <a href="#south-shores">South Shores</a>
+  </div>
+</div>
+
+<div class="page-layout">
+
+<!-- SIDEBAR (desktop) -->
+<aside class="sidebar">
+  <div class="sidebar-label">Neighborhoods</div>
+  <div class="sidebar-nav">
+    <div class="city-label">Palos Verdes Estates</div>
+    <a href="#malaga-cove">Malaga Cove</a>
+    <a href="#lunada-bay">Lunada Bay</a>
+    <a href="#valmonte">Valmonte</a>
+    <a href="#montemalaga">Montemalaga</a>
+    <div class="city-label">Rolling Hills Estates</div>
+    <a href="#rolling-hills-estates">Rolling Hills Estates</a>
+    <a href="#silver-spur">Silver Spur</a>
+    <div class="city-label">Rolling Hills</div>
+    <a href="#rolling-hills">Rolling Hills</a>
+    <div class="city-label">Rancho Palos Verdes</div>
+    <a href="#mira-catalina">Mira Catalina</a>
+    <a href="#los-verdes">Los Verdes</a>
+    <a href="#pv-drive-east">PV Drive East</a>
+    <a href="#la-cresta">La Cresta</a>
+    <a href="#south-shores">South Shores</a>
+  </div>
+  <div class="sidebar-guides">
+    <div class="sidebar-guides-label">More Guides</div>
+    <a href="/guides/schools/">Schools &amp; PVPUSD</a>
+    <a href="/market/">Market Reports</a>
+    <a href="/guides/lifestyle/">Life on the Hill</a>
+  </div>
+</aside>
+
+<!-- PAGE CONTENT -->
+<div class="page-content">
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PALOS VERDES ESTATES                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="city-divider">
+  <div class="city-divider-inner">
+    <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/o607sthxr9jhjwmqebxj" alt="Palos Verdes Estates coastline" loading="lazy">
+    <div>
+      <h2>Palos Verdes Estates</h2>
+      <p>The historic heart of the peninsula. Master-planned in 1923 by the Olmsted Brothers with deed-controlled architecture, no commercial signage, and Mediterranean roots still visible on every block.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MALAGA COVE -->
+<section class="neighborhood" id="malaga-cove">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Palos Verdes Estates</div>
+        <h3 class="hood-name">Malaga Cove</h3>
+        <div class="hood-city">PVE &middot; Historic Village &middot; Bluff Estates</div>
+        <p class="hood-summary">The original neighborhood of Palos Verdes Estates, developed beginning in 1923 with Olmsted Brothers landscape design. Spanish Revival architecture, red clay roof tiles, and stucco facades define the streetscape. The Malaga Cove Plaza Historic District earned National Register listing in 2021. Life here centers on the plaza, the Neptune Fountain courtyard, and the bluff trails down to the cove. Quiet, historic, and deeply rooted in the peninsula's founding identity.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$3.38M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1,124</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">31</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">26</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Morning coffee at Yellow Vase on the plaza patio, then a walk down the Bluff Cove Trail for ocean views. Kids at Malaga Cove Intermediate, library art shows on weekends, Friday night movies on the library lawn in summer. The PV Beach &amp; Athletic Club has a 211-family waitlist &mdash; that tells you everything about demand here.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Yellow Vase &mdash; French-American brunch, in-house bakery</li>
+          <li>Malaga Cove Ranch Market &mdash; deli, bakery, wine bar since 1952</li>
+          <li>The Cove Cafe &mdash; gourmet coffee, flatbreads, paninis</li>
+          <li>Salt &amp; Pearl, Bettolino Kitchen nearby</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Neptune Fountain &mdash; Carrara marble, dedicated 1930</li>
+          <li>Malaga Cove Plaza &mdash; National Register Historic District</li>
+          <li>Bluff Cove Trail &mdash; 1.7 mi coastal bluff walk</li>
+          <li>RAT Beach &mdash; surfing, diving, kelp forest</li>
+          <li>PV Beach &amp; Athletic Club</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LUNADA BAY -->
+<section class="neighborhood" id="lunada-bay">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Palos Verdes Estates</div>
+        <h3 class="hood-name">Lunada Bay</h3>
+        <div class="hood-city">PVE &middot; Coastal &middot; Surf Culture</div>
+        <p class="hood-summary">The most coastal of PVE's four neighborhoods. Lunada Bay sits on the western cliffs above a rocky cove known for its powerful reef break. The surf culture is real &mdash; you hear waves from the street on big swell days. Cornerstone at Pedregal is the local Montessori and Discovery-based school drawing families from across the peninsula. The neighborhood plaza anchors a small but tight-knit commercial strip. Homes range from classic ranch to custom-built cliff-edge estates with uninterrupted Pacific views.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$3.0M+</div>
+          <div class="hood-stat-label">Median Price (est.)</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1,050+</div>
+          <div class="hood-stat-label">Price / Sq Ft (est.)</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">~25</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">Low</div>
+          <div class="hood-stat-label">Inventory</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Morning surf check at the bay, coffee at Lunada Kitchen, kids dropped at Cornerstone or Lunada Bay Elementary. The neighborhood is defined by its proximity to the water &mdash; surfers, tide-poolers, and dog walkers share the bluff trails daily. PVE's tree lighting ceremony, summer concerts, and library events are all within a short drive at Malaga Cove Plaza.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Lunada Kitchen &mdash; locally roasted coffee, brunch, farm-to-table</li>
+          <li>Black Bamboo Sushi &mdash; hidden gem, small sushi bar</li>
+          <li>Raffaello's Pizza &mdash; neighborhood Italian</li>
+          <li>Salsa Verdes &mdash; quick Mexican</li>
+          <li>Malaga Cove Plaza dining (5 min)</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Lunada Bay surf break &mdash; renowned reef break</li>
+          <li>Lunada Bay Plaza &mdash; neighborhood shops &amp; dining</li>
+          <li>Cornerstone at Pedregal &mdash; Discovery-based school</li>
+          <li>Paseo del Mar coastal trails</li>
+          <li>PVE Shoreline Preserve</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALMONTE -->
+<section class="neighborhood" id="valmonte">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Palos Verdes Estates</div>
+        <h3 class="hood-name">Valmonte</h3>
+        <div class="hood-city">PVE &middot; Tree-Lined &middot; Family Core</div>
+        <p class="hood-summary">The most popular family neighborhood in PVE. Eucalyptus-lined streets &mdash; particularly "The Grove" area &mdash; give Valmonte a dense tree canopy that feels more like a wooded retreat than a coastal suburb. No street lights, no sidewalks in most areas. Originally built in the late 1940s as modest Cape Cod and ranch homes on flat lots, many now significantly expanded or fully rebuilt. The fastest-moving market on the entire peninsula at 12 days on market.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$2.29M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1,062</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">12</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">44</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Walk under the eucalyptus canopy on PV Drive North to Malaga Cove Plaza for coffee. Kids bike to Valmonte Elementary on quiet streets without sidewalks &mdash; it works because there is almost no through traffic. In 1948, the city built barriers on Via Alameda, Via Pasqual, and Via Colusa specifically to keep it that way. Summer movie nights at Ernie Howlett Park, skating in the park at the civic center in winter.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>The Cove Cafe &mdash; gourmet coffee, flatbreads (at Malaga Cove)</li>
+          <li>Yellow Vase &mdash; breakfast, pastries, dog-friendly patio</li>
+          <li>Malaga Cove Ranch Market &mdash; deli, wine bar</li>
+          <li>Bettolino Kitchen &mdash; Italian (short drive)</li>
+          <li>Table Manners &mdash; casual neighborhood dining</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>The Grove &mdash; eucalyptus-canopied streets</li>
+          <li>Valmonte Trail &amp; Frog Creek Loop &mdash; 1.3 mi easy trail</li>
+          <li>Eucalyptus Median Trails &mdash; shaded pedestrian paths</li>
+          <li>Point Vicente Lighthouse &mdash; whale watching Dec&ndash;May</li>
+          <li>Malaga Cove Plaza &amp; Library</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONTEMALAGA -->
+<section class="neighborhood" id="montemalaga">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Palos Verdes Estates</div>
+        <h3 class="hood-name">Montemalaga</h3>
+        <div class="hood-city">PVE &middot; Hilltop &middot; Panoramic Views</div>
+        <p class="hood-summary">The highest point in PVE at 1,380 feet, Montemalaga delivers some of the most commanding ocean panoramas on the peninsula &mdash; sweeping views of the Pacific, Catalina Island, and Santa Monica Bay from Malibu to Long Beach. Strictly residential with no commercial zoning. Contains many of the largest homes on the entire peninsula, with lots among the biggest in PVE. Most new construction in PVE is happening here.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$3.58M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$936</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">25</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">21</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Sunset views from your own property. The Ocean Trails Reserve trailhead is accessible directly from Montemalaga Drive near Basswood. Kids at Montemalaga Elementary (California Distinguished School and National Blue Ribbon). Dining split between Malaga Cove Plaza to the west and Lunada Bay Plaza to the south, both about five minutes away. Summer concerts at Farnham Martin Park on Wednesday evenings.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Malaga Cove Ranch Market &mdash; 5 min west</li>
+          <li>Lunada Kitchen &mdash; coffee, brunch, 5 min south</li>
+          <li>Black Bamboo Sushi &mdash; Lunada Bay Plaza</li>
+          <li>Salt &amp; Pearl, The Little Oliva &mdash; nearby</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Ocean Trails Reserve &mdash; 119 acres, 4.5 mi hike</li>
+          <li>Malaga Canyon Trail &mdash; coastal sage scrub, wildflowers</li>
+          <li>Bluff Cove to Lunada Bay Trail &mdash; 1.7 mi coastal</li>
+          <li>Farnham Martin Park &mdash; summer concerts</li>
+          <li>Montemalaga Elementary &mdash; Blue Ribbon school</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ROLLING HILLS ESTATES                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="city-divider">
+  <div class="city-divider-inner">
+    <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/di4dokutbsissq1mzsac" alt="Rolling Hills Estates equestrian trails" loading="lazy">
+    <div>
+      <h2>Rolling Hills Estates</h2>
+      <p>Incorporated 1957. The retail and equestrian center of the peninsula. 25+ miles of dedicated bridle trails, three major shopping centers, and the only commercial districts on the Hill's western side.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ROLLING HILLS ESTATES -->
+<section class="neighborhood" id="rolling-hills-estates">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rolling Hills Estates</div>
+        <h3 class="hood-name">Rolling Hills Estates</h3>
+        <div class="hood-city">RHE &middot; Equestrian &middot; Commercial Hub</div>
+        <p class="hood-summary">The retail center of the PV Peninsula. Three major shopping centers along Silver Spur Road and Hawthorne Blvd serve the entire Hill. But the real identity is equestrian &mdash; 25+ miles of dedicated bridle trails maintained by the city, many properties zoned for horses with large lots, and the Peter Weber Equestrian Center offering boarding, lessons, and summer camps. Open streets with public access, unlike gated Rolling Hills next door.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$2.40M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$891</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">20</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">48</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Horses on the bridle trails in the morning. Coffee at Misc. Coffee or The Crepery Cafe. Kids at one of the PVPUSD schools, weekend clinics at Peter Weber Equestrian Center or a hike through George F Canyon Nature Preserve. The Portuguese Bend National Horse Show at Ernie Howlett Park every Labor Day weekend is a 67+ year tradition. Block parties and nature walks define the social fabric.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>SUGO Social &mdash; Italian, Promenade (opened Nov 2024)</li>
+          <li>Good Stuff Restaurant &mdash; longtime local favorite</li>
+          <li>The Crepery Cafe &mdash; breakfast crepes</li>
+          <li>Dragonfly Thai Bistro &mdash; authentic Thai since 2006</li>
+          <li>Bristol Farms Cafe &mdash; prepared foods, 7am&ndash;9pm</li>
+          <li>Misc. Coffee &mdash; specialty</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Ernie Howlett Park &mdash; 3 riding rings, grandstand, sports fields</li>
+          <li>Peter Weber Equestrian Center &mdash; boarding, lessons, camps</li>
+          <li>George F Canyon &mdash; 51-acre preserve, Catalina schist</li>
+          <li>Dapplegray Park &mdash; equestrian facility, bridle trails</li>
+          <li>Promenade on the Peninsula &mdash; 65+ stores</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SILVER SPUR -->
+<section class="neighborhood" id="silver-spur">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rolling Hills Estates / RPV</div>
+        <h3 class="hood-name">Silver Spur</h3>
+        <div class="hood-city">RHE &middot; Walkable &middot; Value Entry</div>
+        <p class="hood-summary">The most walkable neighborhood on the Hill. Bristol Farms, the Sunday farmers market, Peninsula Shopping Center, coffee shops, and restaurants are all along Silver Spur Road &mdash; no freeway required. Predominantly single-family homes with mid-century designs, many modernized over decades. Homes move fast here: 15 days on market, strong demand from families wanting PVPUSD schools without a $3M+ entry price.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1.76M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$979</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">15</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">34</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Sunday mornings at the PV Farmers Market (40+ vendors, year-round at Peninsula Center). Walk to Bristol Farms for groceries. Kids at Silver Spur Elementary (Blue Ribbon school), then Ridgecrest Intermediate, then Peninsula High. The Promenade is in a revival phase &mdash; Level Up Bowl &amp; Bistro, Daisy Buchanan's Pizza Bar, and SUGO Social all opened recently. Select city-light views, some properties with panoramic downtown LA and Queen's Necklace views.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>The Crepery Cafe &mdash; 810 Silver Spur, neighborhood favorite</li>
+          <li>Bristol Cafe &mdash; inside Bristol Farms, Sunday brunch</li>
+          <li>Peet's Coffee &mdash; Bristol Farms complex</li>
+          <li>Reverent Coffee Bar &mdash; specialty roaster</li>
+          <li>Pho Redbo &mdash; Wagyu beef pho at Promenade</li>
+          <li>Level Up Bowl &amp; Bistro &mdash; upscale bowling + restaurant</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>PV Farmers Market &mdash; every Sunday 8am&ndash;1pm</li>
+          <li>Peninsula Shopping Center &mdash; primary retail hub</li>
+          <li>Hesse Park &mdash; 29 acres, Shakespeare by the Sea</li>
+          <li>PV Nature Preserve &mdash; 1,400+ acres, 30+ mi trails</li>
+          <li>Silver Spur Park &mdash; walkable open green space</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ROLLING HILLS                               -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="city-divider">
+  <div class="city-divider-inner">
+    <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/wloqbdur3q5bikzee3jt" alt="Rolling Hills gated estates" loading="lazy">
+    <div>
+      <h2>Rolling Hills</h2>
+      <p>One of the few gated incorporated cities in the United States. Three staffed entry gates, private roads, no commercial zoning, and a one-acre lot minimum. About 700 homes on 2.99 square miles.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ROLLING HILLS -->
+<section class="neighborhood" id="rolling-hills">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rolling Hills</div>
+        <h3 class="hood-name">Rolling Hills</h3>
+        <div class="hood-city">Gated City &middot; Equestrian &middot; Estate Living</div>
+        <p class="hood-summary">About 700 homes across 2.99 square miles, all behind three 24/7 staffed gates. No commercial zoning, no multi-family, no sidewalks, no streetlights, no traffic signals. Every property must contain stables or reserve space for them &mdash; this is not decorative, it is a structural requirement that prevents overdevelopment and preserves the equestrian character. The third-highest median house value in the nation. Properties take the longest to sell on the peninsula at 71 days &mdash; they require the right buyer.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$3.60M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1,071</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">71</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">21</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Morning trail ride on the 26 miles of maintained bridle trails. Tennis at one of the three RHCA courts. No errands within the gates &mdash; you drive five minutes to RHE for Bristol Farms, the Promenade, or Peninsula Shopping Center. Rolling Hills Country Club for golf and dining. RHCA Tennis Club tournaments, Caballeros de Rancho PV trail rides, and Women's Community Club events make up the social calendar. One of the most private residential communities in Southern California.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Rolling Hills Country Club &mdash; private dining</li>
+          <li>Bristol Farms Cafe &mdash; RHE, 5 min drive</li>
+          <li>Good Stuff Restaurant &mdash; RHE</li>
+          <li>SUGO Social &mdash; Italian, Promenade</li>
+          <li>Dragonfly Thai &mdash; RHE</li>
+          <li>Misc. Coffee, Fika Fika Creamery &mdash; RHE</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>26 miles maintained bridle trails</li>
+          <li>Caballeros &amp; Hix riding rings &mdash; residents only</li>
+          <li>Rolling Hills Country Club &mdash; private golf</li>
+          <li>3 RHCA tennis courts</li>
+          <li>George F Canyon Nature Preserve &mdash; adjacent</li>
+          <li>Portuguese Bend Reserve &mdash; 424 acres</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- RANCHO PALOS VERDES                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="city-divider">
+  <div class="city-divider-inner">
+    <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/zverjeorqcaigxqhjxmz" alt="Rancho Palos Verdes ocean views" loading="lazy">
+    <div>
+      <h2>Rancho Palos Verdes</h2>
+      <p>The largest city on the peninsula by area. Incorporated in 1973 to maintain low-density residential character. Home to Terranea Resort, Point Vicente Lighthouse, and 1,600+ acres of nature preserves.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MIRA CATALINA -->
+<section class="neighborhood" id="mira-catalina">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rancho Palos Verdes</div>
+        <h3 class="hood-name">Mira Catalina</h3>
+        <div class="hood-city">RPV &middot; Elevated &middot; Catalina Views</div>
+        <p class="hood-summary">Named for its panoramic Catalina Island views. About 758 homes at some of the highest elevations on the peninsula, dating to 1958. Quiet, family-friendly, low turnover &mdash; only 14 sales in all of 2025, making it one of the tightest markets on the Hill. Many homes also overlook the LA basin and harbor. Feels removed from urban LA despite being 30 minutes from downtown via the 110.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1.97M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$803</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">48</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">14</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Catalina Island visible from your kitchen window on clear mornings. Hike the 123-acre Deane Dana Friendship Park with harbor and island views. Summer concerts at Ken Dyda Civic Center on Saturday afternoons, Shakespeare by the Sea at Hesse Park in July. Trump National Golf Club is adjacent, Los Verdes Golf Course is nearby and public. Terranea Resort is the closest luxury amenity anchor &mdash; spa, restaurants, oceanfront trails.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Mar'sel at Terranea &mdash; Forbes Four-Star fine dining</li>
+          <li>Nelson's at Terranea &mdash; oceanfront, fire pits</li>
+          <li>Sea Beans at Terranea &mdash; casual cafe, gelato</li>
+          <li>Swan Thai RPV &mdash; authentic Thai</li>
+          <li>Avenue Italy &mdash; fresh Italian</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Deane Dana Friendship Park &mdash; 123 acres, nature center</li>
+          <li>Abalone Cove Shoreline Park &amp; tidepools</li>
+          <li>Trump National Golf Club</li>
+          <li>PVPLC preserves &mdash; 1,600+ acres of trails</li>
+          <li>Terranea Resort &mdash; 102-acre oceanfront</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOS VERDES -->
+<section class="neighborhood" id="los-verdes">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rancho Palos Verdes</div>
+        <h3 class="hood-name">Los Verdes</h3>
+        <div class="hood-city">RPV &middot; Golf Course &middot; Ocean Bluffs</div>
+        <p class="hood-summary">Built around the Los Verdes Golf Course on the western bluffs. Ranch-style homes from the 1960s&ndash;70s, many with ocean views from Malibu to Catalina. No HOA, no monthly dues. The golf course itself is one of the top 10 busiest public courses in the nation &mdash; 18 holes designed by William Bell with panoramic ocean views from most holes. Not in the active landslide zone. Accessible entry price with strong demand at $1.75M median.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1.75M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$922</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">23</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">31</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Early tee time at Los Verdes, sunset from the clubhouse bar. Trader Joe's run at Golden Cove Shopping Center. Saturday summer concerts at Ken Dyda, Whale of a Day festival at Point Vicente each spring. Wayfarers Chapel &mdash; Lloyd Wright's glass-and-stone chapel in lush gardens &mdash; is nearby. Point Vicente Interpretive Center for gray whale migration viewing December through April.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Los Verdes Clubhouse &mdash; casual dining, ocean views</li>
+          <li>Yellow Vase &mdash; cafe/bakery at Golden Cove</li>
+          <li>Nelson's at Terranea &mdash; coastal, fire pits, sunsets</li>
+          <li>Mar'sel at Terranea &mdash; Forbes Four-Star, Sunday brunch</li>
+          <li>Swan Thai RPV &mdash; authentic Thai</li>
+          <li>Sea Beans &mdash; oceanfront coffee, gelato</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Los Verdes Golf Course &mdash; public, top-10 busiest nationally</li>
+          <li>Point Vicente Interpretive Center &amp; Lighthouse</li>
+          <li>Wayfarers Chapel &mdash; Lloyd Wright design</li>
+          <li>Golden Cove Shopping Center &mdash; Trader Joe's</li>
+          <li>Portuguese Bend Reserve &mdash; 424 acres</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PV DRIVE EAST -->
+<section class="neighborhood" id="pv-drive-east">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rancho Palos Verdes</div>
+        <h3 class="hood-name">PV Drive East</h3>
+        <div class="hood-city">RPV &middot; Sea Cliffs &middot; Volume Market</div>
+        <p class="hood-summary">The largest MLS area in RPV by sales volume &mdash; 48 closings in 2025. Runs along the eastern side of the peninsula above dramatic sea cliffs. About 1,943 homes, averaging 2,819 sq ft on spacious lots. Mid-range pricing for the peninsula at $1.94M median. Terranea Resort is the luxury amenity anchor. Semi-rural feel with large lots, equestrian-friendly areas, and no sidewalks on many streets. The city was incorporated in 1973 specifically to maintain this character.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1.94M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$722</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">34</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">48</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Whale watching from the bluffs December through April &mdash; gray whales pass offshore within binocular range. Point Vicente Lighthouse turned 100 in 2026. Whale of a Day festival every spring, 40+ year tradition. The Terranea Beach &amp; Hudson's Bluff Sea Cave hike is 5.2 miles along the coast. Abalone Cove Shoreline Park for tide pools and Sacred Cove for beach access. Produce Exchange monthly for backyard surplus swapping.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Mar'sel at Terranea &mdash; Forbes Four-Star</li>
+          <li>Nelson's at Terranea &mdash; coastal American, fire pits</li>
+          <li>Bashi at Terranea &mdash; Asian wok-style</li>
+          <li>Yellow Vase &mdash; cafe/bakery, artisan goods</li>
+          <li>Swan Thai RPV &mdash; curry with filet mignon</li>
+          <li>Misc Coffee, Reverent Coffee Bar</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Terranea Resort &mdash; spa, golf, oceanfront trails</li>
+          <li>Point Vicente Lighthouse &mdash; est. 1926</li>
+          <li>Abalone Cove Shoreline Park &amp; Sacred Cove</li>
+          <li>Pirate and Flying Mane Loop &mdash; top-rated RPV trail</li>
+          <li>Del Amo Fashion Center &mdash; short drive</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA CRESTA -->
+<section class="neighborhood" id="la-cresta">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">Rancho Palos Verdes</div>
+        <h3 class="hood-name">La Cresta</h3>
+        <div class="hood-city">RPV &middot; Estate Lots &middot; Premium Views</div>
+        <p class="hood-summary">Estate-oriented neighborhood on elevated ground in RPV. About 1,125 homes, averaging 3,511 sq ft on larger-than-average lots. Purely residential with no commercial zoning &mdash; the nearest shops are at Golden Cove Shopping Center and the Promenade. Sweeping Pacific and Catalina views from the elevated position. Not in the landslide zone. Properties take longer to sell at 47 days &mdash; typical for estate-scale real estate that requires the right match.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$2.82M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$830</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">47</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">24</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Quiet estate living with views. Morning coffee at Yellow Vase at Golden Cove or Sea Beans at Terranea. Hiking Portuguese Bend Reserve, White Point Nature Preserve, or Ocean Trails Reserve &mdash; all accessible from the neighborhood. Chadwick School (private K&ndash;12) is a draw for affluent families. Whale of a Day at Point Vicente in spring, summer concerts at Ken Dyda on Saturdays. 30 minutes to LAX, 20 to Torrance commercial.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Yellow Vase &mdash; French-style bakery/cafe at Golden Cove</li>
+          <li>Sea Beans at Terranea &mdash; artisan coffee, gelato</li>
+          <li>Mar'sel at Terranea &mdash; Forbes Four-Star</li>
+          <li>Nelson's at Terranea &mdash; oceanside, sunsets</li>
+          <li>Swan Thai RPV &mdash; authentic Thai at Golden Cove</li>
+          <li>Avenue Italy &mdash; Italian at Golden Cove</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Portuguese Bend Reserve &mdash; 424 acres</li>
+          <li>White Point Nature Preserve</li>
+          <li>Ocean Trails Reserve</li>
+          <li>Chadwick School &mdash; private K&ndash;12</li>
+          <li>Golden Cove Shopping Center</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOUTH SHORES -->
+<section class="neighborhood" id="south-shores">
+  <div class="hood-inner">
+    <div class="hood-header">
+      <div>
+        <div class="section-tag">San Pedro (Peninsula-Adjacent)</div>
+        <h3 class="hood-name">South Shores</h3>
+        <div class="hood-city">San Pedro &middot; Coastal &middot; Value Entry</div>
+        <p class="hood-summary">Southern edge of the peninsula, technically City of Los Angeles (San Pedro) bordering RPV. The most affordable peninsula entry at $1.35M median and the fastest-moving market at 17 days. Mid-century coastal homes on wide streets with unobstructable Pacific and Catalina views. Two tiers: Lower South Shores closer to the water with coastal trail access, Upper South Shores at higher elevation with wider views. SSCA (South Shores Community Association) has been active for 50+ years. Important note: schools are LAUSD, not PVPUSD.</p>
+      </div>
+      <div class="hood-stats">
+        <div class="hood-stat">
+          <div class="hood-stat-num">$1.35M</div>
+          <div class="hood-stat-label">Median Price</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">$693</div>
+          <div class="hood-stat-label">Price / Sq Ft</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">17</div>
+          <div class="hood-stat-label">Days on Market</div>
+        </div>
+        <div class="hood-stat">
+          <div class="hood-stat-num">37</div>
+          <div class="hood-stat-label">Homes Sold (2025)</div>
+        </div>
+      </div>
+    </div>
+    <div class="hood-details">
+      <div class="hood-detail">
+        <h4>Daily Life</h4>
+        <p>Walk to Averill Park with its gazebo, artificial pond, and harbor views. Dinner at Shore Grille &mdash; the neighborhood's own scratch kitchen. Korean Friendship Bell ringing on New Year's Day at Angel's Gate Park. Cabrillo Beach for swimming and tide pools, harbor cruises from the LA Waterfront. CRAFTED at the Port of LA for year-round artisan goods. San Pedro's waterfront district is undergoing real growth &mdash; restaurants, galleries, film festivals.</p>
+      </div>
+      <div class="hood-detail">
+        <h4>Dining &amp; Coffee</h4>
+        <ul>
+          <li>Shore Grille &mdash; locally owned scratch kitchen</li>
+          <li>South Shores Meat and Deli &mdash; neighborhood butcher</li>
+          <li>San Pedro Cafe &mdash; breakfast/lunch/dinner</li>
+          <li>Sirinat Thai &amp; Sushi Bar</li>
+          <li>Sorrento's Italian &mdash; local favorite</li>
+          <li>Sirens Java &amp; Tea &mdash; independent coffee</li>
+        </ul>
+      </div>
+      <div class="hood-detail">
+        <h4>Landmarks &amp; Trails</h4>
+        <ul>
+          <li>Averill Park &mdash; gazebo, pond, harbor views</li>
+          <li>Point Fermin Park &amp; Lighthouse</li>
+          <li>Cabrillo Beach &amp; Marine Aquarium</li>
+          <li>Korean Friendship Bell &mdash; Angel's Gate Park</li>
+          <li>CRAFTED at the Port of LA</li>
+          <li>Knoll Hill Off-Leash Dog Park</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <h2>Ready to explore in person?</h2>
+  <p>Every neighborhood has a feel you can only get by walking the streets. I have lived here for over twenty years and I know every block. Let's find yours.</p>
+  <a href="/#contact" class="btn-primary">Get in touch &rarr;</a>
+</section>
+
+</div><!-- /page-content -->
+</div><!-- /page-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Angelique Lyle</div>
+    <div class="footer-sub">Accardo Real Estate Associates<br>CA DRE# 01475592<br>Compass &middot; 550 Silver Spur Rd, Suite 110<br>Rancho Palos Verdes, CA 90275</div>
+  </div>
+  <div>
+    <div class="footer-col-title">Navigate</div>
+    <div class="footer-links">
+      <a href="https://ownpalosverdes.com/#about">About Angelique</a>
+      <a href="https://ownpalosverdes.com/#neighborhoods">Neighborhoods</a>
+      <a href="https://ownpalosverdes.com/market/">Market Reports</a>
+      <a href="https://ownpalosverdes.com/#contact">Contact</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <div class="footer-links">
+      <a href="tel:3107518335">(310) 751-8335</a>
+      <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
+      <a href="https://angeliquelyle.com" target="_blank" rel="noopener">angeliquelyle.com</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>&copy; 2026 Angelique Lyle &middot; Accardo Real Estate Associates &middot; Compass &middot; CA DRE# 01475592 &middot; Equal Housing Opportunity</p>
+  <p><a href="https://angeliquelyle.com/terms-and-conditions" target="_blank" rel="noopener">Privacy Policy</a></p>
+</div>
+
+<!-- NAV SCROLL + SIDEBAR SPY -->
+<script>
+  window.addEventListener('scroll', function() {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // Scroll spy for sidebar
+  (function() {
+    var links = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+    var sections = [];
+    links.forEach(function(a) {
+      var el = document.querySelector(a.getAttribute('href'));
+      if (el) sections.push({ el: el, link: a });
+    });
+    if (!sections.length) return;
+    function update() {
+      var scrollY = window.scrollY + 120;
+      var active = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].el.offsetTop <= scrollY) active = sections[i];
+      }
+      links.forEach(function(a) { a.classList.remove('active'); });
+      if (active) active.link.classList.add('active');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+</body>
+</html>

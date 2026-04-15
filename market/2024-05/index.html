@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>May 2024 Palos Verdes Market Report | OwnPalosVerdes.com</title>
+<meta name="description" content="Peninsula housing market data for May 2024. Median price, days on market, price per sqft, and city breakdowns for RPV, PVE, RHE, and Rolling Hills.">
+<meta property="og:title" content="May 2024 PV Peninsula Market Report">
+<meta property="og:description" content="Peninsula housing market data for May 2024. Median price, days on market, price per sqft, and city breakdowns for RPV, PVE, RHE, and Rolling Hills.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ownpalosverdes.com/market/2024-05/">
+<link rel="canonical" href="https://ownpalosverdes.com/market/2024-05/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sand: #F4EFE6; --sand-mid: #E8DDD0; --sand-dark: #C8B99A;
+    --ocean: #1C3A4A; --ocean-mid: #2C5568; --foam: #F9F7F4;
+    --drift: #8A9BA8; --stone: #4A5A62; --white: #FFFFFF; --ink: #1A2428;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Outfit', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--foam); color: var(--ink); }
+
+  /* ── NAV ─────── */
+  nav {
+    position: sticky; top: 0; z-index: 100; padding: 0 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px; background: rgba(249,247,244,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,185,154,0.25);
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); text-decoration: none; }
+  .nav-logo span { font-style: italic; color: var(--sand-dark); }
+  .nav-back { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
+  .nav-back:hover { color: var(--ocean); }
+
+  /* ── HERO ─────── */
+  .report-hero {
+    background: var(--ocean); padding: 5rem 3rem 4rem; text-align: center;
+  }
+  .report-hero .eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 1rem;
+  }
+  .report-hero h1 {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400; color: var(--sand); line-height: 1.15; margin-bottom: 1rem;
+  }
+  .report-hero h1 em { font-style: italic; }
+  .report-hero .subtitle { color: var(--drift); font-size: 0.95rem; font-weight: 300; }
+  .report-nav {
+    display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;
+  }
+  .report-nav a {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sand-dark); text-decoration: none; opacity: 0.7; transition: opacity 0.2s;
+  }
+  .report-nav a:hover { opacity: 1; }
+
+  /* ── STATS CARDS ─────── */
+  .stats-section { max-width: 1100px; margin: -2rem auto 0; padding: 0 2rem; position: relative; z-index: 2; }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  }
+  .stat-card {
+    background: var(--white); padding: 2rem; text-align: center;
+    box-shadow: 0 2px 20px rgba(28,58,74,0.06);
+  }
+  .stat-label {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--drift); margin-bottom: 0.5rem;
+  }
+  .stat-value {
+    font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--ocean);
+  }
+  .stat-change {
+    font-size: 0.75rem; margin-top: 0.4rem;
+  }
+  .stat-change.up { color: #2d8a4e; }
+  .stat-change.down { color: #c0392b; }
+
+  /* ── TABLE ─────── */
+  .table-section { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand-dark); margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::before {
+    content: ''; width: 28px; height: 1px; background: var(--sand-dark);
+  }
+  .table-section h2 {
+    font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 2rem;
+  }
+  .table-section h2 em { font-style: italic; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 0.85rem;
+  }
+  thead th {
+    text-align: left; padding: 0.8rem 1rem;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--drift); border-bottom: 2px solid var(--sand-mid);
+    font-weight: 400;
+  }
+  tbody td {
+    padding: 0.9rem 1rem; border-bottom: 1px solid var(--sand-mid);
+    color: var(--stone);
+  }
+  tbody tr:hover { background: rgba(244,239,230,0.5); }
+  tbody a {
+    color: var(--ocean); text-decoration: none; font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+  tbody a:hover { text-decoration: underline; }
+
+  /* ── REDFIN / COMPASS LINKS ─────── */
+  .platform-links {
+    max-width: 1100px; margin: 3rem auto 4rem; padding: 0 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .platform-card {
+    background: var(--white); padding: 2rem; box-shadow: 0 2px 16px rgba(28,58,74,0.05);
+  }
+  .platform-card h3 {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+    color: var(--ocean); margin-bottom: 1rem;
+  }
+  .platform-card ul { list-style: none; }
+  .platform-card li { margin-bottom: 0.6rem; }
+  .platform-card a {
+    color: var(--ocean); text-decoration: none; font-size: 0.85rem;
+    border-bottom: 1px solid rgba(28,58,74,0.2); padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+  .platform-card a:hover { border-color: var(--ocean); }
+  .platform-card .tag {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--drift); margin-left: 0.5rem;
+  }
+
+  /* ── ARCHIVE ─────── */
+  .archive-section {
+    background: var(--ocean); padding: 4rem 3rem; text-align: center;
+  }
+  .archive-section h3 {
+    font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
+    color: var(--sand); margin-bottom: 2rem;
+  }
+  .archive-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1rem;
+    max-width: 900px; margin: 0 auto;
+  }
+  .archive-grid a {
+    font-size: 0.75rem; color: var(--drift); text-decoration: none;
+    padding: 0.4rem 0.8rem; border: 1px solid rgba(138,155,168,0.3);
+    transition: all 0.2s;
+  }
+  .archive-grid a:hover, .archive-grid a.active {
+    color: var(--sand); border-color: var(--sand-dark);
+  }
+
+  /* ── FOOTER ─────── */
+  footer {
+    padding: 3rem; text-align: center;
+    font-size: 0.75rem; color: var(--drift);
+  }
+  footer a { color: var(--ocean); text-decoration: none; }
+
+  /* ── CTA BAR ─────── */
+  .cta-bar {
+    background: var(--sand); padding: 3rem 2rem; text-align: center;
+  }
+  .cta-bar p {
+    font-family: var(--serif); font-size: 1.2rem; color: var(--ocean);
+    margin-bottom: 1rem;
+  }
+  .cta-bar a {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 12px 28px; border: 1px solid var(--ocean);
+    color: var(--ocean); text-decoration: none; font-family: var(--sans);
+    transition: background 0.2s, color 0.2s;
+  }
+  .cta-bar a:hover { background: var(--ocean); color: var(--white); }
+
+  /* ── RESPONSIVE ─────── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .report-hero { padding: 4rem 1.5rem 3rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .table-section { overflow-x: auto; }
+    .platform-links { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Own<span>PV</span></a>
+  <a href="/" class="nav-back">&larr; Back to OwnPalosVerdes.com</a>
+</nav>
+
+<section class="report-hero">
+  <div class="eyebrow">Peninsula Market Data</div>
+  <h1>May 2024<br><em>Market Report</em></h1>
+  <p class="subtitle">Closed residential sales across the Palos Verdes Peninsula</p>
+  <div class="report-nav">
+    <a href='/market/2024-04/'>&larr; April 2024</a>
+    <a href="/market/">All Reports</a>
+    <a href='/market/2024-06/'>Next month &rarr;</a>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Median Sale Price</div>
+      <div class="stat-value">$2.16M</div>
+      <div class='stat-change down'>-0.3% vs prior month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Homes Sold</div>
+      <div class="stat-value">53</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Median Days on Market</div>
+      <div class="stat-value">21</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Median $/ft&sup2;</div>
+      <div class="stat-value">$868</div>
+    </div>
+  </div>
+</section>
+
+<section class="table-section">
+  <div class="section-label">By City</div>
+  <h2>Peninsula <em>breakdown.</em></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>Median Price</th>
+        <th>Sales</th>
+        <th>Median DOM</th>
+        <th>$/ft&sup2;</th>
+        <th>Live Market</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>PVE</strong></td>
+        <td>$3.25M</td>
+        <td>11</td>
+        <td>36</td>
+        <td>$1,150/ft&sup2;</td>
+        <td><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
+      </tr>
+      <tr>
+        <td><strong>RPV</strong></td>
+        <td>$1.98M</td>
+        <td>32</td>
+        <td>17</td>
+        <td>$830/ft&sup2;</td>
+        <td><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Compass</a></td>
+      </tr>
+      <tr>
+        <td><strong>RHE</strong></td>
+        <td>$2.52M</td>
+        <td>4</td>
+        <td>60</td>
+        <td>$762/ft&sup2;</td>
+        <td><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
+      </tr>
+      <tr>
+        <td><strong>RH</strong></td>
+        <td>$5.82M</td>
+        <td>2</td>
+        <td>31</td>
+        <td>$1,071/ft&sup2;</td>
+        <td><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Compass</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="table-section">
+  <div class="section-label">Notable Sales</div>
+  <h2>Top transactions <em>this month.</em></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>City</th>
+        <th>Close Price</th>
+        <th>Bed/Bath</th>
+        <th>Size</th>
+        <th>DOM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/1420-Paseo-La-Cresta-90274/home" target="_blank" rel="noopener">1420 Paseo La Cresta</a></td>
+        <td>PVE</td>
+        <td>$10,600,000</td>
+        <td>6/10</td>
+        <td>11,332 ft&sup2;</td>
+        <td>36 days</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.redfin.com/CA/Rolling-Hills/35-Saddleback-90274/home" target="_blank" rel="noopener">35 Saddleback</a></td>
+        <td>RH</td>
+        <td>$9,100,000</td>
+        <td>5/8</td>
+        <td>8,250 ft&sup2;</td>
+        <td>2 days</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/1601-Via-Barcelona-90274/home" target="_blank" rel="noopener">1601 Via Barcelona</a></td>
+        <td>PVE</td>
+        <td>$5,888,000</td>
+        <td>5/5</td>
+        <td>6,780 ft&sup2;</td>
+        <td>46 days</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.redfin.com/CA/Rancho-Palos-Verdes/51-Albero-90275/home" target="_blank" rel="noopener">51 Albero</a></td>
+        <td>RPV</td>
+        <td>$4,150,000</td>
+        <td>6/5</td>
+        <td>5,182 ft&sup2;</td>
+        <td>32 days</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/1915-Via-Coronel-90274/home" target="_blank" rel="noopener">1915 Via Coronel</a></td>
+        <td>PVE</td>
+        <td>$3,950,000</td>
+        <td>5/4</td>
+        <td>3,189 ft&sup2;</td>
+        <td>21 days</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="platform-links">
+  <div class="platform-card">
+    <h3>Search on Compass</h3>
+    <ul>
+      <li><a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Palos Verdes Estates</a> <span class="tag">PVE</span></li>
+      <li><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
+      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
+      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
+    </ul>
+  </div>
+  <div class="platform-card">
+    <h3>Market Data on Redfin</h3>
+    <ul>
+      <li><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">PVE Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">RPV Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">RHE Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">RH Housing Market</a> <span class="tag">Trends</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-bar">
+  <p>Want a deeper look at the numbers for your street?</p>
+  <a href="/#contact">Talk to Angelique</a>
+</section>
+
+<section class="archive-section">
+  <h3>All monthly reports</h3>
+  <div class="archive-grid">
+    <a href="/market/2026-04/">April 2026</a>
+        <a href="/market/2026-03/">March 2026</a>
+        <a href="/market/2026-02/">February 2026</a>
+        <a href="/market/2026-01/">January 2026</a>
+        <a href="/market/2025-12/">December 2025</a>
+        <a href="/market/2025-11/">November 2025</a>
+        <a href="/market/2025-10/">October 2025</a>
+        <a href="/market/2025-09/">September 2025</a>
+        <a href="/market/2025-08/">August 2025</a>
+        <a href="/market/2025-07/">July 2025</a>
+        <a href="/market/2025-06/">June 2025</a>
+        <a href="/market/2025-05/">May 2025</a>
+        <a href="/market/2025-04/">April 2025</a>
+        <a href="/market/2025-03/">March 2025</a>
+        <a href="/market/2025-02/">February 2025</a>
+        <a href="/market/2025-01/">January 2025</a>
+        <a href="/market/2024-12/">December 2024</a>
+        <a href="/market/2024-11/">November 2024</a>
+        <a href="/market/2024-10/">October 2024</a>
+        <a href="/market/2024-09/">September 2024</a>
+        <a href="/market/2024-08/">August 2024</a>
+        <a href="/market/2024-07/">July 2024</a>
+        <a href="/market/2024-06/">June 2024</a>
+        <a href="/market/2024-05/" class="active">May 2024</a>
+        <a href="/market/2024-04/">April 2024</a>
+        <a href="/market/2024-03/">March 2024</a>
+        <a href="/market/2024-02/">February 2024</a>
+        <a href="/market/2024-01/">January 2024</a>
+        <a href="/market/2023-12/">December 2023</a>
+        <a href="/market/2023-11/">November 2023</a>
+        <a href="/market/2023-10/">October 2023</a>
+        <a href="/market/2023-09/">September 2023</a>
+        <a href="/market/2023-08/">August 2023</a>
+        <a href="/market/2023-07/">July 2023</a>
+        
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Angelique Lyle &middot; Compass &middot; DRE# 01475592</p>
+  <p style="margin-top:0.5rem;"><a href="/">OwnPalosVerdes.com</a></p>
+  <p style="margin-top:1rem; font-size:0.65rem; max-width:700px; margin-left:auto; margin-right:auto;">
+    Data sourced from CRMLS. Deemed reliable but not guaranteed.
+    Compass is a licensed real estate broker. Equal Housing Opportunity.
+  </p>
+</footer>
+
+</body>
+</html>
