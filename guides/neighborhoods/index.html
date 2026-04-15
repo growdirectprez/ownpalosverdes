@@ -109,7 +109,7 @@
 
   /* ── HERO ────────────────────────────────────── */
   .hero {
-    background: var(--ocean); padding: 10rem 3rem 5rem; text-align: center;
+    background: var(--ocean); padding: 7rem 3rem 3rem; text-align: center;
     position: relative; overflow: hidden;
   }
   .hero::before {
@@ -141,72 +141,28 @@
   }
   .section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--sand-dark); }
 
-  /* ── SIDEBAR + LAYOUT ────────────────────────── */
-  .page-layout {
-    display: grid; grid-template-columns: 220px 1fr;
+  /* ── TOC ────────────────────────────────────── */
+  .toc {
+    background: var(--white); border-bottom: 1px solid var(--sand-mid);
+    padding: 1rem 3rem; position: sticky; top: 68px; z-index: 50;
+    overflow-x: auto;
   }
-  .sidebar {
-    position: sticky; top: 68px; height: calc(100vh - 68px);
-    overflow-y: auto; background: var(--white);
-    border-right: 1px solid var(--sand-mid);
-    padding: 2rem 1.5rem; z-index: 50;
+  .toc-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; gap: 0.3rem 1rem;
+    align-items: center;
   }
-  .sidebar-label {
-    font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--sand-dark); font-weight: 400; margin-bottom: 1rem;
-  }
-  .sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
-  .sidebar-nav a {
-    font-size: 0.76rem; color: var(--stone); text-decoration: none;
-    padding: 6px 10px; border-left: 2px solid transparent;
-    transition: all 0.2s; line-height: 1.4;
-  }
-  .sidebar-nav a:hover { color: var(--ocean); background: var(--foam); }
-  .sidebar-nav a.active {
-    color: var(--ocean); border-left-color: var(--ocean);
-    background: var(--foam); font-weight: 400;
-  }
-  .sidebar-nav .city-label {
-    font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--sand-dark); padding: 12px 10px 4px; font-weight: 400;
-  }
-  .sidebar-nav .city-label:first-child { padding-top: 0; }
-  .sidebar-guides {
-    margin-top: 2rem; padding-top: 1.5rem;
-    border-top: 1px solid var(--sand-mid);
-    display: flex; flex-direction: column; gap: 2px;
-  }
-  .sidebar-guides-label {
-    font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--sand-dark); font-weight: 400; margin-bottom: 0.5rem;
-  }
-  .sidebar-guides a {
-    font-size: 0.72rem; color: var(--drift); text-decoration: none;
-    padding: 5px 10px; transition: color 0.2s;
-  }
-  .sidebar-guides a:hover { color: var(--ocean); }
-  .page-content { min-width: 0; }
-
-  /* Mobile: hide sidebar, show horizontal TOC */
-  .toc-mobile {
-    display: none; background: var(--white); border-bottom: 1px solid var(--sand-mid);
-    padding: 1.25rem 1.5rem; position: sticky; top: 68px; z-index: 50;
-    overflow-x: auto; white-space: nowrap;
-  }
-  .toc-mobile-inner {
-    display: flex; gap: 0.5rem; align-items: center;
-  }
-  .toc-mobile-label {
+  .toc-label {
     font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--sand-dark); font-weight: 400; margin-right: 0.25rem;
-    flex-shrink: 0;
+    white-space: nowrap;
   }
-  .toc-mobile a {
-    font-size: 0.72rem; color: var(--stone); text-decoration: none;
-    padding: 4px 8px; border: 1px solid transparent;
-    transition: border-color 0.2s, color 0.2s; flex-shrink: 0;
+  .toc a {
+    font-size: 0.74rem; color: var(--stone); text-decoration: none;
+    padding: 3px 8px; border: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s; white-space: nowrap;
   }
-  .toc-mobile a:hover { border-color: var(--sand-mid); color: var(--ocean); }
+  .toc a:hover { border-color: var(--sand-mid); color: var(--ocean); }
 
   /* ── NEIGHBORHOOD SECTIONS ──────────────────── */
   .neighborhood {
@@ -328,10 +284,9 @@
     .nav-links { display: none; }
     .nav-cta { display: none; }
     .nav-menu { display: block; }
-    .hero { padding: 8rem 1.5rem 3.5rem; }
-    .page-layout { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
-    .toc-mobile { display: block; }
+    .hero { padding: 5.5rem 1.5rem 2rem; }
+    .toc { padding: 0.75rem 1.5rem; }
+    .toc-inner { flex-wrap: nowrap; overflow-x: auto; }
     .neighborhood { padding: 3rem 1.5rem; }
     .hood-header { grid-template-columns: 1fr; gap: 2rem; }
     .hood-details { grid-template-columns: 1fr; gap: 2rem; }
@@ -355,7 +310,7 @@
   <a href="/" onclick="this.parentElement.classList.remove('open')">Home</a>
   <a href="/#about" onclick="this.parentElement.classList.remove('open')">About</a>
   <a href="/#welcome" onclick="this.parentElement.classList.remove('open')">Welcome Guide</a>
-  <a href="/#resources" onclick="this.parentElement.classList.remove('open')">Resources</a>
+
   <a href="/#testimonials" onclick="this.parentElement.classList.remove('open')">Reviews</a>
   <a href="/#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
 </div>
@@ -366,7 +321,7 @@
   <ul class="nav-links">
     <li><a href="/#about">About</a></li>
     <li><a href="/#welcome">Welcome Guide</a></li>
-    <li><a href="/#resources">Resources</a></li>
+
     <li><a href="/#testimonials">Reviews</a></li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
@@ -383,10 +338,9 @@
   </div>
 </section>
 
-<!-- MOBILE TOC (shown < 900px) -->
-<div class="toc-mobile">
-  <div class="toc-mobile-inner">
-    <span class="toc-mobile-label">Jump to</span>
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-inner">
     <a href="#malaga-cove">Malaga Cove</a>
     <a href="#lunada-bay">Lunada Bay</a>
     <a href="#valmonte">Valmonte</a>
@@ -401,40 +355,6 @@
     <a href="#south-shores">South Shores</a>
   </div>
 </div>
-
-<div class="page-layout">
-
-<!-- SIDEBAR (desktop) -->
-<aside class="sidebar">
-  <div class="sidebar-label">Neighborhoods</div>
-  <div class="sidebar-nav">
-    <div class="city-label">Palos Verdes Estates</div>
-    <a href="#malaga-cove">Malaga Cove</a>
-    <a href="#lunada-bay">Lunada Bay</a>
-    <a href="#valmonte">Valmonte</a>
-    <a href="#montemalaga">Montemalaga</a>
-    <div class="city-label">Rolling Hills Estates</div>
-    <a href="#rolling-hills-estates">Rolling Hills Estates</a>
-    <a href="#silver-spur">Silver Spur</a>
-    <div class="city-label">Rolling Hills</div>
-    <a href="#rolling-hills">Rolling Hills</a>
-    <div class="city-label">Rancho Palos Verdes</div>
-    <a href="#mira-catalina">Mira Catalina</a>
-    <a href="#los-verdes">Los Verdes</a>
-    <a href="#pv-drive-east">PV Drive East</a>
-    <a href="#la-cresta">La Cresta</a>
-    <a href="#south-shores">South Shores</a>
-  </div>
-  <div class="sidebar-guides">
-    <div class="sidebar-guides-label">More Guides</div>
-    <a href="/guides/schools/">Schools &amp; PVPUSD</a>
-    <a href="/market/">Market Reports</a>
-    <a href="/guides/lifestyle/">Life on the Hill</a>
-  </div>
-</aside>
-
-<!-- PAGE CONTENT -->
-<div class="page-content">
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- PALOS VERDES ESTATES                        -->
@@ -1198,8 +1118,6 @@
   <a href="/#contact" class="btn-primary">Get in touch &rarr;</a>
 </section>
 
-</div><!-- /page-content -->
-</div><!-- /page-layout -->
 
 <!-- FOOTER -->
 <footer>
@@ -1236,27 +1154,6 @@
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // Scroll spy for sidebar
-  (function() {
-    var links = document.querySelectorAll('.sidebar-nav a[href^="#"]');
-    var sections = [];
-    links.forEach(function(a) {
-      var el = document.querySelector(a.getAttribute('href'));
-      if (el) sections.push({ el: el, link: a });
-    });
-    if (!sections.length) return;
-    function update() {
-      var scrollY = window.scrollY + 120;
-      var active = sections[0];
-      for (var i = 0; i < sections.length; i++) {
-        if (sections[i].el.offsetTop <= scrollY) active = sections[i];
-      }
-      links.forEach(function(a) { a.classList.remove('active'); });
-      if (active) active.link.classList.add('active');
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  })();
 </script>
 
 </body>

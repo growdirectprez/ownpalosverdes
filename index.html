@@ -59,26 +59,6 @@
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); background: var(--foam); color: var(--ink); overflow-x: hidden; }
 
-  /* ── CURSOR ────────────────────────────────── */
-  @media (pointer: fine) {
-    * { cursor: none !important; }
-    #cursor {
-      position: fixed; width: 10px; height: 10px;
-      background: var(--sand-dark); border-radius: 50%;
-      pointer-events: none; z-index: 9999;
-      transition: transform 0.15s ease, opacity 0.2s;
-      transform: translate(-50%,-50%);
-    }
-    #cursor-ring {
-      position: fixed; width: 36px; height: 36px;
-      border: 1px solid var(--sand-dark); border-radius: 50%;
-      pointer-events: none; z-index: 9998;
-      transition: transform 0.35s ease, width 0.3s, height 0.3s, opacity 0.3s;
-      transform: translate(-50%,-50%); opacity: 0.5;
-    }
-    body.hovering #cursor { transform: translate(-50%,-50%) scale(2.5); opacity: 0.3; }
-    body.hovering #cursor-ring { width: 60px; height: 60px; opacity: 0.2; }
-  }
 
   /* ── NAV ────────────────────────────────────── */
   nav {
@@ -675,16 +655,12 @@
 </head>
 <body>
 
-<!-- cursors -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav">
   <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close">&times;</button>
   <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
   <a href="#welcome" onclick="this.parentElement.classList.remove('open')">Welcome Guide</a>
-  <a href="#resources" onclick="this.parentElement.classList.remove('open')">Resources</a>
   <a href="#testimonials" onclick="this.parentElement.classList.remove('open')">Reviews</a>
   <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
 </div>
@@ -695,7 +671,6 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#welcome">Welcome Guide</a></li>
-    <li><a href="#resources">Resources</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -739,31 +714,6 @@
   </div>
 </section>
 
-<!-- SEAM -->
-<div class="history-seam">
-  <div class="seam-label">Est. 1913</div>
-  <div class="seam-scroll">
-    <span>Lunada Bay</span><span>&middot;</span>
-    <span>Malaga Cove</span><span>&middot;</span>
-    <span>Portuguese Bend</span><span>&middot;</span>
-    <span>Rolling Hills</span><span>&middot;</span>
-    <span>Rolling Hills Estates</span><span>&middot;</span>
-    <span>Silver Spur</span><span>&middot;</span>
-    <span>Valmonte</span><span>&middot;</span>
-    <span>The Riviera</span><span>&middot;</span>
-    <span>Rancho Palos Verdes</span><span>&middot;</span>
-    <span>Lunada Bay</span><span>&middot;</span>
-    <span>Malaga Cove</span><span>&middot;</span>
-    <span>Portuguese Bend</span><span>&middot;</span>
-    <span>Rolling Hills</span><span>&middot;</span>
-    <span>Rolling Hills Estates</span><span>&middot;</span>
-    <span>Silver Spur</span><span>&middot;</span>
-    <span>Valmonte</span><span>&middot;</span>
-    <span>The Riviera</span><span>&middot;</span>
-    <span>Rancho Palos Verdes</span><span>&middot;</span>
-  </div>
-</div>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
@@ -787,178 +737,6 @@
         </div>
         <a href="#contact" class="sig-cta">Work with me &rarr;</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEIGHBORHOODS -->
-<section id="neighborhoods">
-  <div class="hoods-header">
-    <div>
-      <div class="section-tag">The Peninsula</div>
-      <h2 class="section-heading">Find your place<br>on <em>the Hill.</em></h2>
-    </div>
-  </div>
-  <div class="hoods-grid">
-    <a href="#contact" class="hood-card reveal">
-      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/o607sthxr9jhjwmqebxj" alt="Lunada Bay">
-      <div class="hood-card-arrow">&nearr;</div>
-      <div class="hood-card-content">
-        <div class="hood-card-tag">PVE &middot; Surf &middot; Views</div>
-        <div class="hood-card-name">Lunada Bay</div>
-        <div class="hood-card-price">From $2.8M</div>
-      </div>
-    </a>
-    <a href="#contact" class="hood-card reveal reveal-delay-1">
-      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/o607sthxr9jhjwmqebxj" alt="Malaga Cove">
-      <div class="hood-card-arrow">&nearr;</div>
-      <div class="hood-card-content">
-        <div class="hood-card-tag">PVE &middot; Historic &middot; Plaza</div>
-        <div class="hood-card-name">Malaga Cove</div>
-        <div class="hood-card-price">From $3.4M</div>
-      </div>
-    </a>
-    <a href="#contact" class="hood-card reveal reveal-delay-2">
-      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/zverjeorqcaigxqhjxmz" alt="Rancho Palos Verdes">
-      <div class="hood-card-arrow">&nearr;</div>
-      <div class="hood-card-content">
-        <div class="hood-card-tag">RPV &middot; Coastal &middot; Family</div>
-        <div class="hood-card-name">Rancho Palos Verdes</div>
-        <div class="hood-card-price">From $1.6M</div>
-      </div>
-    </a>
-    <a href="#contact" class="hood-card reveal">
-      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/di4dokutbsissq1mzsac" alt="Rolling Hills Estates">
-      <div class="hood-card-arrow">&nearr;</div>
-      <div class="hood-card-content">
-        <div class="hood-card-tag">RHE &middot; Trails &middot; Schools</div>
-        <div class="hood-card-name">Rolling Hills Estates</div>
-        <div class="hood-card-price">From $2.4M</div>
-      </div>
-    </a>
-    <a href="#contact" class="hood-card reveal reveal-delay-1">
-      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/wloqbdur3q5bikzee3jt" alt="Rolling Hills">
-      <div class="hood-card-arrow">&nearr;</div>
-      <div class="hood-card-content">
-        <div class="hood-card-tag">Gated &middot; Equestrian &middot; Private</div>
-        <div class="hood-card-name">Rolling Hills</div>
-        <div class="hood-card-price">From $3.6M</div>
-      </div>
-    </a>
-    <a href="#contact" class="hood-card reveal reveal-delay-2">
-      <img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/h2m6enniq987eficxuhx" alt="The Riviera">
-      <div class="hood-card-arrow">&nearr;</div>
-      <div class="hood-card-content">
-        <div class="hood-card-tag">Beach &middot; Walkable &middot; Village</div>
-        <div class="hood-card-name">The Riviera</div>
-        <div class="hood-card-price">Riviera Village lifestyle</div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- MARKET -->
-<section id="market">
-  <div class="market-inner">
-    <div class="section-tag reveal">Market Intelligence</div>
-    <h2 class="section-heading reveal reveal-delay-1">Peninsula market<br><em>by the numbers.</em></h2>
-    <p class="body-text reveal reveal-delay-2" style="max-width:720px;">Monthly data from closed CRMLS transactions across all four Peninsula cities. Real numbers, not estimates.</p>
-    <div class="market-grid">
-      <div>
-        <div class="market-reports">
-          <a href="/market/2026-03/" class="market-report-link reveal">
-            <span class="market-report-month">March 2026</span>
-            <span class="market-report-stat">46 sales &middot; $2.02M</span>
-          </a>
-          <a href="/market/2026-02/" class="market-report-link reveal reveal-delay-1">
-            <span class="market-report-month">February 2026</span>
-            <span class="market-report-stat">24 sales &middot; $2.34M</span>
-          </a>
-          <a href="/market/2026-01/" class="market-report-link reveal reveal-delay-1">
-            <span class="market-report-month">January 2026</span>
-            <span class="market-report-stat">37 sales &middot; $1.90M</span>
-          </a>
-          <a href="/market/2025-12/" class="market-report-link reveal reveal-delay-2">
-            <span class="market-report-month">December 2025</span>
-            <span class="market-report-stat">41 sales &middot; $2.08M</span>
-          </a>
-          <a href="/market/2025-11/" class="market-report-link reveal reveal-delay-2">
-            <span class="market-report-month">November 2025</span>
-            <span class="market-report-stat">42 sales &middot; $2.22M</span>
-          </a>
-          <a href="/market/2025-10/" class="market-report-link reveal reveal-delay-3">
-            <span class="market-report-month">October 2025</span>
-            <span class="market-report-stat">50 sales &middot; $2.00M</span>
-          </a>
-        </div>
-        <a href="/market/" class="market-view-all reveal reveal-delay-3">View all 34 monthly reports &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCHOOLS -->
-<section id="schools">
-  <div class="schools-inner">
-    <div class="section-tag reveal">Schools</div>
-    <h2 class="section-heading reveal reveal-delay-1">PVPUSD &mdash; where <em>every family</em> starts.</h2>
-    <p class="body-text reveal reveal-delay-2" style="max-width:720px;">The Palos Verdes Peninsula Unified School District is the #1 reason families move here. Blue Ribbon campuses, IB programs, STEAM magnets, and feeder patterns that families plan around years in advance. I know every campus because my kids went through them.</p>
-    <div class="schools-grid">
-      <div class="school-card reveal">
-        <div class="school-level">High School</div>
-        <div class="school-name">Palos Verdes High</div>
-        <p class="school-desc">Sea Kings. IB programme, strong arts and athletics. Feeds from Malaga Cove, Lunada Bay, Montemalaga, Valmonte.</p>
-        <span class="school-rating">&#9733; 9/10 GreatSchools</span>
-      </div>
-      <div class="school-card reveal reveal-delay-1">
-        <div class="school-level">High School</div>
-        <div class="school-name">Peninsula High</div>
-        <p class="school-desc">Panthers. Strong STEM, competitive athletics. Feeds from Miraleste, Silver Spur, Soleado, Mira Catalina.</p>
-        <span class="school-rating">&#9733; 9/10 GreatSchools</span>
-      </div>
-      <div class="school-card reveal reveal-delay-2">
-        <div class="school-level">Elementary</div>
-        <div class="school-name">Silver Spur</div>
-        <p class="school-desc">Blue Ribbon school. Walkable from Silver Spur commercial district. Strong parent involvement.</p>
-        <span class="school-rating">&#9733; 9/10 GreatSchools</span>
-      </div>
-      <div class="school-card reveal">
-        <div class="school-level">Elementary</div>
-        <div class="school-name">Cornerstone at Pedregal</div>
-        <p class="school-desc">STEAM magnet school. Project-based learning, technology integration, draws from across the peninsula.</p>
-        <span class="school-rating">&#9733; 8/10 GreatSchools</span>
-      </div>
-      <div class="school-card reveal reveal-delay-1">
-        <div class="school-level">Intermediate</div>
-        <div class="school-name">Miraleste</div>
-        <p class="school-desc">Strong academics, arts programs, active parent community. Feeds into Peninsula High School.</p>
-        <span class="school-rating">&#9733; 8/10 GreatSchools</span>
-      </div>
-      <div class="school-card reveal reveal-delay-2">
-        <div class="school-level">Private K-12</div>
-        <div class="school-name">Chadwick School</div>
-        <p class="school-desc">Independent college prep on 45 acres in RPV. Small classes, strong arts and outdoor education.</p>
-        <span class="school-rating">&#9733; Private</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HISTORY -->
-<section id="history">
-  <div class="history-inner">
-    <div class="history-photos reveal">
-      <img class="history-photo" src="https://palosverdeshistory.org/assets/nodeimg/46/max/square:0/version:4f0a1324b2d5531117aa41c9a1693e8e" alt="Historic Palos Verdes">
-      <img class="history-photo" src="https://palosverdeshistory.org/assets/nodeimg/946/max/square:0/version:0e49c082ab216de20f0e6c6730efe301" alt="Historic PV document">
-      <img class="history-photo" src="https://palosverdeshistory.org/assets/nodeimg/954/max/square:0/version:cac40d1daaca2aa0071eed2dbb4d7ab8" alt="Palos Verdes history">
-      <img class="history-photo" src="https://palosverdeshistory.org/assets/nodeimg/46/max/square:0/version:4f0a1324b2d5531117aa41c9a1693e8e" alt="PV archive">
-    </div>
-    <div class="history-content">
-      <div class="section-tag reveal">Rooted in Place</div>
-      <h2 class="section-heading reveal reveal-delay-1">Over a century<br><em>of history here.</em></h2>
-      <p class="body-text reveal reveal-delay-2">Palos Verdes was first developed in 1913 as a planned community of extraordinary ambition &mdash; Spanish architecture, preserved open space, and a commitment to beauty that still shapes how the Peninsula looks today.</p>
-      <p class="body-text reveal reveal-delay-2">Understanding where a community comes from helps you understand what it protects. That history is part of why homes here hold their value &mdash; and their character.</p>
-      <a href="https://palosverdeshistory.org" target="_blank" class="history-link reveal reveal-delay-3">Explore the Palos Verdes Community Archives &rarr;</a>
     </div>
   </div>
 </section>
@@ -1067,52 +845,6 @@
         <div class="concierge-card-item"><span class="concierge-card-check">&#10003;</span> Kitchen &amp; bath cosmetic updates</div>
         <div class="concierge-card-item"><span class="concierge-card-check">&#10003;</span> Roofing &amp; HVAC repairs</div>
         <div class="concierge-card-item"><span class="concierge-card-check">&#10003;</span> Decluttering &amp; hauling</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESOURCES -->
-<section id="resources">
-  <div class="resources-inner">
-    <div class="section-tag reveal">Guides &amp; Resources</div>
-    <h2 class="section-heading reveal reveal-delay-1">Everything you need,<br><em>before you need it.</em></h2>
-    <div class="resources-grid">
-      <div class="resource-card reveal">
-        <div class="resource-type">For Sellers</div>
-        <div class="resource-title">Listing Presentation</div>
-        <p class="resource-desc">Our full marketing strategy &mdash; how we price, stage, photograph, and position your home to sell for top dollar on the Peninsula.</p>
-        <a href="guides/listing-presentation.pdf" target="_blank" class="resource-btn">Download PDF</a>
-      </div>
-      <div class="resource-card reveal reveal-delay-1">
-        <div class="resource-type">For Buyers</div>
-        <div class="resource-title">Buyer's Guide</div>
-        <p class="resource-desc">Step-by-step walkthrough of the buying process, from pre-qualification through closing. Key terms, timelines, and what to expect.</p>
-        <a href="guides/buyers-guide.pdf" target="_blank" class="resource-btn">Download PDF</a>
-      </div>
-      <div class="resource-card reveal reveal-delay-2">
-        <div class="resource-type">Meet the Team</div>
-        <div class="resource-title">AREA Marketing Commitment</div>
-        <p class="resource-desc">How Accardo Real Estate Associates markets your property &mdash; digital, print, social, network, and boots on the ground.</p>
-        <a href="guides/team-marketing.pdf" target="_blank" class="resource-btn">Download PDF</a>
-      </div>
-      <div class="resource-card reveal">
-        <div class="resource-type">Neighborhood Guide</div>
-        <div class="resource-title">Peninsula Neighborhoods</div>
-        <p class="resource-desc">Every neighborhood on the Hill &mdash; character, price ranges, school zones, and what daily life actually looks like in each one.</p>
-        <a href="guides/neighborhoods/" class="resource-btn">Read the Guide</a>
-      </div>
-      <div class="resource-card reveal reveal-delay-1">
-        <div class="resource-type">School Guide</div>
-        <div class="resource-title">PVPUSD School Guide</div>
-        <p class="resource-desc">Campus-by-campus breakdown of every school in the district. Test scores, programs, feeder patterns, and what parents actually say.</p>
-        <a href="guides/schools/" class="resource-btn">Read the Guide</a>
-      </div>
-      <div class="resource-card reveal reveal-delay-2">
-        <div class="resource-type">Market Data</div>
-        <div class="resource-title">Monthly Market Reports</div>
-        <p class="resource-desc">34 months of closed transaction data across all four Peninsula cities. Median prices, DOM, price per sqft, and notable sales.</p>
-        <a href="/market/" class="resource-btn">View Reports</a>
       </div>
     </div>
   </div>
@@ -1315,26 +1047,6 @@
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <script>
-  // Cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  if (cursor && ring) {
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-    });
-    function animRing() {
-      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(animRing);
-    }
-    animRing();
-    document.querySelectorAll('a,button,input,select,textarea').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-    });
-  }
 
   // Nav scroll
   window.addEventListener('scroll', () => {
