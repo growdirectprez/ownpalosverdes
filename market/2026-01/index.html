@@ -3,14 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY3DD9BYZ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZY3DD9BYZ2');
-</script>
 <title>January 2026 Palos Verdes Market Report | OwnPalosVerdes.com</title>
 <meta name="description" content="Peninsula housing market data for January 2026. Median price, days on market, price per sqft, and city breakdowns for RPV, PVE, RHE, and Rolling Hills.">
 <meta property="og:title" content="January 2026 PV Peninsula Market Report">
@@ -24,9 +16,10 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --sand: #F4EFE6; --sand-mid: #E8DDD0; --sand-dark: #C8B99A;
-    --ocean: #1C3A4A; --ocean-mid: #2C5568; --foam: #F9F7F4;
-    --drift: #8A9BA8; --stone: #4A5A62; --white: #FFFFFF; --ink: #1A2428;
+    --ink: #1A1A1A; --stone: #3D3D3D; --drift: #5A5A5A;
+    --foam: #F7F5F2; --sand: #EDE8E0; --sand-mid: #E0D9CE;
+    --teal: #2E6E68; --teal-hover: #245855; --copper: #C97D54;
+    --error: #B44A3E; --white: #FFFFFF;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Outfit', system-ui, sans-serif;
   }
@@ -38,33 +31,33 @@
     position: sticky; top: 0; z-index: 100; padding: 0 3rem;
     display: flex; align-items: center; justify-content: space-between;
     height: 68px; background: rgba(249,247,244,0.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(200,185,154,0.25);
+    border-bottom: 1px solid rgba(224,217,206,0.25);
   }
-  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); text-decoration: none; }
-  .nav-logo span { font-style: italic; color: var(--stone); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+  .nav-logo span { font-style: italic; color: var(--copper); }
   .nav-back { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
-  .nav-back:hover { color: var(--ocean); }
+  .nav-back:hover { color: var(--ink); }
 
   /* ── HERO ─────── */
   .report-hero {
-    background: var(--ocean); padding: 5rem 3rem 4rem; text-align: center;
+    background: var(--ink); padding: 5rem 3rem 4rem; text-align: center;
   }
   .report-hero .eyebrow {
     font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--sand-dark); margin-bottom: 1rem;
+    color: var(--sand-mid); margin-bottom: 1rem;
   }
   .report-hero h1 {
     font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 400; color: var(--sand); line-height: 1.15; margin-bottom: 1rem;
   }
   .report-hero h1 em { font-style: italic; }
-  .report-hero .subtitle { color: var(--drift); font-size: 0.95rem; font-weight: 300; }
+  .report-hero .subtitle { color: var(--sand-mid); font-size: 0.95rem; font-weight: 300; }
   .report-nav {
     display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;
   }
   .report-nav a {
     font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sand-dark); text-decoration: none; opacity: 0.7; transition: opacity 0.2s;
+    color: var(--sand-mid); text-decoration: none; opacity: 0.7; transition: opacity 0.2s;
   }
   .report-nav a:hover { opacity: 1; }
 
@@ -75,14 +68,14 @@
   }
   .stat-card {
     background: var(--white); padding: 2rem; text-align: center;
-    box-shadow: 0 2px 20px rgba(28,58,74,0.06);
+    box-shadow: 0 2px 20px rgba(26,26,26,0.06);
   }
   .stat-label {
     font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--stone); margin-bottom: 0.5rem;
+    color: var(--drift); margin-bottom: 0.5rem;
   }
   .stat-value {
-    font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--ocean);
+    font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--ink);
   }
   .stat-change {
     font-size: 0.75rem; margin-top: 0.4rem;
@@ -94,15 +87,15 @@
   .table-section { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
   .section-label {
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--stone); margin-bottom: 0.5rem;
+    color: var(--copper); margin-bottom: 0.5rem;
     display: flex; align-items: center; gap: 0.8rem;
   }
   .section-label::before {
-    content: ''; width: 28px; height: 1px; background: var(--stone);
+    content: ''; width: 28px; height: 1px; background: var(--copper);
   }
   .table-section h2 {
     font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
-    color: var(--ocean); margin-bottom: 2rem;
+    color: var(--ink); margin-bottom: 2rem;
   }
   .table-section h2 em { font-style: italic; }
   table {
@@ -111,7 +104,7 @@
   thead th {
     text-align: left; padding: 0.8rem 1rem;
     font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--stone); border-bottom: 2px solid var(--sand-mid);
+    color: var(--drift); border-bottom: 2px solid var(--sand-mid);
     font-weight: 400;
   }
   tbody td {
@@ -120,7 +113,7 @@
   }
   tbody tr:hover { background: rgba(244,239,230,0.5); }
   tbody a {
-    color: var(--ocean); text-decoration: none; font-size: 0.75rem;
+    color: var(--teal); text-decoration: none; font-size: 0.75rem;
     letter-spacing: 0.05em;
   }
   tbody a:hover { text-decoration: underline; }
@@ -131,28 +124,28 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
   }
   .platform-card {
-    background: var(--white); padding: 2rem; box-shadow: 0 2px 16px rgba(28,58,74,0.05);
+    background: var(--white); padding: 2rem; box-shadow: 0 2px 16px rgba(26,26,26,0.05);
   }
   .platform-card h3 {
     font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
-    color: var(--ocean); margin-bottom: 1rem;
+    color: var(--ink); margin-bottom: 1rem;
   }
   .platform-card ul { list-style: none; }
   .platform-card li { margin-bottom: 0.6rem; }
   .platform-card a {
-    color: var(--ocean); text-decoration: none; font-size: 0.85rem;
-    border-bottom: 1px solid rgba(28,58,74,0.2); padding-bottom: 1px;
+    color: var(--teal); text-decoration: none; font-size: 0.85rem;
+    border-bottom: 1px solid rgba(26,26,26,0.2); padding-bottom: 1px;
     transition: border-color 0.2s;
   }
-  .platform-card a:hover { border-color: var(--ocean); }
+  .platform-card a:hover { border-color: var(--teal); }
   .platform-card .tag {
     font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--stone); margin-left: 0.5rem;
+    color: var(--drift); margin-left: 0.5rem;
   }
 
   /* ── ARCHIVE ─────── */
   .archive-section {
-    background: var(--ocean); padding: 4rem 3rem; text-align: center;
+    background: var(--ink); padding: 4rem 3rem; text-align: center;
   }
   .archive-section h3 {
     font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
@@ -163,48 +156,36 @@
     max-width: 900px; margin: 0 auto;
   }
   .archive-grid a {
-    font-size: 0.75rem; color: var(--drift); text-decoration: none;
-    padding: 0.4rem 0.8rem; border: 1px solid rgba(138,155,168,0.3);
+    font-size: 0.75rem; color: var(--sand-mid); text-decoration: none;
+    padding: 0.4rem 0.8rem; border: 1px solid rgba(90,90,90,0.3);
     transition: all 0.2s;
   }
   .archive-grid a:hover, .archive-grid a.active {
-    color: var(--sand); border-color: var(--sand-dark);
+    color: var(--sand); border-color: var(--sand);
   }
 
   /* ── FOOTER ─────── */
   footer {
-    background: var(--ink); padding: 3rem;
-    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem;
+    padding: 3rem; text-align: center;
+    font-size: 0.75rem; color: var(--drift);
   }
-  .footer-logo { font-family: var(--serif); font-size: 1.3rem; color: var(--sand); }
-  .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; margin-top: 0.5rem; }
-  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-dark); margin-bottom: 1rem; }
-  .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
-  .footer-links a { font-size: 0.78rem; color: var(--stone); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--sand-dark); }
-  .footer-bottom {
-    background: var(--ink); padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid rgba(200,185,154,0.15);
-  }
-  .footer-bottom p { font-size: 0.65rem; color: var(--stone); }
-  .footer-bottom a { color: var(--stone); text-decoration: none; }
-  .footer-bottom a:hover { color: var(--sand-dark); }
+  footer a { color: var(--teal); text-decoration: none; }
 
   /* ── CTA BAR ─────── */
   .cta-bar {
     background: var(--sand); padding: 3rem 2rem; text-align: center;
   }
   .cta-bar p {
-    font-family: var(--serif); font-size: 1.2rem; color: var(--ocean);
+    font-family: var(--serif); font-size: 1.2rem; color: var(--ink);
     margin-bottom: 1rem;
   }
   .cta-bar a {
     display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 12px 28px; border: 1px solid var(--ocean);
-    color: var(--ocean); text-decoration: none; font-family: var(--sans);
+    text-transform: uppercase; padding: 12px 28px; border: 1px solid var(--ink);
+    color: var(--ink); text-decoration: none; font-family: var(--sans);
     transition: background 0.2s, color 0.2s;
   }
-  .cta-bar a:hover { background: var(--ocean); color: var(--white); }
+  .cta-bar a:hover { background: var(--ink); color: var(--white); }
 
   /* ── RESPONSIVE ─────── */
   @media (max-width: 768px) {
@@ -213,8 +194,6 @@
     .stats-grid { grid-template-columns: 1fr 1fr; }
     .table-section { overflow-x: auto; }
     .platform-links { grid-template-columns: 1fr; }
-    footer { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
-    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
@@ -282,7 +261,7 @@
         <td>10</td>
         <td>42</td>
         <td>$1,023/ft&sup2;</td>
-        <td><a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
       <tr>
         <td><strong>RPV</strong></td>
@@ -290,7 +269,7 @@
         <td>16</td>
         <td>91</td>
         <td>$751/ft&sup2;</td>
-        <td><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
       <tr>
         <td><strong>RHE</strong></td>
@@ -298,7 +277,7 @@
         <td>5</td>
         <td>43</td>
         <td>$763/ft&sup2;</td>
-        <td><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
       <tr>
         <td><strong>RH</strong></td>
@@ -306,7 +285,7 @@
         <td>3</td>
         <td>225</td>
         <td>$995/ft&sup2;</td>
-        <td><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">Redfin</a> &middot; <a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Compass</a></td>
       </tr>
     </tbody>
   </table>
@@ -328,7 +307,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>609 Paseo Del Mar</td>
+        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/609-Paseo-Del-Mar-90274/home" target="_blank" rel="noopener">609 Paseo Del Mar</a></td>
         <td>PVE</td>
         <td>$9,600,000</td>
         <td>5/6</td>
@@ -336,7 +315,7 @@
         <td>68 days</td>
       </tr>
       <tr>
-        <td>2 Pine Tree</td>
+        <td><a href="https://www.redfin.com/CA/Rolling-Hills/2-Pine-Tree-90274/home" target="_blank" rel="noopener">2 Pine Tree</a></td>
         <td>RH</td>
         <td>$5,500,000</td>
         <td>7/8</td>
@@ -344,7 +323,7 @@
         <td>370 days</td>
       </tr>
       <tr>
-        <td>1640 Paseo Del Mar</td>
+        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/1640-Paseo-Del-Mar-90274/home" target="_blank" rel="noopener">1640 Paseo Del Mar</a></td>
         <td>PVE</td>
         <td>$5,150,000</td>
         <td>5/6</td>
@@ -352,7 +331,7 @@
         <td>246 days</td>
       </tr>
       <tr>
-        <td>2 Eucalyptus</td>
+        <td><a href="https://www.redfin.com/CA/Rolling-Hills/2-Eucalyptus-90274/home" target="_blank" rel="noopener">2 Eucalyptus</a></td>
         <td>RH</td>
         <td>$5,085,000</td>
         <td>6/4</td>
@@ -360,7 +339,7 @@
         <td>42 days</td>
       </tr>
       <tr>
-        <td>1024 Via Nogales</td>
+        <td><a href="https://www.redfin.com/CA/Palos-Verdes-Estates/1024-Via-Nogales-90274/home" target="_blank" rel="noopener">1024 Via Nogales</a></td>
         <td>PVE</td>
         <td>$4,950,000</td>
         <td>5/5</td>
@@ -379,6 +358,15 @@
       <li><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
       <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
       <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
+    </ul>
+  </div>
+  <div class="platform-card">
+    <h3>Market Data on Redfin</h3>
+    <ul>
+      <li><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">PVE Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">RPV Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">RHE Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">RH Housing Market</a> <span class="tag">Trends</span></li>
     </ul>
   </div>
 </section>
@@ -430,50 +418,13 @@
 </section>
 
 <footer>
-  <div>
-    <div class="footer-logo">Angelique Lyle</div>
-    <div class="footer-sub">Accardo Real Estate Associates<br>CA DRE# 01475592<br>Compass &middot; 550 Silver Spur Rd, Suite 110<br>Rancho Palos Verdes, CA 90275</div>
-  </div>
-  <div>
-    <div class="footer-col-title">Navigate</div>
-    <div class="footer-links">
-      <a href="/#about">About Angelique</a>
-      <a href="/#welcome">Welcome Guide</a>
-      <a href="/#testimonials">Reviews</a>
-      <a href="/#contact">Contact</a>
-    </div>
-  </div>
-  <div>
-    <div class="footer-col-title">Guides &amp; Reports</div>
-    <div class="footer-links">
-      <a href="/guides/neighborhoods/">Neighborhood Guide</a>
-      <a href="/guides/schools/">School Guide</a>
-      <a href="/guides/lifestyle/">Life on the Hill</a>
-      <a href="/market/">Monthly Market Reports</a>
-    </div>
-  </div>
-  <div>
-    <div class="footer-col-title">Connect</div>
-    <div class="footer-links">
-      <a href="tel:3107518335">(310) 751-8335</a>
-      <a href="mailto:angelique.lyle@compass.com">angelique.lyle@compass.com</a>
-      <a href="https://angeliquelyle.com" target="_blank" rel="noopener">angeliquelyle.com</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;">
-      <a href="https://accardorealestate.com" target="_blank" rel="noopener"><img src="/images/logos/area-logo-white.png" alt="AREA — Accardo Real Estate Associates" style="height:56px;opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
-      <a href="https://www.compass.com" target="_blank" rel="noopener" style="opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-        <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="21" font-family="'Outfit', system-ui, sans-serif" font-size="18" font-weight="400" letter-spacing="0.18em" fill="white">COMPASS</text>
-        </svg>
-      </a>
-    </div>
-  </div>
+  <p>&copy; 2026 Angelique Lyle &middot; Compass &middot; DRE# 01475592</p>
+  <p style="margin-top:0.5rem;"><a href="/">OwnPalosVerdes.com</a></p>
+  <p style="margin-top:1rem; font-size:0.65rem; max-width:700px; margin-left:auto; margin-right:auto;">
+    Data sourced from CRMLS. Deemed reliable but not guaranteed.
+    Compass is a licensed real estate broker. Equal Housing Opportunity.
+  </p>
 </footer>
-<div class="footer-bottom">
-  <p>&copy; 2026 Angelique Lyle &middot; Accardo Real Estate Associates &middot; Compass &middot; CA DRE# 01475592 &middot; Equal Housing Opportunity</p>
-  <p><a href="https://angeliquelyle.com/terms-and-conditions" target="_blank" rel="noopener">Privacy Policy</a></p>
-  <p style="margin-top:0.5rem; font-size:0.65rem; max-width:700px; margin-left:auto; margin-right:auto;">Data sourced from CRMLS. Deemed reliable but not guaranteed.</p>
-</div>
 
 </body>
 </html>
