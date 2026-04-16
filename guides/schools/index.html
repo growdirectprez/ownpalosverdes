@@ -25,16 +25,17 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --sand: #F4EFE6;
-    --sand-mid: #E8DDD0;
-    --sand-dark: #C8B99A;
-    --ocean: #1C3A4A;
-    --ocean-mid: #2C5568;
-    --foam: #F9F7F4;
-    --drift: #8A9BA8;
-    --stone: #4A5A62;
+    --ink: #1A1A1A;
+    --stone: #3D3D3D;
+    --drift: #5A5A5A;
+    --foam: #F7F5F2;
+    --sand: #EDE8E0;
+    --sand-mid: #E0D9CE;
+    --teal: #2E6E68;
+    --teal-hover: #245855;
+    --copper: #C97D54;
+    --error: #B44A3E;
     --white: #FFFFFF;
-    --ink: #1A2428;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Outfit', system-ui, sans-serif;
   }
@@ -46,13 +47,13 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 0 3rem; display: flex; align-items: center; justify-content: space-between;
-    height: 68px; background: rgba(249,247,244,0.92);
+    height: 68px; background: rgba(247,245,242,0.92);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(200,185,154,0.25);
+    border-bottom: 1px solid rgba(224,217,206,0.25);
     transition: box-shadow 0.3s;
   }
-  nav.scrolled { box-shadow: 0 2px 24px rgba(28,58,74,0.08); }
-  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ocean); letter-spacing: 0.02em; text-decoration: none; }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(26,26,26,0.08); }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); letter-spacing: 0.02em; text-decoration: none; }
   .nav-logo span { font-style: italic; color: var(--stone); }
   .nav-links {
     list-style: none; display: flex; gap: 2rem; align-items: center;
@@ -62,17 +63,17 @@
     color: var(--stone); text-decoration: none; font-weight: 400;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--ocean); }
+  .nav-links a:hover { color: var(--ink); }
   .nav-cta {
     font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 10px 22px; border: 1px solid var(--ocean); color: var(--ocean);
+    padding: 10px 22px; border: 1px solid var(--ink); color: var(--ink);
     text-decoration: none; font-weight: 500; transition: all 0.2s;
   }
-  .nav-cta:hover { background: var(--ocean); color: var(--foam); }
+  .nav-cta:hover { background: var(--ink); color: var(--foam); }
   .nav-menu {
     display: none; background: none; border: none; font-family: var(--sans);
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--ocean); cursor: pointer;
+    color: var(--ink); cursor: pointer;
   }
   .mobile-nav {
     position: fixed; inset: 0; z-index: 200; background: var(--foam);
@@ -81,34 +82,34 @@
   .mobile-nav.open { display: flex; }
   .mobile-nav a {
     font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--ocean); text-decoration: none;
+    color: var(--ink); text-decoration: none;
   }
   .mobile-nav-close {
     position: absolute; top: 1.5rem; right: 1.5rem;
-    background: none; border: none; font-size: 2rem; color: var(--ocean); cursor: pointer;
+    background: none; border: none; font-size: 2rem; color: var(--ink); cursor: pointer;
   }
 
   /* ── HERO ────────────────────────────────────── */
   .hero {
-    background: var(--ocean); padding: 7rem 3rem 3rem; text-align: center;
+    background: var(--ink); padding: 7rem 3rem 3rem; text-align: center;
     position: relative; overflow: hidden;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 30% 80%, rgba(200,185,154,0.08) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 30% 80%, rgba(224,217,206,0.08) 0%, transparent 60%);
   }
   .hero-eyebrow {
     font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--sand-dark); margin-bottom: 1.5rem; position: relative;
+    color: var(--copper); margin-bottom: 1.5rem; position: relative;
   }
   .hero h1 {
     font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem);
     font-weight: 400; line-height: 1.1; color: var(--sand); margin-bottom: 1.5rem;
     position: relative;
   }
-  .hero h1 em { font-style: italic; color: var(--sand-dark); }
+  .hero h1 em { font-style: italic; color: var(--copper); }
   .hero-sub {
-    font-size: 0.92rem; line-height: 1.8; color: var(--drift); max-width: 640px;
+    font-size: 0.92rem; line-height: 1.8; color: var(--sand); max-width: 640px;
     margin: 0 auto; font-weight: 300; position: relative;
   }
 
@@ -121,11 +122,11 @@
   .section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--stone); }
   .section-heading {
     font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 400; line-height: 1.15; color: var(--ocean); margin-bottom: 1.5rem;
+    font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem;
   }
   .section-heading em { font-style: italic; }
   .body-text { font-size: 0.92rem; line-height: 1.85; color: var(--stone); font-weight: 300; margin-bottom: 1rem; }
-  .body-text strong { font-weight: 500; color: var(--ocean); }
+  .body-text strong { font-weight: 500; color: var(--ink); }
 
   .content-section { padding: 5rem 3rem; max-width: 960px; margin: 0 auto; }
   .content-section-wide { padding: 5rem 3rem; }
@@ -141,7 +142,7 @@
   }
   .how-card-level {
     font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
-    color: var(--ocean); margin-bottom: 0.75rem;
+    color: var(--ink); margin-bottom: 0.75rem;
   }
   .how-card p { font-size: 0.85rem; line-height: 1.7; color: var(--stone); font-weight: 300; }
 
@@ -160,10 +161,10 @@
     vertical-align: top;
   }
   .school-table td:first-child {
-    color: var(--ocean); font-weight: 400;
+    color: var(--ink); font-weight: 400;
   }
   .school-table tr:last-child td { border-bottom: none; }
-  .school-table tr:hover td { background: rgba(244,239,230,0.5); }
+  .school-table tr:hover td { background: rgba(237,232,224,0.5); }
 
   /* ── HS COMPARISON ──────────────────────────── */
   .hs-compare {
@@ -179,10 +180,10 @@
   }
   .hs-card h3 {
     font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
-    color: var(--ocean); margin-bottom: 0.25rem;
+    color: var(--ink); margin-bottom: 0.25rem;
   }
   .hs-card-schedule {
-    font-size: 0.78rem; font-weight: 500; color: var(--ocean);
+    font-size: 0.78rem; font-weight: 500; color: var(--ink);
     letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.25rem;
     padding-bottom: 1.25rem; border-bottom: 1px solid var(--sand-mid);
   }
@@ -195,14 +196,14 @@
 
   /* ── CALLOUT ─────────────────────────────────── */
   .callout {
-    background: var(--ocean); padding: 2.5rem; margin-top: 2rem;
+    background: var(--ink); padding: 2.5rem; margin-top: 2rem;
   }
   .callout h3 {
     font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
     color: var(--sand); margin-bottom: 0.75rem;
   }
-  .callout p { font-size: 0.88rem; line-height: 1.75; color: var(--drift); font-weight: 300; }
-  .callout strong { color: var(--sand-dark); font-weight: 500; }
+  .callout p { font-size: 0.88rem; line-height: 1.75; color: var(--sand); font-weight: 300; }
+  .callout strong { color: var(--copper); font-weight: 500; }
 
   /* ── PERMIT DOCS ─────────────────────────────── */
   .doc-list {
@@ -214,7 +215,7 @@
   }
   .doc-list li::before {
     content: ''; position: absolute; left: 0; top: 0.85rem;
-    width: 6px; height: 6px; border: 1px solid var(--sand-dark);
+    width: 6px; height: 6px; border: 1px solid var(--sand-mid);
   }
 
   /* ── PRIVATE SCHOOL CARDS ──────────────────── */
@@ -227,7 +228,7 @@
   }
   .private-card h4 {
     font-family: var(--serif); font-size: 1.05rem; font-weight: 400;
-    color: var(--ocean); margin-bottom: 0.15rem;
+    color: var(--ink); margin-bottom: 0.15rem;
   }
   .private-card-grades {
     font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
@@ -237,18 +238,18 @@
 
   /* ── CTA BAR ────────────────────────────────── */
   .cta-bar {
-    background: var(--ocean); padding: 4rem 3rem; text-align: center;
+    background: var(--ink); padding: 4rem 3rem; text-align: center;
   }
   .cta-bar h2 {
     font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 400; color: var(--sand); margin-bottom: 0.75rem;
   }
   .cta-bar p {
-    font-size: 0.92rem; color: var(--drift); font-weight: 300; margin-bottom: 2rem;
+    font-size: 0.92rem; color: var(--sand); font-weight: 300; margin-bottom: 2rem;
   }
   .cta-btn {
     font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 14px 32px; background: var(--sand-dark); color: var(--ocean);
+    padding: 14px 32px; background: var(--sand); color: var(--ink);
     border: none; font-family: var(--sans); font-weight: 500;
     text-decoration: none; display: inline-block;
     transition: background 0.2s, transform 0.15s;
@@ -262,10 +263,10 @@
   }
   .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--sand); margin-bottom: 0.75rem; font-style: italic; }
   .footer-sub { font-size: 0.72rem; color: var(--stone); line-height: 1.8; }
-  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-dark); margin-bottom: 1rem; }
+  .footer-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 1rem; }
   .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
   .footer-links a { font-size: 0.78rem; color: var(--stone); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--sand-dark); }
+  .footer-links a:hover { color: var(--sand); }
   .footer-bottom {
     background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
     padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center;
@@ -498,7 +499,7 @@
   <h2 class="section-heading">Getting In <em>From Outside</em></h2>
   <p class="body-text">This is the section that matters most for buyers who own or are considering a home outside PVPUSD boundaries but want access to the schools. These paths are real, documented, and used regularly by peninsula families.</p>
 
-  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2rem 0 0.75rem;">Grandparent Permit</h3>
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ink); margin: 2rem 0 0.75rem;">Grandparent Permit</h3>
   <p class="body-text">The most commonly used out-of-district path. Available TK through 12. The student must have at least one grandparent residing inside PVPUSD boundaries. LAUSD-zoned portions of RHE and RPV (notably parts of Eastview) do not qualify as "inside PVPUSD boundaries."</p>
   <p class="body-text"><strong>Application window:</strong> April 1 &ndash; June 1 (annual). Space-dependent &mdash; approval is not guaranteed. The district recommends concurrent enrollment in your home district as a fallback.</p>
   <p class="body-text"><strong>Documents required:</strong></p>
@@ -513,13 +514,13 @@
   <p class="body-text" style="margin-top: 1rem;">Online enrollment note: when filling the district portal, enter the home address as literally <strong>"1 Grandparent Permit"</strong> &mdash; not the student's actual home address and not the grandparent's address.</p>
   <p class="body-text">The grandparent permit is a multi-generational legacy lever. It's how a family that moved "down the hill" years ago can still get grandchildren into PVPUSD today. Each child must file separately &mdash; permits are not portable across siblings.</p>
 
-  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Allen Bill (Parent Employment)</h3>
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 0.75rem;">Allen Bill (Parent Employment)</h3>
   <p class="body-text">A parent works at least 10 hours per week at a business physically located inside PVPUSD boundaries. Governed by Administrative Regulation 5.111.12. Covers K&ndash;12. Space-dependent. This path is underused &mdash; a buyer who works out of Peninsula Center, Golden Cove, or any PVE/RPV/RHE business has a viable path they may not know about.</p>
 
-  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Eastview Optional Attendance</h3>
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 0.75rem;">Eastview Optional Attendance</h3>
   <p class="body-text">This is not a permit &mdash; it's a zoning fact. Eastview (eastern RPV, adjoining San Pedro) is technically zoned for LAUSD. PVPUSD designates it an optional attendance area &mdash; TK&ndash;12 students who live there may choose PVPUSD instead. No lineage, employment, or military tie required.</p>
 
-  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Active-Duty Military</h3>
+  <h3 style="font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 0.75rem;">Active-Duty Military</h3>
   <p class="body-text">Children of active-duty U.S. military parents qualify for an interdistrict permit through a separate, expedited process.</p>
 
   <div class="callout">
@@ -566,7 +567,7 @@
   <h2 class="section-heading">Parochial <em>Schools</em></h2>
   <p class="body-text">A meaningful share of peninsula families &mdash; including families who could afford Chadwick &mdash; choose a religious K&ndash;8 for values, smaller scale, or proximity. The peninsula is well-served by Catholic and Lutheran options.</p>
 
-  <h3 style="font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ocean); margin: 2rem 0 0.75rem;">Catholic</h3>
+  <h3 style="font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin: 2rem 0 0.75rem;">Catholic</h3>
 
   <div class="school-table-wrap">
     <table class="school-table">
@@ -593,7 +594,7 @@
     </table>
   </div>
 
-  <h3 style="font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ocean); margin: 2.5rem 0 0.75rem;">Lutheran &mdash; The PV Boulevard Cluster</h3>
+  <h3 style="font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 0.75rem;">Lutheran &mdash; The PV Boulevard Cluster</h3>
   <p class="body-text">Three Lutheran K&ndash;8 schools sit on or near the peninsula boundary. Hill-native families know about them; relocating buyers typically don't.</p>
 
   <div class="school-table-wrap">
