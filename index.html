@@ -1160,13 +1160,30 @@
 <!-- FORMSPREE -->
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#contact-form', formId: 'mwvapnan' });
-  formspree('initForm', { formElement: '#guide-form', formId: 'mwvapnan' });
-  formspree('initForm', { formElement: '#value-form', formId: 'mwvapnan' });
-  formspree('initForm', { formElement: '#connect-form', formId: 'mwvapnan' });
+  // Fire a GA4 generate_lead event (tagged with the form's form_type) on a
+  // successful Formspree submit. form_type is read from the form's hidden
+  // input so it always matches what Formspree receives.
+  function trackLead(selector) {
+    var form = document.querySelector(selector);
+    var field = form && form.querySelector('[name="form_type"]');
+    var formType = field ? field.value : 'unknown';
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', { form_type: formType, form_id: 'mwvapnan' });
+    }
+  }
+  formspree('initForm', { formElement: '#contact-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#contact-form'); } });
+  formspree('initForm', { formElement: '#guide-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#guide-form'); } });
+  formspree('initForm', { formElement: '#value-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#value-form'); } });
+  formspree('initForm', { formElement: '#connect-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#connect-form'); } });
   formspree('initForm', {
     formElement: '#concierge-dl-form', formId: 'mwvapnan',
-    onSuccess: function() { window.open('guides/compass-concierge.pdf', '_blank'); }
+    onSuccess: function () {
+      trackLead('#concierge-dl-form');
+      if (typeof gtag === 'function') {
+        gtag('event', 'file_download', { file_name: 'compass-concierge.pdf', link_text: 'Compass Concierge Guide', form_type: 'concierge_booklet' });
+      }
+      window.open('guides/compass-concierge.pdf', '_blank');
+    }
   });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
