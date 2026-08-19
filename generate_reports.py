@@ -325,6 +325,11 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{SITE_URL}/market/{year}-{month:02d}/">
+<meta property="og:image" content="{SITE_URL}/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}/images/og-cover.jpg">
 <link rel="canonical" href="{SITE_URL}/market/{year}-{month:02d}/">
 <script type="application/ld+json">
 {{
@@ -689,6 +694,15 @@ def render_index(all_months, monthly_stats):
 <title>Palos Verdes Monthly Market Reports | OwnPalosVerdes.com</title>
 <meta name="description" content="Monthly housing market reports for the Palos Verdes Peninsula. Median prices, days on market, and sales data for PVE, RPV, RHE, and Rolling Hills.">
 <link rel="canonical" href="{SITE_URL}/market/">
+<meta property="og:title" content="Palos Verdes Monthly Market Reports">
+<meta property="og:description" content="Monthly housing market reports for the Palos Verdes Peninsula — median prices, days on market, and sales data for PVE, RPV, RHE, and Rolling Hills.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{SITE_URL}/market/">
+<meta property="og:image" content="{SITE_URL}/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}/images/og-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
