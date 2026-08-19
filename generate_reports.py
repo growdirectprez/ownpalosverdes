@@ -326,6 +326,19 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
 <meta property="og:type" content="article">
 <meta property="og:url" content="{SITE_URL}/market/{year}-{month:02d}/">
 <link rel="canonical" href="{SITE_URL}/market/{year}-{month:02d}/">
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{month_name} {year} Palos Verdes Market Report",
+  "description": "{desc}",
+  "url": "{SITE_URL}/market/{year}-{month:02d}/",
+  "datePublished": "{year}-{month:02d}-01",
+  "author": {{ "@type": "RealEstateAgent", "name": "Angelique Lyle", "url": "{SITE_URL}", "worksFor": {{ "@type": "RealEstateAgent", "name": "Compass" }} }},
+  "publisher": {{ "@type": "RealEstateAgent", "name": "Own Palos Verdes", "url": "{SITE_URL}" }},
+  "about": {{ "@type": "Place", "name": "Palos Verdes Peninsula", "containedInPlace": {{ "@type": "State", "name": "California" }} }}
+}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
