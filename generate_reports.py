@@ -291,6 +291,14 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY3DD9BYZ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-ZY3DD9BYZ2');
+</script>
 <title>{month_name} {year} Palos Verdes Market Report | OwnPalosVerdes.com</title>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{month_name} {year} PV Peninsula Market Report">
@@ -637,6 +645,14 @@ def render_index(all_months, monthly_stats):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY3DD9BYZ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-ZY3DD9BYZ2');
+</script>
 <title>Palos Verdes Monthly Market Reports | OwnPalosVerdes.com</title>
 <meta name="description" content="Monthly housing market reports for the Palos Verdes Peninsula. Median prices, days on market, and sales data for PVE, RPV, RHE, and Rolling Hills.">
 <link rel="canonical" href="{SITE_URL}/market/">
