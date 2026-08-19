@@ -23,6 +23,12 @@ TP_GLOB = os.path.expanduser("~/GrowDirect/Angel/Top Producer - Residential*/*.t
 OUTPUT_DIR = Path(__file__).parent / "market"
 SITE_URL = "https://ownpalosverdes.com"
 
+# Month keys (YYYY-MM) whose CRMLS source data is known to be incomplete — the
+# export was taken mid-month, so closings are under-counted. These render a
+# "preliminary" banner rather than presenting a partial month as final.
+# Remove a month here once a full-month export has been regenerated.
+PRELIMINARY_MONTHS = {"2026-04"}
+
 CITY_NAMES = {
     "Rancho Palos Verdes": "RPV",
     "Palos Verdes Estates": "PVE",
@@ -286,6 +292,20 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
         active = ' class="active"' if mk == current_key else ""
         archive_links += f'<a href="/market/{mk}/"{active}>{mn} {y}</a>\n        '
 
+    # Preliminary-data banner for months with a known-incomplete export.
+    prelim_banner = ""
+    if current_key in PRELIMINARY_MONTHS:
+        prelim_banner = (
+            '<div style="max-width:760px;margin:24px auto 0;padding:16px 20px;'
+            'border:1px solid #d9a441;background:#fdf3e7;color:#7a4706;'
+            'border-radius:8px;font-size:0.95rem;line-height:1.5">'
+            f'<strong>Preliminary &mdash; partial month.</strong> This report reflects '
+            f'only sales recorded in the CRMLS through early {month_name}, so the '
+            'homes-sold count and medians below undercount the full month. '
+            f'It will be updated once complete {month_name} {year} data is available.'
+            '</div>'
+        )
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -513,7 +533,7 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
     {"<a href='" + next_link + "'>Next month &rarr;</a>" if next_link else "<span></span>"}
   </div>
 </section>
-
+{prelim_banner}
 <section class="stats-section">
   <div class="stats-grid">
     <div class="stat-card">
