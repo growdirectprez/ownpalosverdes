@@ -212,6 +212,13 @@
     transition: background 0.2s, color 0.2s;
   }
   .cta-bar a:hover { background: var(--ink); color: var(--white); }
+  .cta-sub { font-family: var(--sans); font-size: 0.85rem; color: var(--drift); margin-top: -0.6rem; margin-bottom: 1.25rem; }
+  .report-lead { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+  .report-lead input { padding: 12px 14px; border: 1px solid var(--sand-mid); background: var(--white); font-family: var(--sans); font-size: 0.9rem; color: var(--ink); }
+  .report-lead input:focus { outline: none; border-color: var(--copper); }
+  .report-lead button { margin-top: 4px; padding: 13px 28px; background: var(--ink); color: var(--white); border: none; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+  .report-lead button:hover { background: var(--copper); }
+  .report-lead-msg { display: none; font-family: var(--serif); color: var(--teal); font-size: 1.05rem; margin-top: 0.5rem; text-align: center; }
 
   /* ── RESPONSIVE ─────── */
   @media (max-width: 768px) {
@@ -399,7 +406,16 @@
 
 <section class="cta-bar">
   <p>Want a deeper look at the numbers for your street?</p>
-  <a href="/#contact">Talk to Angelique</a>
+  <p class="cta-sub">Get a personalized analysis from Angelique &mdash; no obligation.</p>
+  <form id="report-lead-form" class="report-lead" action="https://formspree.io/f/mwvapnan" method="POST">
+    <input type="hidden" name="form_type" value="market_2023-10">
+    <input type="hidden" name="report" value="October 2023 Market Report">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone (optional)">
+    <button type="submit">Get My Market Analysis</button>
+  </form>
+  <div class="report-lead-msg" id="report-lead-msg"></div>
 </section>
 
 <section class="archive-section">
@@ -451,6 +467,24 @@
     Compass is a licensed real estate broker. Equal Housing Opportunity.
   </p>
 </footer>
+
+<!-- FORMSPREE -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', {
+    formElement: '#report-lead-form', formId: 'mwvapnan',
+    onSuccess: function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { form_type: 'market_2023-10', form_id: 'mwvapnan' });
+      }
+      var f = document.getElementById('report-lead-form');
+      var m = document.getElementById('report-lead-msg');
+      if (f) { f.style.display = 'none'; }
+      if (m) { m.textContent = 'Thank you \u2014 Angelique will be in touch shortly.'; m.style.display = 'block'; }
+    }
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
