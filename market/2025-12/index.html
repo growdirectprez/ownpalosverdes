@@ -36,6 +36,17 @@
   "about": { "@type": "Place", "name": "Palos Verdes Peninsula", "containedInPlace": { "@type": "State", "name": "California" } }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ownpalosverdes.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Market Reports", "item": "https://ownpalosverdes.com/market/" },
+    { "@type": "ListItem", "position": 3, "name": "December 2025", "item": "https://ownpalosverdes.com/market/2025-12/" }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
@@ -219,6 +230,12 @@
   .report-lead button { margin-top: 4px; padding: 13px 28px; background: var(--ink); color: var(--white); border: none; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
   .report-lead button:hover { background: var(--copper); }
   .report-lead-msg { display: none; font-family: var(--serif); color: var(--teal); font-size: 1.05rem; margin-top: 0.5rem; text-align: center; }
+  .related-guides { max-width: 1100px; margin: 3.5rem auto 0; padding: 0 2rem; }
+  .guide-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .guide-card { display: block; padding: 1.5rem; background: var(--white); border: 1px solid var(--sand-mid); text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+  .guide-card:hover { border-color: var(--copper); transform: translateY(-2px); }
+  .guide-card strong { display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: 0.4rem; }
+  .guide-card span { font-size: 0.85rem; color: var(--drift); line-height: 1.4; }
 
   /* ── RESPONSIVE ─────── */
   @media (max-width: 768px) {
@@ -381,6 +398,25 @@
       </tr>
     </tbody>
   </table>
+</section>
+
+<section class="related-guides">
+  <div class="section-label">Keep Exploring</div>
+  <h2>Get to know <em>the Peninsula.</em></h2>
+  <div class="guide-cards">
+    <a href="/guides/neighborhoods/" class="guide-card">
+      <strong>Neighborhood Guide</strong>
+      <span>All 12 Palos Verdes neighborhoods, street by street.</span>
+    </a>
+    <a href="/guides/schools/" class="guide-card">
+      <strong>PVPUSD School Guide</strong>
+      <span>Boundaries, open choice, permits &amp; private options.</span>
+    </a>
+    <a href="/guides/lifestyle/" class="guide-card">
+      <strong>Lifestyle Guide</strong>
+      <span>Trails, beaches, golf, equestrian &amp; dining.</span>
+    </a>
+  </div>
 </section>
 
 <section class="platform-links">
