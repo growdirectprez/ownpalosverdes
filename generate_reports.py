@@ -27,7 +27,7 @@ SITE_URL = "https://ownpalosverdes.com"
 # export was taken mid-month, so closings are under-counted. These render a
 # "preliminary" banner rather than presenting a partial month as final.
 # Remove a month here once a full-month export has been regenerated.
-PRELIMINARY_MONTHS = {"2026-04"}
+PRELIMINARY_MONTHS = {"2026-08"}
 
 CITY_NAMES = {
     "Rancho Palos Verdes": "RPV",
