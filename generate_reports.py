@@ -61,6 +61,17 @@ COMPASS_LINKS = {
     "RH": "https://www.compass.com/homes-for-sale/rolling-hills-ca/",
 }
 
+# Angelique's own IDX portal (angeliquelyle.com) — route buyers here so they
+# stay in her frame and she keeps the lead, instead of sending them to
+# Compass/Redfin. Per-city links go to her neighborhood pages.
+ANGELIQUE_SEARCH = "https://angeliquelyle.com/home-search/listings"
+ANGELIQUE_CITY = {
+    "RPV": "https://angeliquelyle.com/neighborhoods/rancho-palos-verdes",
+    "PVE": "https://angeliquelyle.com/neighborhoods/palos-verdes-estates",
+    "RHE": "https://angeliquelyle.com/neighborhoods/rolling-hills-estates",
+    "RH": "https://angeliquelyle.com/neighborhoods/rolling-hills",
+}
+
 MONTH_NAMES = [
     "", "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
@@ -263,15 +274,15 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
         <td>{cs['count']}</td>
         <td>{cs['median_dom'] if cs['median_dom'] is not None else '—'}</td>
         <td>${cs['median_ppsf']:,}/ft&sup2;</td>
-        <td><a href="{REDFIN_LINKS.get(abbr, '#')}" target="_blank" rel="noopener">Redfin</a> &middot; <a href="{COMPASS_LINKS.get(abbr, '#')}" target="_blank" rel="noopener">Compass</a></td>
+        <td><a href="{ANGELIQUE_CITY.get(abbr, ANGELIQUE_SEARCH)}" target="_blank" rel="noopener">View homes &rarr;</a></td>
       </tr>"""
 
     # Notable sales (top 5 by price)
     top_sales = sorted(sales, key=lambda s: s["close_price"], reverse=True)[:5]
     notable_rows = ""
     for s in top_sales:
-        rf = redfin_url(s)
-        addr_cell = f'<a href="{rf}" target="_blank" rel="noopener">{s["address"]}</a>' if rf else s["address"]
+        city_url = ANGELIQUE_CITY.get(s.get("city", ""), ANGELIQUE_SEARCH)
+        addr_cell = f'<a href="{city_url}" target="_blank" rel="noopener">{s["address"]}</a>'
         sqft_cell = f'{s["sqft"]:,} ft&sup2;' if s.get("sqft") else "—"
         dom_cell = f'{s["dom"]} days' if s["dom"] is not None else "—"
         notable_rows += f"""
@@ -609,7 +620,7 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
         <th>Sales</th>
         <th>Median DOM</th>
         <th>$/ft&sup2;</th>
-        <th>Live Market</th>
+        <th>Search</th>
       </tr>
     </thead>
     <tbody>{city_rows}
@@ -657,21 +668,20 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
 
 <section class="platform-links">
   <div class="platform-card">
-    <h3>Search on Compass</h3>
+    <h3>Search Homes by City</h3>
     <ul>
-      <li><a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Palos Verdes Estates</a> <span class="tag">PVE</span></li>
-      <li><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
-      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
-      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/palos-verdes-estates" target="_blank" rel="noopener">Palos Verdes Estates</a> <span class="tag">PVE</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/rancho-palos-verdes" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/rolling-hills-estates" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/rolling-hills" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
     </ul>
   </div>
   <div class="platform-card">
-    <h3>Market Data on Redfin</h3>
+    <h3>Start Your Search</h3>
     <ul>
-      <li><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">PVE Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">RPV Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">RHE Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">RH Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://angeliquelyle.com/home-search/listings" target="_blank" rel="noopener">All Palos Verdes Listings</a> <span class="tag">Search</span></li>
+      <li><a href="https://angeliquelyle.com/properties/sold" target="_blank" rel="noopener">Recently Sold</a> <span class="tag">Comps</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods" target="_blank" rel="noopener">Explore Neighborhoods</a> <span class="tag">Guides</span></li>
     </ul>
   </div>
 </section>
@@ -901,21 +911,20 @@ def render_index(all_months, monthly_stats):
 
 <section class="platform-links">
   <div class="platform-card">
-    <h3>Search on Compass</h3>
+    <h3>Search Homes by City</h3>
     <ul>
-      <li><a href="https://www.compass.com/homes-for-sale/palos-verdes-estates-ca/" target="_blank" rel="noopener">Palos Verdes Estates</a> <span class="tag">PVE</span></li>
-      <li><a href="https://www.compass.com/homes-for-sale/rancho-palos-verdes-ca/" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
-      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-estates-ca/" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
-      <li><a href="https://www.compass.com/homes-for-sale/rolling-hills-ca/" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/palos-verdes-estates" target="_blank" rel="noopener">Palos Verdes Estates</a> <span class="tag">PVE</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/rancho-palos-verdes" target="_blank" rel="noopener">Rancho Palos Verdes</a> <span class="tag">RPV</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/rolling-hills-estates" target="_blank" rel="noopener">Rolling Hills Estates</a> <span class="tag">RHE</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods/rolling-hills" target="_blank" rel="noopener">Rolling Hills</a> <span class="tag">RH</span></li>
     </ul>
   </div>
   <div class="platform-card">
-    <h3>Market Data on Redfin</h3>
+    <h3>Start Your Search</h3>
     <ul>
-      <li><a href="https://www.redfin.com/city/30570/CA/Palos-Verdes-Estates/housing-market" target="_blank" rel="noopener">PVE Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/30573/CA/Rancho-Palos-Verdes/housing-market" target="_blank" rel="noopener">RPV Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/30574/CA/Rolling-Hills-Estates/housing-market" target="_blank" rel="noopener">RHE Housing Market</a> <span class="tag">Trends</span></li>
-      <li><a href="https://www.redfin.com/city/15808/CA/Rolling-Hills/housing-market" target="_blank" rel="noopener">RH Housing Market</a> <span class="tag">Trends</span></li>
+      <li><a href="https://angeliquelyle.com/home-search/listings" target="_blank" rel="noopener">All Palos Verdes Listings</a> <span class="tag">Search</span></li>
+      <li><a href="https://angeliquelyle.com/properties/sold" target="_blank" rel="noopener">Recently Sold</a> <span class="tag">Comps</span></li>
+      <li><a href="https://angeliquelyle.com/neighborhoods" target="_blank" rel="noopener">Explore Neighborhoods</a> <span class="tag">Guides</span></li>
     </ul>
   </div>
 </section>
