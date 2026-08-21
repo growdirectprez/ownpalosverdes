@@ -942,6 +942,7 @@ CROSS_LINK_FILES = [
     REPO_ROOT / "guides" / "neighborhoods" / "index.html",
     REPO_ROOT / "guides" / "schools" / "index.html",
     REPO_ROOT / "guides" / "lifestyle" / "index.html",
+    REPO_ROOT / "faq" / "index.html",
 ]
 
 
@@ -951,18 +952,30 @@ def _sub_marker(text, tag, inner):
     return pattern.sub(lambda m: m.group(1) + inner + m.group(2), text)
 
 
-def patch_cross_links(month_keys):
-    """Refresh the latest-report link + month count on the homepage and guides."""
+def patch_cross_links(month_keys, monthly_stats):
+    """Refresh the latest-report link, month count, and FAQ live-data figures."""
     latest = month_keys[-1]
     year, month = latest.split("-")
     label = f"{MONTH_NAMES[int(month)]} {year}"
-    count = len(month_keys)
+    month_count = len(month_keys)
 
     latest_link = f'<a href="/market/{latest}/">Latest: {label} Report</a>'
     market_desc = (
-        f"{count} months of closed CRMLS data &mdash; median price, DOM &amp; "
+        f"{month_count} months of closed CRMLS data &mdash; median price, DOM &amp; "
         f"$/sq ft. Latest: {label}."
     )
+
+    # FAQ live-data figures use the latest *complete* month (skip preliminary/partial),
+    # so the headline "median price" isn't a half-finished month.
+    complete = [k for k in month_keys if k not in PRELIMINARY_MONTHS] or month_keys
+    lc = monthly_stats[complete[-1]]
+    trailing = [monthly_stats[k]["median_price"] for k in complete[-12:]]
+    faq = {
+        "FAQ-MEDIAN": fmt_price(lc["median_price"]),
+        "FAQ-RANGE": f"{fmt_price(min(trailing))}&ndash;{fmt_price(max(trailing))}",
+        "FAQ-DOM": str(lc["median_dom"]) if lc["median_dom"] is not None else "—",
+        "FAQ-SALES": str(lc["count"]),
+    }
 
     for path in CROSS_LINK_FILES:
         if not path.exists():
@@ -971,6 +984,9 @@ def patch_cross_links(month_keys):
         text = _sub_marker(text, "LATEST-REPORT", latest_link)
         if path.name == "index.html" and path.parent == REPO_ROOT:
             text = _sub_marker(text, "MARKET-DESC", market_desc)
+        if path.parent.name == "faq":
+            for tag, val in faq.items():
+                text = _sub_marker(text, tag, val)
         if text != original:
             path.write_text(text)
             print(f"  Patched cross-links in {path.relative_to(REPO_ROOT)}")
@@ -1022,8 +1038,8 @@ def main():
     (OUTPUT_DIR / "index.html").write_text(index_html)
     print(f"  Generated market/index.html")
 
-    # Refresh the "latest report" link + month count on the homepage and guides
-    patch_cross_links(month_keys)
+    # Refresh the "latest report" link, month count, and FAQ live figures
+    patch_cross_links(month_keys, monthly_stats)
 
     print(f"\nDone! {len(month_keys)} monthly reports + index generated in market/")
 
