@@ -241,7 +241,6 @@ def pct_change(current, previous):
 def render_report(year, month, stats, city_stats, prev_stats, all_months, sales):
     month_name = MONTH_NAMES[month]
     title = f"Palos Verdes Market Report &mdash; {month_name} {year}"
-    desc = f"Peninsula housing market data for {month_name} {year}. Median price, days on market, price per sqft, and city breakdowns for RPV, PVE, RHE, and Rolling Hills."
 
     # Previous / next month links
     month_keys = sorted(all_months.keys())
@@ -261,6 +260,18 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
     price_change_str = ""
     if prev_stats:
         price_change_str = pct_change(stats["median_price"], prev_stats["median_price"])
+
+    # Unique, data-rich meta description — carries this month's actual numbers so
+    # no two of the 38 reports share a description (helps indexing + click-through).
+    desc = f"Palos Verdes home prices for {month_name} {year}: median {fmt_price(stats['median_price'])}"
+    if price_change_str and prev_month_name:
+        desc += f" ({price_change_str} vs {prev_month_name})"
+    desc += f", {stats['count']} closed sales"
+    if stats.get("median_dom") is not None:
+        desc += f", {stats['median_dom']} median days on market"
+    desc += ". RPV, PVE, RHE and Rolling Hills, from closed CRMLS data."
+    if current_key in PRELIMINARY_MONTHS:
+        desc += " Preliminary (partial month)."
 
     # City breakdown rows
     city_rows = ""
