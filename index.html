@@ -733,7 +733,7 @@
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="javascript:void(0)" class="nav-cta" onclick="openModal('connect-modal')">Let's Connect</a>
+  <a href="https://angeliquelyle.com/contact?utm_source=ownpalosverdes&utm_medium=nav" target="_blank" rel="noopener" class="nav-cta" onclick="if(typeof gtag==='function'){gtag('event','generate_lead',{form_type:'quick_connect',destination:'angeliquelyle.com/contact'});}">Let's Connect</a>
   <button class="nav-menu" onclick="document.querySelector('.mobile-nav').classList.add('open')">Menu</button>
 </nav>
 
@@ -848,16 +848,8 @@
       <div class="pkg-label">Stay in the Loop</div>
       <div class="pkg-title">Peninsula market updates, monthly.</div>
       <p class="pkg-body">New listings, closed sales, price shifts, and neighborhood intel &mdash; straight to your inbox. No spam, unsubscribe anytime.</p>
-      <form id="guide-form" class="pkg-form">
-        <input type="hidden" name="_subject" value="Newsletter Signup — OwnPalosVerdes.com">
-        <input type="hidden" name="form_type" value="newsletter">
-        <input class="pkg-input" type="text" name="name" placeholder="Your name" data-fs-field required>
-        <span data-fs-error="name" class="pkg-error"></span>
-        <input class="pkg-input" type="email" name="email" placeholder="Email address" data-fs-field required>
-        <span data-fs-error="email" class="pkg-error"></span>
-        <button type="submit" class="pkg-btn" data-fs-submit-btn>Subscribe &rarr;</button>
-        <p class="pkg-disclaimer">Your information is never shared. Unsubscribe anytime.</p>
-      </form>
+      <a href="https://angeliquelyle.com/contact?utm_source=ownpalosverdes&utm_medium=newsletter" target="_blank" rel="noopener" class="pkg-btn" style="display:inline-block;text-decoration:none;text-align:center;" onclick="if(typeof gtag==='function'){gtag('event','generate_lead',{form_type:'newsletter',destination:'angeliquelyle.com/contact'});}">Subscribe &rarr;</a>
+      <p class="pkg-disclaimer">Delivered by Angelique Lyle. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
@@ -871,7 +863,7 @@
           <div class="section-tag reveal">For Sellers</div>
           <h2 class="section-heading reveal reveal-delay-1">Compass<br><em>Concierge.</em></h2>
         </div>
-        <a href="javascript:void(0)" onclick="openModal('concierge-dl-modal')" class="concierge-booklet reveal reveal-delay-1">
+        <a href="https://angeliquelyle.com/contact?utm_source=ownpalosverdes&utm_medium=concierge" target="_blank" rel="noopener" class="concierge-booklet reveal reveal-delay-1" onclick="if(typeof gtag==='function'){gtag('event','generate_lead',{form_type:'concierge_booklet',destination:'angeliquelyle.com/contact'});}">
           <svg class="concierge-booklet-icon" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="2" y="2" width="44" height="56" rx="3" stroke="currentColor" stroke-width="2"/>
             <path d="M14 18h20M14 26h20M14 34h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -904,7 +896,7 @@
         </div>
       </div>
       <div class="concierge-cta-wrap reveal reveal-delay-3">
-        <a href="javascript:void(0)" onclick="openModal('connect-modal')" class="concierge-cta">Let's Talk About Listing &rarr;</a>
+        <a href="https://angeliquelyle.com/contact?utm_source=ownpalosverdes&utm_medium=listing_cta" target="_blank" rel="noopener" class="concierge-cta" onclick="if(typeof gtag==='function'){gtag('event','generate_lead',{form_type:'home_valuation',destination:'angeliquelyle.com/contact'});}">Let's Talk About Listing &rarr;</a>
       </div>
     </div>
     <div class="concierge-card reveal reveal-delay-1">
@@ -1013,35 +1005,8 @@
     <div data-fs-error class="form-error"></div>
     <div class="section-tag" style="color:var(--stone);">Send a Message</div>
     <h3 style="font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin-bottom:1.5rem;font-weight:400;">Get in <em style="font-style:italic;">touch.</em></h3>
-    <form id="contact-form" class="contact-form">
-      <input type="hidden" name="_subject" value="Contact Inquiry — OwnPalosVerdes.com">
-      <input type="hidden" name="form_type" value="contact">
-      <div class="form-row">
-        <div>
-          <input class="form-input" type="text" name="first_name" placeholder="First name" data-fs-field required>
-          <span data-fs-error="first_name" class="form-error"></span>
-        </div>
-        <div>
-          <input class="form-input" type="text" name="last_name" placeholder="Last name" data-fs-field required>
-          <span data-fs-error="last_name" class="form-error"></span>
-        </div>
-      </div>
-      <input class="form-input" type="email" name="email" placeholder="Email address" data-fs-field required>
-      <span data-fs-error="email" class="form-error"></span>
-      <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)" data-fs-field>
-      <select class="form-select" name="interest" data-fs-field>
-        <option value="" disabled selected>I'm interested in...</option>
-        <option value="buying">Buying on the Peninsula</option>
-        <option value="selling">Selling my home</option>
-        <option value="relocating">Relocating to Palos Verdes</option>
-        <option value="welcome_guide">Getting the Welcome Guide</option>
-        <option value="home_value">What's my home worth?</option>
-        <option value="exploring">Just exploring</option>
-      </select>
-      <textarea class="form-input" name="message" placeholder="Tell me a little about what you're looking for..." data-fs-field></textarea>
-      <span data-fs-error="message" class="form-error"></span>
-      <button type="submit" class="form-submit" data-fs-submit-btn>Send message &rarr;</button>
-    </form>
+    <p style="color:var(--stone);font-size:0.95rem;line-height:1.6;margin-bottom:1.5rem;">Buying, selling, or relocating to the Peninsula? Send Angelique a message and she'll get back to you the same day.</p>
+    <a href="https://angeliquelyle.com/contact?utm_source=ownpalosverdes&utm_medium=contact" target="_blank" rel="noopener" class="form-submit" style="display:inline-block;text-decoration:none;text-align:center;" onclick="if(typeof gtag==='function'){gtag('event','generate_lead',{form_type:'contact',destination:'angeliquelyle.com/contact'});}">Contact Angelique &rarr;</a>
   </div>
 </section>
 
@@ -1093,105 +1058,8 @@
 
 <!-- MODALS -->
 
-<!-- Quick Connect Modal -->
-<div class="modal-overlay" id="connect-modal" onclick="closeModalOutside(event,'connect-modal')">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('connect-modal')">&#10005;</button>
-    <div class="modal-title">Let's Connect</div>
-    <p class="modal-body">Quick question? Thinking about a move? Drop me a line &mdash; I'll get back to you the same day.</p>
-    <form id="connect-form">
-      <input type="hidden" name="_subject" value="Quick Connect — OwnPalosVerdes.com">
-      <input type="hidden" name="form_type" value="quick_connect">
-      <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <input class="form-input" type="tel" name="phone" placeholder="Phone number" data-fs-field style="margin-bottom:0.75rem;width:100%;">
-      <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;">
-        <label style="flex:1;display:flex;align-items:center;gap:0.4rem;padding:0.6rem 0.8rem;border:1px solid var(--sand-mid);border-radius:6px;cursor:pointer;font-size:0.85rem;color:var(--stone);transition:all 0.2s;">
-          <input type="radio" name="preferred_contact" value="email_me" checked style="accent-color:var(--teal);"> Email me
-        </label>
-        <label style="flex:1;display:flex;align-items:center;gap:0.4rem;padding:0.6rem 0.8rem;border:1px solid var(--sand-mid);border-radius:6px;cursor:pointer;font-size:0.85rem;color:var(--stone);transition:all 0.2s;">
-          <input type="radio" name="preferred_contact" value="text_me"> Text me
-        </label>
-        <label style="flex:1;display:flex;align-items:center;gap:0.4rem;padding:0.6rem 0.8rem;border:1px solid var(--sand-mid);border-radius:6px;cursor:pointer;font-size:0.85rem;color:var(--stone);transition:all 0.2s;">
-          <input type="radio" name="preferred_contact" value="call_me"> Call me
-        </label>
-      </div>
-      <textarea class="form-input" name="message" placeholder="What's on your mind? (optional)" data-fs-field rows="2" style="margin-bottom:0.75rem;width:100%;resize:vertical;"></textarea>
-      <button type="submit" class="form-submit" data-fs-submit-btn style="width:100%;">Send &rarr;</button>
-    </form>
-    <div data-fs-success class="form-success" style="margin-top:1rem;"></div>
-    <div data-fs-error class="form-error"></div>
-  </div>
-</div>
-
-<!-- Home Valuation Modal -->
-<div class="modal-overlay" id="value-modal" onclick="closeModalOutside(event,'value-modal')">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('value-modal')">&#10005;</button>
-    <div class="modal-title">Let's Talk About Listing Your Home</div>
-    <p class="modal-body">The Palos Verdes market is hyperlocal &mdash; street, view, and school zone all move the needle. Let me give you an honest, data-backed valuation, not an automated estimate.</p>
-    <form id="value-form">
-      <input type="hidden" name="_subject" value="Home Valuation Request — OwnPalosVerdes.com">
-      <input type="hidden" name="form_type" value="home_valuation">
-      <input class="form-input" type="text" name="address" placeholder="Property address" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <button type="submit" class="form-submit" data-fs-submit-btn style="width:100%;">Request valuation &rarr;</button>
-    </form>
-    <div data-fs-success class="form-success" style="margin-top:1rem;"></div>
-    <div data-fs-error class="form-error"></div>
-  </div>
-</div>
-
-<!-- Concierge Booklet Download Modal -->
-<div class="modal-overlay" id="concierge-dl-modal" onclick="closeModalOutside(event,'concierge-dl-modal')">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('concierge-dl-modal')">&#10005;</button>
-    <div class="modal-title">Get the Concierge Booklet</div>
-    <p class="modal-body">Everything you need to know about Compass Concierge &mdash; how it works, what's covered, and real before-and-after results. Free PDF, no obligation.</p>
-    <form id="concierge-dl-form">
-      <input type="hidden" name="_subject" value="Concierge Booklet Download — OwnPalosVerdes.com">
-      <input type="hidden" name="form_type" value="concierge_booklet">
-      <input class="form-input" type="text" name="name" placeholder="Your name" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <input class="form-input" type="email" name="email" placeholder="Email" data-fs-field required style="margin-bottom:0.75rem;width:100%;">
-      <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)" data-fs-field style="margin-bottom:0.75rem;width:100%;">
-      <button type="submit" class="form-submit" data-fs-submit-btn style="width:100%;">Download the booklet &rarr;</button>
-    </form>
-    <div data-fs-success class="form-success" style="margin-top:1rem;"></div>
-    <div data-fs-error class="form-error"></div>
-  </div>
-</div>
-
-<!-- FORMSPREE -->
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  // Fire a GA4 generate_lead event (tagged with the form's form_type) on a
-  // successful Formspree submit. form_type is read from the form's hidden
-  // input so it always matches what Formspree receives.
-  function trackLead(selector) {
-    var form = document.querySelector(selector);
-    var field = form && form.querySelector('[name="form_type"]');
-    var formType = field ? field.value : 'unknown';
-    if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', { form_type: formType, form_id: 'mwvapnan' });
-    }
-  }
-  formspree('initForm', { formElement: '#contact-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#contact-form'); } });
-  formspree('initForm', { formElement: '#guide-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#guide-form'); } });
-  formspree('initForm', { formElement: '#value-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#value-form'); } });
-  formspree('initForm', { formElement: '#connect-form', formId: 'mwvapnan', onSuccess: function () { trackLead('#connect-form'); } });
-  formspree('initForm', {
-    formElement: '#concierge-dl-form', formId: 'mwvapnan',
-    onSuccess: function () {
-      trackLead('#concierge-dl-form');
-      if (typeof gtag === 'function') {
-        gtag('event', 'file_download', { file_name: 'compass-concierge.pdf', link_text: 'Compass Concierge Guide', form_type: 'concierge_booklet' });
-      }
-      window.open('guides/compass-concierge.pdf', '_blank');
-    }
-  });
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<!-- Lead capture is handled on angeliquelyle.com (Luxury Presence -> Follow Up Boss).
+     All CTAs on this content site route there; ownpalosverdes.com holds no forms. -->
 
 <script>
 
@@ -1206,11 +1074,6 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => obs.observe(el));
-
-  // Modals
-  function openModal(id) { document.getElementById(id).classList.add('active'); }
-  function closeModal(id) { document.getElementById(id).classList.remove('active'); }
-  function closeModalOutside(e, id) { if (e.target === e.currentTarget) closeModal(id); }
 </script>
 </body>
 </html>
