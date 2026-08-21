@@ -442,15 +442,7 @@
 <section class="cta-bar">
   <p>Want a deeper look at the numbers for your street?</p>
   <p class="cta-sub">Get a personalized analysis from Angelique &mdash; no obligation.</p>
-  <form id="report-lead-form" class="report-lead" action="https://formspree.io/f/mwvapnan" method="POST">
-    <input type="hidden" name="form_type" value="market_2025-09">
-    <input type="hidden" name="report" value="September 2025 Market Report">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="phone" placeholder="Phone (optional)">
-    <button type="submit">Get My Market Analysis</button>
-  </form>
-  <div class="report-lead-msg" id="report-lead-msg"></div>
+  <a href="https://angeliquelyle.com/contact?utm_source=ownpalosverdes&utm_medium=market_report&utm_campaign=2025-09" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','generate_lead',{form_type:'market_2025-09',destination:'angeliquelyle.com/contact'});}">Talk to Angelique &rarr;</a>
 </section>
 
 <section class="archive-section">
@@ -507,23 +499,6 @@
   </p>
 </footer>
 
-<!-- FORMSPREE -->
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', {
-    formElement: '#report-lead-form', formId: 'mwvapnan',
-    onSuccess: function () {
-      if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', { form_type: 'market_2025-09', form_id: 'mwvapnan' });
-      }
-      var f = document.getElementById('report-lead-form');
-      var m = document.getElementById('report-lead-msg');
-      if (f) { f.style.display = 'none'; }
-      if (m) { m.textContent = 'Thank you \u2014 Angelique will be in touch shortly.'; m.style.display = 'block'; }
-    }
-  });
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
