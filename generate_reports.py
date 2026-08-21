@@ -675,6 +675,10 @@ def render_report(year, month, stats, city_stats, prev_stats, all_months, sales)
       <strong>Lifestyle Guide</strong>
       <span>Trails, beaches, golf, equestrian &amp; dining.</span>
     </a>
+    <a href="/faq/" class="guide-card">
+      <strong>Palos Verdes FAQ</strong>
+      <span>Schools, neighborhoods, prices &amp; moving, answered.</span>
+    </a>
   </div>
 </section>
 
