@@ -13,6 +13,7 @@ Outputs HTML to market/YYYY-MM/index.html
 import csv
 import glob
 import os
+import re
 import statistics
 from collections import defaultdict
 from datetime import datetime
@@ -918,6 +919,52 @@ def render_index(all_months, monthly_stats):
     return html
 
 
+# ── Cross-page links ──────────────────────────────────────────────
+# The homepage and guides carry a "latest market report" link (and a month
+# count) that must track the newest report. Rather than hand-edit 4 files each
+# month, those spots are wrapped in HTML-comment markers and rewritten here.
+# Bootstrap: the marker pair must already exist in the file (added once by hand);
+# this only refreshes what's between the markers, so it's a no-op if unchanged.
+REPO_ROOT = Path(__file__).parent
+CROSS_LINK_FILES = [
+    REPO_ROOT / "index.html",
+    REPO_ROOT / "guides" / "neighborhoods" / "index.html",
+    REPO_ROOT / "guides" / "schools" / "index.html",
+    REPO_ROOT / "guides" / "lifestyle" / "index.html",
+]
+
+
+def _sub_marker(text, tag, inner):
+    """Replace the content between <!--tag-->...<!--/tag--> with `inner`."""
+    pattern = re.compile(f"(<!--{tag}-->).*?(<!--/{tag}-->)", re.DOTALL)
+    return pattern.sub(lambda m: m.group(1) + inner + m.group(2), text)
+
+
+def patch_cross_links(month_keys):
+    """Refresh the latest-report link + month count on the homepage and guides."""
+    latest = month_keys[-1]
+    year, month = latest.split("-")
+    label = f"{MONTH_NAMES[int(month)]} {year}"
+    count = len(month_keys)
+
+    latest_link = f'<a href="/market/{latest}/">Latest: {label} Report</a>'
+    market_desc = (
+        f"{count} months of closed CRMLS data &mdash; median price, DOM &amp; "
+        f"$/sq ft. Latest: {label}."
+    )
+
+    for path in CROSS_LINK_FILES:
+        if not path.exists():
+            continue
+        text = original = path.read_text()
+        text = _sub_marker(text, "LATEST-REPORT", latest_link)
+        if path.name == "index.html" and path.parent == REPO_ROOT:
+            text = _sub_marker(text, "MARKET-DESC", market_desc)
+        if text != original:
+            path.write_text(text)
+            print(f"  Patched cross-links in {path.relative_to(REPO_ROOT)}")
+
+
 # ── Main ──────────────────────────────────────────────────────────
 def main():
     print("Loading sales data...")
@@ -963,6 +1010,9 @@ def main():
     index_html = render_index(by_month, monthly_stats)
     (OUTPUT_DIR / "index.html").write_text(index_html)
     print(f"  Generated market/index.html")
+
+    # Refresh the "latest report" link + month count on the homepage and guides
+    patch_cross_links(month_keys)
 
     print(f"\nDone! {len(month_keys)} monthly reports + index generated in market/")
 
